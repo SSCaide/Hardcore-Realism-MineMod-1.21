@@ -1,6 +1,7 @@
 package net.sscaide.realismmod;
 
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.sscaide.realismmod.item.ModItems;
 import org.slf4j.Logger;
@@ -40,6 +41,11 @@ public class RealismMod
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+
+        // Register the item to a creative tab
+        modEventBus.addListener(this::addCreative);
+        //Register our mod's ModConfigSpec so that FML can create and load the config file for us
+        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
