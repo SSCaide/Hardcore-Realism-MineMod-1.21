@@ -14,6 +14,11 @@ public class ModItems {
     public static final DeferredItem<Item> RAW_BISMUTH = ITEMS.register("raw_bismuth",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> CLUMP_OF_DIRT = ITEMS.register("clump_of_dirt",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> ROCK = ITEMS.register("rock",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

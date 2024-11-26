@@ -1,4 +1,11 @@
 {
   "item.sscaiderealism.bismuth": "Bismuth",
-  "item.sscaiderealism.raw_bismuth": "Raw Bismuth"
+  "item.sscaiderealism.raw_bismuth": "Raw Bismuth",
+
+  "item.sscaiderealism.clump_of_dirt": "Clump of Dirt",
+  "item.sscaiderealism.rock": "Rock",
+
+
+  "block.sscaiderealism.bismuth_block": "Block of Bismuth",
+  "block.sscaiderealism.bismuth_ore": "Bismuth Ore"
 }

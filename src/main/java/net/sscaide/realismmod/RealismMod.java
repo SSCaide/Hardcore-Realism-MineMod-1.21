@@ -3,6 +3,7 @@ package net.sscaide.realismmod;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
+import net.sscaide.realismmod.block.ModBlocks;
 import net.sscaide.realismmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -41,6 +42,7 @@ public class RealismMod
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -59,6 +61,14 @@ public class RealismMod
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.BISMUTH);
             event.accept(ModItems.RAW_BISMUTH);
+
+            event.accept(ModItems.CLUMP_OF_DIRT);
+            event.accept(ModItems.ROCK);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.BISMUTH_BLOCK);
+            event.accept(ModBlocks.BISMUTH_ORE);
         }
     }
 
