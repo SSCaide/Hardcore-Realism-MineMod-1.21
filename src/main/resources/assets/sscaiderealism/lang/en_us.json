@@ -4,8 +4,18 @@
 
   "item.sscaiderealism.clump_of_dirt": "Clump of Dirt",
   "item.sscaiderealism.rock": "Rock",
+  "item.sscaiderealism.raw_tin": "Raw Tin",
+  "item.sscaiderealism.tin_ingot": "Tin Ingot",
 
 
   "block.sscaiderealism.bismuth_block": "Block of Bismuth",
-  "block.sscaiderealism.bismuth_ore": "Bismuth Ore"
+  "block.sscaiderealism.bismuth_ore": "Bismuth Ore",
+
+  "block.sscaiderealism.tin_ore": "Tin Ore",
+  "block.sscaiderealism.tin_block": "Block of Tin",
+  "block.sscaiderealism.raw_tin_block": "Block of Raw Tin",
+
+
+  "creativetab.sscaiderealism.sscr_items": "SSCR Items",
+  "creativetab.sscaiderealism.sscr_blocks": "SSCR Blocks"
 }

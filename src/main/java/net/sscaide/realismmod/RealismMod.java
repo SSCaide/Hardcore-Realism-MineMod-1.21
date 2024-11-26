@@ -4,6 +4,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.sscaide.realismmod.block.ModBlocks;
+import net.sscaide.realismmod.item.ModCreativeModeTabs;
 import net.sscaide.realismmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -41,6 +42,8 @@ public class RealismMod
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
@@ -64,11 +67,17 @@ public class RealismMod
 
             event.accept(ModItems.CLUMP_OF_DIRT);
             event.accept(ModItems.ROCK);
+            event.accept(ModItems.RAW_TIN);
+            event.accept(ModItems.TIN_INGOT);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.BISMUTH_BLOCK);
             event.accept(ModBlocks.BISMUTH_ORE);
+
+            event.accept(ModBlocks.TIN_ORE);
+            event.accept(ModBlocks.RAW_TIN_BLOCK);
+            event.accept(ModBlocks.TIN_BLOCK);
         }
     }
 
