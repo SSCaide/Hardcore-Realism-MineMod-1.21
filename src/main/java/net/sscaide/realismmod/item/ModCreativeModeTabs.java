@@ -22,6 +22,14 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.CLUMP_OF_DIRT);
                         output.accept(ModItems.ROCK);
+                        output.accept(ModItems.OAK_BARK);
+                        output.accept(ModItems.SPRUCE_BARK);
+                        output.accept(ModItems.BIRCH_BARK);
+                        output.accept(ModItems.JUNGLE_BARK);
+                        output.accept(ModItems.ACACIA_BARK);
+                        output.accept(ModItems.DARK_OAK_BARK);
+                        output.accept(ModItems.MANGROVE_BARK);
+                        output.accept(ModItems.CHERRY_BARK);
                         output.accept(ModItems.RAW_TIN);
                         output.accept(ModItems.TIN_INGOT);
                     }).build());
@@ -34,6 +42,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.TIN_ORE);
                         output.accept(ModBlocks.RAW_TIN_BLOCK);
                         output.accept(ModBlocks.TIN_BLOCK);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> SSCR_FOOD_TAB = CREATIVE_MODE_TAB.register("sscr_food_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ORANGE.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID, "sscr_blocks_tab"))
+                    .title(Component.translatable("creativetab.sscaiderealism.sscr_food"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.ORANGE);
                     }).build());
 
     public static void register(IEventBus eventBus) {

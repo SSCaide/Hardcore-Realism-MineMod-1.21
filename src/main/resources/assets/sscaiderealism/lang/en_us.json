@@ -1,15 +1,19 @@
 {
-  "item.sscaiderealism.bismuth": "Bismuth",
-  "item.sscaiderealism.raw_bismuth": "Raw Bismuth",
-
   "item.sscaiderealism.clump_of_dirt": "Clump of Dirt",
   "item.sscaiderealism.rock": "Rock",
+  "item.sscaiderealism.oak_bark": "Oak Bark",
+  "item.sscaiderealism.spruce_bark": "Spruce Bark",
+  "item.sscaiderealism.birch_bark": "Birch Bark",
+  "item.sscaiderealism.jungle_bark": "Jungle Bark",
+  "item.sscaiderealism.acacia_bark": "Acacia Bark",
+  "item.sscaiderealism.dark_oak_bark": "Dark Oak Bark",
+  "item.sscaiderealism.mangrove_bark": "Mangrove Bark",
+  "item.sscaiderealism.cherry_bark": "Cherry Bark",
   "item.sscaiderealism.raw_tin": "Raw Tin",
   "item.sscaiderealism.tin_ingot": "Tin Ingot",
 
+  "item.sscaiderealism.orange": "Orange",
 
-  "block.sscaiderealism.bismuth_block": "Block of Bismuth",
-  "block.sscaiderealism.bismuth_ore": "Bismuth Ore",
 
   "block.sscaiderealism.tin_ore": "Tin Ore",
   "block.sscaiderealism.tin_block": "Block of Tin",
@@ -17,5 +21,6 @@
 
 
   "creativetab.sscaiderealism.sscr_items": "SSCR Items",
-  "creativetab.sscaiderealism.sscr_blocks": "SSCR Blocks"
+  "creativetab.sscaiderealism.sscr_blocks": "SSCR Blocks",
+  "creativetab.sscaiderealism.sscr_food": "SSCR Food"
 }

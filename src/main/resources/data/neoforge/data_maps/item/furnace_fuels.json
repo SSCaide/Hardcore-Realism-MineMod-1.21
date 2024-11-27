@@ -1,0 +1,28 @@
+{
+  "values": {
+    "sscaiderealism:oak_bark": {
+      "burn_time": 100
+    },
+    "sscaiderealism:spruce_bark": {
+      "burn_time": 100
+    },
+    "sscaiderealism:birch_bark": {
+      "burn_time": 100
+    },
+    "sscaiderealism:jungle_bark": {
+      "burn_time": 100
+    },
+    "sscaiderealism:acacia_bark": {
+      "burn_time": 100
+    },
+    "sscaiderealism:dark_oak_bark": {
+      "burn_time": 100
+    },
+    "sscaiderealism:mangrove_bark": {
+      "burn_time": 100
+    },
+    "sscaiderealism:cherry_bark": {
+      "burn_time": 100
+    }
+  }
+}

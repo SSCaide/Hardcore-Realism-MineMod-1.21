@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "sscaiderealism:item/raw_bismuth"
+    "layer0": "sscaiderealism:item/orange"
   }
 }

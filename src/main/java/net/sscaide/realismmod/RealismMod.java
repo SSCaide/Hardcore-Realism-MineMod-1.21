@@ -62,19 +62,25 @@ public class RealismMod
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.BISMUTH);
-            event.accept(ModItems.RAW_BISMUTH);
-
             event.accept(ModItems.CLUMP_OF_DIRT);
             event.accept(ModItems.ROCK);
+            event.accept(ModItems.OAK_BARK);
+            event.accept(ModItems.SPRUCE_BARK);
+            event.accept(ModItems.BIRCH_BARK);
+            event.accept(ModItems.JUNGLE_BARK);
+            event.accept(ModItems.ACACIA_BARK);
+            event.accept(ModItems.DARK_OAK_BARK);
+            event.accept(ModItems.MANGROVE_BARK);
+            event.accept(ModItems.CHERRY_BARK);
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
         }
 
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.BISMUTH_BLOCK);
-            event.accept(ModBlocks.BISMUTH_ORE);
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.ORANGE);
+        }
 
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.TIN_ORE);
             event.accept(ModBlocks.RAW_TIN_BLOCK);
             event.accept(ModBlocks.TIN_BLOCK);
