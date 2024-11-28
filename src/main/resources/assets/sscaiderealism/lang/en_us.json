@@ -1,6 +1,7 @@
 {
   "item.sscaiderealism.clump_of_dirt": "Clump of Dirt",
   "item.sscaiderealism.rock": "Rock",
+
   "item.sscaiderealism.oak_bark": "Oak Bark",
   "item.sscaiderealism.spruce_bark": "Spruce Bark",
   "item.sscaiderealism.birch_bark": "Birch Bark",
@@ -9,15 +10,37 @@
   "item.sscaiderealism.dark_oak_bark": "Dark Oak Bark",
   "item.sscaiderealism.mangrove_bark": "Mangrove Bark",
   "item.sscaiderealism.cherry_bark": "Cherry Bark",
+  "item.sscaiderealism.palm_bark": "Palm Bark",
+
   "item.sscaiderealism.raw_tin": "Raw Tin",
   "item.sscaiderealism.tin_ingot": "Tin Ingot",
 
   "item.sscaiderealism.orange": "Orange",
 
 
+  "block.sscaiderealism.palm_log": "Palm Log",
+  "block.sscaiderealism.palm_wood": "Palm Wood",
+  "block.sscaiderealism.stripped_palm_log": "Stripped Palm Log",
+  "block.sscaiderealism.stripped_palm_wood": "Stripped Palm Wood",
+  "block.sscaiderealism.palm_planks": "Palm Planks",
+
+  "block.sscaiderealism.palm_stairs": "Palm Stairs",
+  "block.sscaiderealism.palm_slab": "Palm Slab",
+  "block.sscaiderealism.palm_fence": "Palm Fence",
+  "block.sscaiderealism.palm_fence_gate": "Palm Fence Gate",
+  "block.sscaiderealism.palm_door": "Palm Door",
+  "block.sscaiderealism.palm_trapdoor": "Palm Trapdoor",
+  "block.sscaiderealism.palm_pressure_plate": "Palm Pressure Plate",
+  "block.sscaiderealism.palm_button": "Palm Button",
+
   "block.sscaiderealism.tin_ore": "Tin Ore",
   "block.sscaiderealism.tin_block": "Block of Tin",
   "block.sscaiderealism.raw_tin_block": "Block of Raw Tin",
+  "block.sscaiderealism.tin_wall": "Tin Wall",
+
+  "block.sscaiderealism.tin_bulb": "Tin Bulb",
+
+  "block.sscaiderealism.dirt_slab": "Dirt Slab",
 
 
   "creativetab.sscaiderealism.sscr_items": "SSCR Items",

@@ -64,6 +64,7 @@ public class RealismMod
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.CLUMP_OF_DIRT);
             event.accept(ModItems.ROCK);
+
             event.accept(ModItems.OAK_BARK);
             event.accept(ModItems.SPRUCE_BARK);
             event.accept(ModItems.BIRCH_BARK);
@@ -72,6 +73,8 @@ public class RealismMod
             event.accept(ModItems.DARK_OAK_BARK);
             event.accept(ModItems.MANGROVE_BARK);
             event.accept(ModItems.CHERRY_BARK);
+            event.accept(ModItems.PALM_BARK);
+
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
         }
@@ -81,9 +84,31 @@ public class RealismMod
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.DIRT_SLAB);
+
+            event.accept(ModBlocks.PALM_LOG);
+            event.accept(ModBlocks.PALM_WOOD);
+            event.accept(ModBlocks.STRIPPED_PALM_LOG);
+            event.accept(ModBlocks.STRIPPED_PALM_WOOD);
+            event.accept(ModBlocks.PALM_PLANKS);
+            event.accept(ModBlocks.PALM_STAIRS);
+            event.accept(ModBlocks.PALM_SLAB);
+            event.accept(ModBlocks.PALM_FENCE);
+
+            event.accept(ModBlocks.PALM_FENCE_GATE);
+            event.accept(ModBlocks.PALM_DOOR);
+            event.accept(ModBlocks.PALM_TRAPDOOR);
+            event.accept(ModBlocks.PALM_PRESSURE_PLATE);
+            event.accept(ModBlocks.PALM_BUTTON);
+
             event.accept(ModBlocks.TIN_ORE);
             event.accept(ModBlocks.RAW_TIN_BLOCK);
             event.accept(ModBlocks.TIN_BLOCK);
+            event.accept(ModBlocks.TIN_WALL);
+
+        }
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(ModBlocks.TIN_BULB);
         }
     }
 

@@ -31,6 +31,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> CHERRY_BARK = ITEMS.register("cherry_bark",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PALM_BARK = ITEMS.register("palm_bark",
+            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> RAW_TIN = ITEMS.register("raw_tin",
             () -> new Item(new Item.Properties()));
