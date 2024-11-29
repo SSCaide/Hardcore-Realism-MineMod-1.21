@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.CLUMP_OF_DIRT);
                         output.accept(ModItems.ROCK);
+                        output.accept(ModItems.VINE);
 
                         output.accept(ModItems.OAK_BARK);
                         output.accept(ModItems.SPRUCE_BARK);
@@ -76,6 +77,18 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.sscaiderealism.sscr_food"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ORANGE);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> SSCR_TOOLS_TAB = CREATIVE_MODE_TAB.register("sscr_tools_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.COPPER_PICKAXE.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID, "sscr_food_tab"))
+                    .title(Component.translatable("creativetab.sscaiderealism.sscr_tools"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.COPPER_SWORD);
+                        output.accept(ModItems.COPPER_PICKAXE);
+                        output.accept(ModItems.COPPER_AXE);
+                        output.accept(ModItems.COPPER_SHOVEL);
+                        output.accept(ModItems.COPPER_HOE);
                     }).build());
 
     public static void register(IEventBus eventBus) {

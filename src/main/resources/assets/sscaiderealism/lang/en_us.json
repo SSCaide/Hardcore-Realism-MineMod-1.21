@@ -1,6 +1,7 @@
 {
   "item.sscaiderealism.clump_of_dirt": "Clump of Dirt",
   "item.sscaiderealism.rock": "Rock",
+  "item.sscaiderealism.vine": "Vine",
 
   "item.sscaiderealism.oak_bark": "Oak Bark",
   "item.sscaiderealism.spruce_bark": "Spruce Bark",
@@ -16,6 +17,12 @@
   "item.sscaiderealism.tin_ingot": "Tin Ingot",
 
   "item.sscaiderealism.orange": "Orange",
+
+  "item.sscaiderealism.copper_sword": "Copper Sword",
+  "item.sscaiderealism.copper_pickaxe": "Copper Pickaxe",
+  "item.sscaiderealism.copper_axe": "Copper Axe",
+  "item.sscaiderealism.copper_shovel": "Copper Shovel",
+  "item.sscaiderealism.copper_hoe": "Copper Hoe",
 
 
   "block.sscaiderealism.palm_log": "Palm Log",
@@ -45,5 +52,6 @@
 
   "creativetab.sscaiderealism.sscr_items": "SSCR Items",
   "creativetab.sscaiderealism.sscr_blocks": "SSCR Blocks",
-  "creativetab.sscaiderealism.sscr_food": "SSCR Food"
+  "creativetab.sscaiderealism.sscr_food": "SSCR Food",
+  "creativetab.sscaiderealism.sscr_tools": "SSCR Weapons & Tools"
 }

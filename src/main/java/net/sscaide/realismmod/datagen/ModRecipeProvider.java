@@ -3,6 +3,8 @@ package net.sscaide.realismmod.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -15,6 +17,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.sscaide.realismmod.RealismMod;
 import net.sscaide.realismmod.block.ModBlocks;
 import net.sscaide.realismmod.item.ModItems;
+import net.sscaide.realismmod.util.ModTags;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -39,6 +42,57 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             oreSmelting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 200, "tin");
             oreBlasting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 100, "tin");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_SWORD.get())
+                        .pattern(" A ")
+                        .pattern(" A ")
+                        .pattern(" B ")
+                        .define('A', Items.COPPER_INGOT)
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_copper", has(Items.COPPER_INGOT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_PICKAXE.get())
+                        .pattern("AAA")
+                        .pattern(" B ")
+                        .pattern(" B ")
+                        .define('A', Items.COPPER_INGOT)
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_copper", has(Items.COPPER_INGOT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_AXE.get())
+                        .pattern("AA ")
+                        .pattern("AB ")
+                        .pattern(" B ")
+                        .define('A', Items.COPPER_INGOT)
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_copper", has(Items.COPPER_INGOT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_AXE.get())
+                        .pattern(" AA")
+                        .pattern(" BA")
+                        .pattern(" B ")
+                        .define('A', Items.COPPER_INGOT)
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_copper", has(Items.COPPER_INGOT)).save(recipeOutput, "sscaiderealism:copper_axe_2");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_SHOVEL.get())
+                        .pattern(" A ")
+                        .pattern(" B ")
+                        .pattern(" B ")
+                        .define('A', Items.COPPER_INGOT)
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_copper", has(Items.COPPER_INGOT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_HOE.get())
+                        .pattern("AA ")
+                        .pattern(" B ")
+                        .pattern(" B ")
+                        .define('A', Items.COPPER_INGOT)
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_copper", has(Items.COPPER_INGOT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_HOE.get())
+                        .pattern(" AA")
+                        .pattern(" B ")
+                        .pattern(" B ")
+                        .define('A', Items.COPPER_INGOT)
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_copper", has(Items.COPPER_INGOT)).save(recipeOutput, "sscaiderealism:copper_hoe_2");
+
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RAW_TIN_BLOCK.get())
                 .pattern("BBB")
                 .pattern("BBB")
@@ -53,6 +107,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_tin_ingot", has(ModItems.TIN_INGOT)).save(recipeOutput);
         wall(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TIN_WALL.get(), ModItems.TIN_INGOT.get());
 
+        planksFromLog(recipeOutput, ModBlocks.PALM_PLANKS, ModTags.Items.PALM_LOGS, 4);
+        woodFromLogs(recipeOutput, ModBlocks.PALM_WOOD, ModBlocks.PALM_LOG);
         stairBuilder(ModBlocks.PALM_STAIRS.get(),
                 Ingredient.of(ModBlocks.PALM_PLANKS)).group("palm")
                 .unlockedBy("has_palm", has(ModBlocks.PALM_PLANKS)).save(recipeOutput);
@@ -78,7 +134,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .pattern("BB")
                         .define('B', ModItems.ROCK.get())
                         .unlockedBy("has_rock", has(ModItems.ROCK)).save(recipeOutput);
-
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.DIRT)
                 .pattern("BB")

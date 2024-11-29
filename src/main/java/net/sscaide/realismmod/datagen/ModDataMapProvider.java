@@ -26,6 +26,8 @@ public class ModDataMapProvider extends DataMapProvider {
     protected void gather() {
 
         this.builder(NeoForgeDataMaps.FURNACE_FUELS)
+                .add(ModItems.VINE.getId(), new FurnaceFuel(100), false)
+
                 .add(ModItems.OAK_BARK.getId(), new FurnaceFuel(100), false)
                 .add(ModItems.SPRUCE_BARK.getId(), new FurnaceFuel(100), false)
                 .add(ModItems.BIRCH_BARK.getId(), new FurnaceFuel(100), false)
