@@ -22,6 +22,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         slabBlock(ModBlocks.DIRT_SLAB.get(), blockTexture(Blocks.DIRT), blockTexture(Blocks.DIRT));
             blockItem(ModBlocks.DIRT_SLAB);
+        slabBlock(ModBlocks.MUD_SLAB.get(), blockTexture(Blocks.MUD), blockTexture(Blocks.MUD));
+            blockItem(ModBlocks.MUD_SLAB);
 
         logBlockWithItem(ModBlocks.PALM_LOG);
         blockWithItem(ModBlocks.PALM_WOOD);

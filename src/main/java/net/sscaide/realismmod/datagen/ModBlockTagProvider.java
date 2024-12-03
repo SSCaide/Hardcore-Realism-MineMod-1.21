@@ -46,13 +46,18 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.DIRT_SLAB.get());
 
-                tag(BlockTags.NEEDS_STONE_TOOL)
+        tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.TIN_ORE.get())
                 .add(ModBlocks.RAW_TIN_BLOCK.get())
                 .add(ModBlocks.TIN_BLOCK.get())
                 .add(ModBlocks.TIN_WALL.get())
 
                 .add(ModBlocks.TIN_BULB.get());
+        tag(ModTags.Blocks.NEEDS_FLINT_TOOL)
+                .addTag(BlockTags.NEEDS_STONE_TOOL);
+        tag(ModTags.Blocks.INCORRECT_FOR_FLINT_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
+                .remove(ModTags.Blocks.NEEDS_FLINT_TOOL);
         tag(ModTags.Blocks.NEEDS_COPPER_TOOL)
                 .addTag(BlockTags.NEEDS_STONE_TOOL);
         tag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL)

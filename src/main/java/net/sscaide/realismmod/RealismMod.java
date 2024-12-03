@@ -4,6 +4,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.sscaide.realismmod.block.ModBlocks;
+import net.sscaide.realismmod.component.ModDataComponents;
 import net.sscaide.realismmod.item.ModCreativeModeTabs;
 import net.sscaide.realismmod.item.ModItems;
 import org.slf4j.Logger;
@@ -47,6 +48,8 @@ public class RealismMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModDataComponents.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
         //Register our mod's ModConfigSpec so that FML can create and load the config file for us
@@ -63,17 +66,27 @@ public class RealismMod
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.CLUMP_OF_DIRT);
+            event.accept(ModItems.CLUMP_OF_MUD);
             event.accept(ModItems.ROCK);
             event.accept(ModItems.VINE);
 
+            event.accept(ModItems.OAK_TIMBER);
             event.accept(ModItems.OAK_BARK);
+            event.accept(ModItems.SPRUCE_TIMBER);
             event.accept(ModItems.SPRUCE_BARK);
+            event.accept(ModItems.BIRCH_TIMBER);
             event.accept(ModItems.BIRCH_BARK);
+            event.accept(ModItems.JUNGLE_TIMBER);
             event.accept(ModItems.JUNGLE_BARK);
+            event.accept(ModItems.ACACIA_TIMBER);
             event.accept(ModItems.ACACIA_BARK);
+            event.accept(ModItems.DARK_OAK_TIMBER);
             event.accept(ModItems.DARK_OAK_BARK);
+            event.accept(ModItems.MANGROVE_TIMBER);
             event.accept(ModItems.MANGROVE_BARK);
+            event.accept(ModItems.CHERRY_TIMBER);
             event.accept(ModItems.CHERRY_BARK);
+            event.accept(ModItems.PALM_TIMBER);
             event.accept(ModItems.PALM_BARK);
 
             event.accept(ModItems.RAW_TIN);
@@ -85,10 +98,22 @@ public class RealismMod
         }
 
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.FLINT_KNIFE);
+
             event.accept(ModItems.COPPER_SWORD);
+            event.accept(ModItems.COPPER_HELMET);
+            event.accept(ModItems.COPPER_CHESTPLATE);
+            event.accept(ModItems.COPPER_LEGGINGS);
+            event.accept(ModItems.COPPER_BOOTS);
         }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.RANDOM_FLINT_TOOL);
+            event.accept(ModItems.FLINT_PICK);
+            event.accept(ModItems.FLINT_HATCHET);
+            event.accept(ModItems.FLINT_SPADE);
+            event.accept(ModItems.FLINT_TILL);
+
             event.accept(ModItems.COPPER_PICKAXE);
             event.accept(ModItems.COPPER_AXE);
             event.accept(ModItems.COPPER_SHOVEL);
@@ -97,8 +122,6 @@ public class RealismMod
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.DIRT_SLAB);
-
             event.accept(ModBlocks.PALM_LOG);
             event.accept(ModBlocks.PALM_WOOD);
             event.accept(ModBlocks.STRIPPED_PALM_LOG);
@@ -118,6 +141,9 @@ public class RealismMod
             event.accept(ModBlocks.RAW_TIN_BLOCK);
             event.accept(ModBlocks.TIN_BLOCK);
             event.accept(ModBlocks.TIN_WALL);
+
+            event.accept(ModBlocks.DIRT_SLAB);
+            event.accept(ModBlocks.MUD_SLAB);
 
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {

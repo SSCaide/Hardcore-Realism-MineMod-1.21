@@ -1,7 +1,18 @@
 {
   "item.sscaiderealism.clump_of_dirt": "Clump of Dirt",
+  "item.sscaiderealism.clump_of_mud": "Clump of Mud",
   "item.sscaiderealism.rock": "Rock",
   "item.sscaiderealism.vine": "Vine",
+
+  "item.sscaiderealism.oak_timber": "Oak Timber",
+  "item.sscaiderealism.spruce_timber": "Spruce Timber",
+  "item.sscaiderealism.birch_timber": "Birch Timber",
+  "item.sscaiderealism.jungle_timber": "Jungle Timber",
+  "item.sscaiderealism.acacia_timber": "Acacia Timber",
+  "item.sscaiderealism.dark_oak_timber": "Dark Oak Timber",
+  "item.sscaiderealism.mangrove_timber": "Mangrove Timber",
+  "item.sscaiderealism.cherry_timber": "Cherry Timber",
+  "item.sscaiderealism.palm_timber": "Palm Timber",
 
   "item.sscaiderealism.oak_bark": "Oak Bark",
   "item.sscaiderealism.spruce_bark": "Spruce Bark",
@@ -16,13 +27,29 @@
   "item.sscaiderealism.raw_tin": "Raw Tin",
   "item.sscaiderealism.tin_ingot": "Tin Ingot",
 
+
   "item.sscaiderealism.orange": "Orange",
+
+
+  "item.sscaiderealism.random_flint_tool": "Random Flint Tool",
+  "item.sscaiderealism.flint_knife": "Flint Knife",
+  "item.sscaiderealism.flint_pick": "Flint Pick",
+  "item.sscaiderealism.flint_hatchet": "Flint Hatchet",
+  "item.sscaiderealism.flint_spade": "Flint Spade",
+  "item.sscaiderealism.flint_till": "Flint Till",
 
   "item.sscaiderealism.copper_sword": "Copper Sword",
   "item.sscaiderealism.copper_pickaxe": "Copper Pickaxe",
   "item.sscaiderealism.copper_axe": "Copper Axe",
   "item.sscaiderealism.copper_shovel": "Copper Shovel",
   "item.sscaiderealism.copper_hoe": "Copper Hoe",
+
+
+  "item.sscaiderealism.copper_helmet": "Copper Helmet",
+  "item.sscaiderealism.copper_chestplate": "Copper Chestplate",
+  "item.sscaiderealism.copper_leggings": "Copper Leggings",
+  "item.sscaiderealism.copper_boots": "Copper Boots",
+  "item.sscaiderealism.copper_horse_armor": "Copper Horse Armor",
 
 
   "block.sscaiderealism.palm_log": "Palm Log",
@@ -48,10 +75,18 @@
   "block.sscaiderealism.tin_bulb": "Tin Bulb",
 
   "block.sscaiderealism.dirt_slab": "Dirt Slab",
+  "block.sscaiderealism.mud_slab": "Mud Slab",
+
+
+  "trim_material.sscaiderealism.tin": "Tin Material",
+
+
+  "tooltip.sscaiderealism.random_flint_tool.tooltip": "The flint is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
 
 
   "creativetab.sscaiderealism.sscr_items": "SSCR Items",
   "creativetab.sscaiderealism.sscr_blocks": "SSCR Blocks",
   "creativetab.sscaiderealism.sscr_food": "SSCR Food",
-  "creativetab.sscaiderealism.sscr_tools": "SSCR Weapons & Tools"
+  "creativetab.sscaiderealism.sscr_tools": "SSCR Weapons & Tools",
+  "creativetab.sscaiderealism.sscr_armor": "SSCR Armor"
 }

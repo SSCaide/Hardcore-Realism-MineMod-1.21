@@ -21,17 +21,27 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.sscaiderealism.sscr_items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.CLUMP_OF_DIRT);
+                        output.accept(ModItems.CLUMP_OF_MUD);
                         output.accept(ModItems.ROCK);
                         output.accept(ModItems.VINE);
 
+                        output.accept(ModItems.OAK_TIMBER);
                         output.accept(ModItems.OAK_BARK);
+                        output.accept(ModItems.SPRUCE_TIMBER);
                         output.accept(ModItems.SPRUCE_BARK);
+                        output.accept(ModItems.BIRCH_TIMBER);
                         output.accept(ModItems.BIRCH_BARK);
+                        output.accept(ModItems.JUNGLE_TIMBER);
                         output.accept(ModItems.JUNGLE_BARK);
+                        output.accept(ModItems.ACACIA_TIMBER);
                         output.accept(ModItems.ACACIA_BARK);
+                        output.accept(ModItems.DARK_OAK_TIMBER);
                         output.accept(ModItems.DARK_OAK_BARK);
+                        output.accept(ModItems.MANGROVE_TIMBER);
                         output.accept(ModItems.MANGROVE_BARK);
+                        output.accept(ModItems.CHERRY_TIMBER);
                         output.accept(ModItems.CHERRY_BARK);
+                        output.accept(ModItems.PALM_TIMBER);
                         output.accept(ModItems.PALM_BARK);
 
                         output.accept(ModItems.RAW_TIN);
@@ -69,6 +79,7 @@ public class ModCreativeModeTabs {
 
 
                         output.accept(ModBlocks.DIRT_SLAB);
+                        output.accept(ModBlocks.MUD_SLAB);
                     }).build());
 
     public static final Supplier<CreativeModeTab> SSCR_FOOD_TAB = CREATIVE_MODE_TAB.register("sscr_food_tab",
@@ -84,11 +95,30 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID, "sscr_food_tab"))
                     .title(Component.translatable("creativetab.sscaiderealism.sscr_tools"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.FLINT_KNIFE);
+                        output.accept(ModItems.RANDOM_FLINT_TOOL);
+                        output.accept(ModItems.FLINT_PICK);
+                        output.accept(ModItems.FLINT_HATCHET);
+                        output.accept(ModItems.FLINT_SPADE);
+                        output.accept(ModItems.FLINT_TILL);
+
                         output.accept(ModItems.COPPER_SWORD);
                         output.accept(ModItems.COPPER_PICKAXE);
                         output.accept(ModItems.COPPER_AXE);
                         output.accept(ModItems.COPPER_SHOVEL);
                         output.accept(ModItems.COPPER_HOE);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> SSCR_ARMOR_TAB = CREATIVE_MODE_TAB.register("sscr_armor_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.COPPER_HELMET.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID, "sscr_tools_tab"))
+                    .title(Component.translatable("creativetab.sscaiderealism.sscr_armor"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.COPPER_HELMET);
+                        output.accept(ModItems.COPPER_CHESTPLATE);
+                        output.accept(ModItems.COPPER_LEGGINGS);
+                        output.accept(ModItems.COPPER_BOOTS);
+                        output.accept(ModItems.COPPER_HORSE_ARMOR);
                     }).build());
 
     public static void register(IEventBus eventBus) {

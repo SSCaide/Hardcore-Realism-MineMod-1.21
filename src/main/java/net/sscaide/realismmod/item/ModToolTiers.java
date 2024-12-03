@@ -9,7 +9,10 @@ import net.sscaide.realismmod.util.ModTags;
 public class ModToolTiers {
 
     public static final Tier COPPER = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL,
-            64, 5f, 1.5f, 18,() -> Ingredient.of(Items.COPPER_INGOT));
+            82, 5f, 1.5f, 18,() -> Ingredient.of(Items.COPPER_INGOT));
+
+    public static final Tier FLINT = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_FLINT_TOOL,
+            64, 3f, 1.25f, 7,() -> Ingredient.of(Items.FLINT));
 
 
 }

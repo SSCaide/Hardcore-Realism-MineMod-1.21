@@ -22,6 +22,9 @@ public class ModBlocks {
     public static final DeferredBlock<SlabBlock> DIRT_SLAB = registerBlock("dirt_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of()
                     .strength(.5f).explosionResistance(.5f).sound(SoundType.GRAVEL)));
+    public static final DeferredBlock<SlabBlock> MUD_SLAB = registerBlock("mud_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(.5f).explosionResistance(.5f).sound(SoundType.MUD)));
 
     public static final DeferredBlock<RotatedPillarBlock> PALM_LOG = registerBlock("palm_log",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
