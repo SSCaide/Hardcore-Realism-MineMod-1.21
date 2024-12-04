@@ -10,7 +10,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sscaide.realismmod.RealismMod;
-import net.sscaide.realismmod.block.custom.ToggleableLamp;
+import net.sscaide.realismmod.block.custom.ToggleableBulb;
 import net.sscaide.realismmod.item.ModItems;
 
 import java.util.function.Supplier;
@@ -25,6 +25,26 @@ public class ModBlocks {
     public static final DeferredBlock<SlabBlock> MUD_SLAB = registerBlock("mud_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of()
                     .strength(.5f).explosionResistance(.5f).sound(SoundType.MUD)));
+    public static final DeferredBlock<SlabBlock> CLAY_SLAB = registerBlock("clay_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(.5f).explosionResistance(.5f).sound(SoundType.GRAVEL)));
+    public static final DeferredBlock<SlabBlock> GRAVEL_SLAB = registerBlock("gravel_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(.5f).explosionResistance(.5f).sound(SoundType.GRAVEL)));
+    public static final DeferredBlock<SlabBlock> SAND_SLAB = registerBlock("sand_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(.5f).explosionResistance(.5f).sound(SoundType.SAND)));
+    public static final DeferredBlock<SlabBlock> RED_SAND_SLAB = registerBlock("red_sand_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(.5f).explosionResistance(.5f).sound(SoundType.SAND)));
+
+    public static final DeferredBlock<SlabBlock> DEEPSLATE_SLAB = registerBlock("deepslate_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(3f).explosionResistance(6f).sound(SoundType.DEEPSLATE)));
+    public static final DeferredBlock<SlabBlock> CALCITE_SLAB = registerBlock("calcite_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(.75f).explosionResistance(.75f).sound(SoundType.CALCITE)));
+
 
     public static final DeferredBlock<RotatedPillarBlock> PALM_LOG = registerBlock("palm_log",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
@@ -84,9 +104,9 @@ public class ModBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.of()
                     .strength(3f).explosionResistance(6f).sound(SoundType.COPPER)));
 
-    public static final DeferredBlock<ToggleableLamp> TIN_BULB = registerBlock("tin_bulb",
-            () -> new ToggleableLamp(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops().lightLevel(state -> state.getValue(ToggleableLamp.ACTIVE) ? 15 : 0)));
+    public static final DeferredBlock<ToggleableBulb> TIN_BULB = registerBlock("tin_bulb",
+            () -> new ToggleableBulb(BlockBehaviour.Properties.of()
+                    .strength(3f).requiresCorrectToolForDrops().lightLevel(state -> state.getValue(ToggleableBulb.ACTIVE) ? 15 : 0)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

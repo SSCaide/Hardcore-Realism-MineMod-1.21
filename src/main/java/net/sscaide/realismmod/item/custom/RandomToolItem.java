@@ -7,24 +7,37 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.sscaide.realismmod.item.ModItems;
 
 import java.util.List;
 import java.util.Random;
 
-public class RandomFlintToolItem extends Item {
+public class RandomToolItem extends Item {
 
-    public RandomFlintToolItem(Properties properties) {
+    String tooltip;
+    DeferredItem sword;
+    DeferredItem pickaxe;
+    DeferredItem axe;
+    DeferredItem shovel;
+    DeferredItem hoe;
+
+    public RandomToolItem(Properties properties, String itemTooltip, DeferredItem randSword,
+                          DeferredItem randPick, DeferredItem randAxe, DeferredItem randShovel, DeferredItem randHoe) {
         super(properties);
+        tooltip = itemTooltip;
+        sword = randSword;
+        pickaxe = randPick;
+        axe = randAxe;
+        shovel = randShovel;
+        hoe = randHoe;
     }
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        tooltipComponents.add(Component.translatable("tooltip.sscaiderealism.random_flint_tool.tooltip"));
+        tooltipComponents.add(Component.translatable(tooltip));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 
@@ -47,12 +60,13 @@ public class RandomFlintToolItem extends Item {
         itemstack.setCount(0);
 
         Random rand = new Random();
-        int n = rand.nextInt(9)+1;
-        itemstack = switch (n) {
-            case 1, 2 -> ModItems.FLINT_SPADE.toStack(); //Shovel
-            case 3, 4, 5 -> ModItems.FLINT_HATCHET.toStack(); //Axe
-            case 6, 7, 8 -> ModItems.FLINT_PICK.toStack(); //Pickaxe
-            case 9 -> ModItems.FLINT_TILL.toStack(); //hoe
+        int n = rand.nextInt(11)+1;
+        itemstack = switch (n) { //shovel
+            case 1, 2 -> shovel.toStack(); //Shovel
+            case 3, 4, 5 -> axe.toStack(); //Axe
+            case 6, 7, 8 -> pickaxe.toStack(); //Pickaxe
+            case 9, 10 -> sword.toStack(); //Sword
+            case 11 -> hoe.toStack(); //Hoe
             default -> itemstack;
         };
 

@@ -43,7 +43,20 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(ModItems.CLUMP_OF_DIRT.get());
         basicItem(ModItems.CLUMP_OF_MUD.get());
+        basicItem(ModItems.PILE_OF_GRAVEL.get());
+        basicItem(ModItems.PILE_OF_SAND.get());
+        basicItem(ModItems.PILE_OF_RED_SAND.get());
+
         basicItem(ModItems.ROCK.get());
+        basicItem(ModItems.DEEPSLATE_ROCK.get());
+        basicItem(ModItems.SANDSTONE_ROCK.get());
+        basicItem(ModItems.RED_SANDSTONE_ROCK.get());
+        basicItem(ModItems.GRANITE_ROCK.get());
+        basicItem(ModItems.DIORITE_ROCK.get());
+        basicItem(ModItems.ANDESITE_ROCK.get());
+        basicItem(ModItems.CALCITE_ROCK.get());
+        basicItem(ModItems.TUFF_ROCK.get());
+
         basicItem(ModItems.VINE.get());
 
         basicItem(ModItems.OAK_TIMBER.get());
@@ -68,10 +81,32 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.RAW_TIN.get());
         basicItem(ModItems.TIN_INGOT.get());
+        basicItem(ModItems.COPPER_DUST.get());
+
+        basicItem(ModItems.WIDE_SHAPED_FLINT.get());
+        basicItem(ModItems.FANNED_SHAPED_FLINT.get());
+        basicItem(ModItems.LONG_SHAPED_FLINT.get());
+        basicItem(ModItems.THIN_SHAPED_FLINT.get());
+
+        basicItem(ModItems.WIDE_SHAPED_COPPER.get());
+        basicItem(ModItems.FANNED_SHAPED_COPPER.get());
+        basicItem(ModItems.LONG_SHAPED_COPPER.get());
+        basicItem(ModItems.JAGGED_SHAPED_COPPER.get());
+        basicItem(ModItems.THIN_SHAPED_COPPER.get());
 
 
         basicItem(ModItems.ORANGE.get());
 
+
+        handheldItem(ModItems.SHARPENED_STICK);
+        handheldItem(ModItems.SHARPENED_ROCK);
+
+        basicItem(ModItems.RANDOM_CRUDE_STONE_TOOL.get());
+        handheldItem(ModItems.CRUDE_STONE_KNIFE);
+        handheldItem(ModItems.CRUDE_STONE_PICK);
+        handheldItem(ModItems.CRUDE_STONE_HATCHET);
+        handheldItem(ModItems.CRUDE_STONE_SPADE);
+        handheldItem(ModItems.CRUDE_STONE_TILL);
 
         basicItem(ModItems.RANDOM_FLINT_TOOL.get());
         handheldItem(ModItems.FLINT_KNIFE);
@@ -79,6 +114,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.FLINT_HATCHET);
         handheldItem(ModItems.FLINT_SPADE);
         handheldItem(ModItems.FLINT_TILL);
+
+        basicItem(ModItems.RANDOM_CRUDE_COPPER_TOOL.get());
+        handheldItem(ModItems.CRUDE_COPPER_KNIFE);
+        handheldItem(ModItems.CRUDE_COPPER_PICK);
+        handheldItem(ModItems.CRUDE_COPPER_HATCHET);
+        handheldItem(ModItems.CRUDE_COPPER_SPADE);
+        handheldItem(ModItems.CRUDE_COPPER_TILL);
 
         handheldItem(ModItems.COPPER_SWORD);
         handheldItem(ModItems.COPPER_PICKAXE);

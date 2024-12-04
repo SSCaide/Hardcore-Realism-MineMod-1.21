@@ -11,7 +11,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.sscaide.realismmod.RealismMod;
 import net.sscaide.realismmod.block.ModBlocks;
-import net.sscaide.realismmod.block.custom.ToggleableLamp;
+import net.sscaide.realismmod.block.custom.ToggleableBulb;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -24,6 +24,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
             blockItem(ModBlocks.DIRT_SLAB);
         slabBlock(ModBlocks.MUD_SLAB.get(), blockTexture(Blocks.MUD), blockTexture(Blocks.MUD));
             blockItem(ModBlocks.MUD_SLAB);
+        slabBlock(ModBlocks.CLAY_SLAB.get(), blockTexture(Blocks.CLAY), blockTexture(Blocks.CLAY));
+            blockItem(ModBlocks.CLAY_SLAB);
+        slabBlock(ModBlocks.GRAVEL_SLAB.get(), blockTexture(Blocks.GRAVEL), blockTexture(Blocks.GRAVEL));
+            blockItem(ModBlocks.GRAVEL_SLAB);
+        slabBlock(ModBlocks.SAND_SLAB.get(), blockTexture(Blocks.SAND), blockTexture(Blocks.SAND));
+            blockItem(ModBlocks.SAND_SLAB);
+        slabBlock(ModBlocks.RED_SAND_SLAB.get(), blockTexture(Blocks.RED_SAND), blockTexture(Blocks.RED_SAND));
+            blockItem(ModBlocks.RED_SAND_SLAB);
+
+        slabBlock(ModBlocks.DEEPSLATE_SLAB.get(), blockTexture(Blocks.DEEPSLATE), blockTexture(Blocks.DEEPSLATE));
+            blockItem(ModBlocks.DEEPSLATE_SLAB);
+        slabBlock(ModBlocks.CALCITE_SLAB.get(), blockTexture(Blocks.CALCITE), blockTexture(Blocks.CALCITE));
+            blockItem(ModBlocks.CALCITE_SLAB);
+
 
         logBlockWithItem(ModBlocks.PALM_LOG);
         blockWithItem(ModBlocks.PALM_WOOD);
@@ -50,7 +64,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.TIN_BLOCK);
         wallBlock(ModBlocks.TIN_WALL.get(), blockTexture(ModBlocks.TIN_BLOCK.get()));
 
-        customToggleableLamp(ModBlocks.TIN_BULB, "tin_bulb");
+        customToggleableBulb(ModBlocks.TIN_BULB, "tin_bulb");
 
 
 
@@ -71,9 +85,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("sscaiderealism:block/" + deferredBlock.getId().getPath() + appendix));
     }
 
-    private void customToggleableLamp(DeferredBlock<ToggleableLamp> lamp, String name) {
+    private void customToggleableBulb(DeferredBlock<ToggleableBulb> lamp, String name) {
         getVariantBuilder(lamp.get()).forAllStates(state -> {
-            if(state.getValue(ToggleableLamp.ACTIVE)) {
+            if(state.getValue(ToggleableBulb.ACTIVE)) {
                 return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll(name + "_on",
                         ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID, "block/" + name + "_on")))};
             } else {

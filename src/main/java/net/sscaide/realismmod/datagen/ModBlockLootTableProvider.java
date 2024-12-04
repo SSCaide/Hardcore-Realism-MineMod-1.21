@@ -33,6 +33,20 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(ModBlocks.DIRT_SLAB.get()));
         add(ModBlocks.MUD_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.MUD_SLAB.get()));
+        add(ModBlocks.CLAY_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.CLAY_SLAB.get()));
+        add(ModBlocks.GRAVEL_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.GRAVEL_SLAB.get()));
+        add(ModBlocks.SAND_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SAND_SLAB.get()));
+        add(ModBlocks.RED_SAND_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.RED_SAND_SLAB.get()));
+
+        add(ModBlocks.DEEPSLATE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.DEEPSLATE_SLAB.get()));
+        add(ModBlocks.CALCITE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.CALCITE_SLAB.get()));
+
 
         dropSelf(ModBlocks.PALM_LOG.get());
         dropSelf(ModBlocks.PALM_WOOD.get());

@@ -10,10 +10,10 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class ToggleableLamp extends Block {
+public class ToggleableBulb extends Block {
     public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
 
-    public ToggleableLamp(Properties properties) {
+    public ToggleableBulb(Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(ACTIVE, false));
     }

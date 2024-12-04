@@ -1,7 +1,20 @@
 {
   "item.sscaiderealism.clump_of_dirt": "Clump of Dirt",
   "item.sscaiderealism.clump_of_mud": "Clump of Mud",
+  "item.sscaiderealism.pile_of_gravel": "Pile of Gravel",
+  "item.sscaiderealism.pile_of_sand": "Pile of Sand",
+  "item.sscaiderealism.pile_of_red_sand": "Pile of Red Sand",
+
   "item.sscaiderealism.rock": "Rock",
+  "item.sscaiderealism.deepslate_rock": "Deepslate Rock",
+  "item.sscaiderealism.sandstone_rock": "Sandstone Rock",
+  "item.sscaiderealism.red_sandstone_rock": "Red Sandstone Rock",
+  "item.sscaiderealism.granite_rock": "Granite Rock",
+  "item.sscaiderealism.diorite_rock": "Diorite Rock",
+  "item.sscaiderealism.andesite_rock": "Andesite Rock",
+  "item.sscaiderealism.calcite_rock": "Calcite Rock",
+  "item.sscaiderealism.tuff_rock": "Tuff Rock",
+
   "item.sscaiderealism.vine": "Vine",
 
   "item.sscaiderealism.oak_timber": "Oak Timber",
@@ -26,10 +39,25 @@
 
   "item.sscaiderealism.raw_tin": "Raw Tin",
   "item.sscaiderealism.tin_ingot": "Tin Ingot",
+  "item.sscaiderealism.copper_dust": "Copper Dust",
+
+  "item.sscaiderealism.wide_shaped_flint": "Wide Shaped Flint",
+  "item.sscaiderealism.fanned_shaped_flint": "Fanned Shaped Flint",
+  "item.sscaiderealism.long_shaped_flint": "Long Shaped Flint",
+  "item.sscaiderealism.thin_shaped_flint": "Thin Shaped Flint",
+
+  "item.sscaiderealism.wide_shaped_copper": "Wide Shaped Copper",
+  "item.sscaiderealism.fanned_shaped_copper": "Fanned Shaped Copper",
+  "item.sscaiderealism.long_shaped_copper": "Long Shaped Copper",
+  "item.sscaiderealism.jagged_shaped_copper": "Long Shaped Copper",
+  "item.sscaiderealism.thin_shaped_copper": "Thin Shaped Copper",
 
 
   "item.sscaiderealism.orange": "Orange",
 
+
+  "item.sscaiderealism.sharpened_stick": "Sharpened Stick",
+  "item.sscaiderealism.sharpened_rock": "Sharpened Rock",
 
   "item.sscaiderealism.random_flint_tool": "Random Flint Tool",
   "item.sscaiderealism.flint_knife": "Flint Knife",
@@ -37,6 +65,20 @@
   "item.sscaiderealism.flint_hatchet": "Flint Hatchet",
   "item.sscaiderealism.flint_spade": "Flint Spade",
   "item.sscaiderealism.flint_till": "Flint Till",
+
+  "item.sscaiderealism.random_crude_stone_tool": "Random Crude Stone Tool",
+  "item.sscaiderealism.crude_stone_knife": "Crude Stone Knife",
+  "item.sscaiderealism.crude_stone_pick": "Crude Stone Pick",
+  "item.sscaiderealism.crude_stone_hatchet": "Crude Stone Hatchet",
+  "item.sscaiderealism.crude_stone_spade": "Crude Stone Spade",
+  "item.sscaiderealism.crude_stone_till": "Crude Stone Till",
+
+  "item.sscaiderealism.random_crude_copper_tool": "Random Crude Copper Tool",
+  "item.sscaiderealism.crude_copper_knife": "Crude Copper Knife",
+  "item.sscaiderealism.crude_copper_pick": "Crude Copper Pick",
+  "item.sscaiderealism.crude_copper_hatchet": "Crude Copper Hatchet",
+  "item.sscaiderealism.crude_copper_spade": "Crude Copper Spade",
+  "item.sscaiderealism.crude_copper_till": "Crude Copper Till",
 
   "item.sscaiderealism.copper_sword": "Copper Sword",
   "item.sscaiderealism.copper_pickaxe": "Copper Pickaxe",
@@ -76,12 +118,30 @@
 
   "block.sscaiderealism.dirt_slab": "Dirt Slab",
   "block.sscaiderealism.mud_slab": "Mud Slab",
+  "block.sscaiderealism.clay_slab": "Clay Slab",
+  "block.sscaiderealism.gravel_slab": "Gravel Slab",
+  "block.sscaiderealism.sand_slab": "Sand Slab",
+  "block.sscaiderealism.red_sand_slab": "Red Sand Slab",
+
+  "block.sscaiderealism.deepslate_slab": "Deepslate Slab",
+  "block.sscaiderealism.calcite_slab": "Calcite Slab",
 
 
   "trim_material.sscaiderealism.tin": "Tin Material",
 
 
-  "tooltip.sscaiderealism.random_flint_tool.tooltip": "The flint is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
+  "tooltip.sscaiderealism.random_crude_stone_tool.tooltip": "§7The rock is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
+  "tooltip.sscaiderealism.random_flint_tool.tooltip": "§7The flint is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
+  "tooltip.sscaiderealism.wide_shaped_flint.tooltip": "§7Flint beaten into shape. Would make a decent shovel.",
+  "tooltip.sscaiderealism.fanned_shaped_flint.tooltip": "§7Flint beaten into shape. Would make a decent axe.",
+  "tooltip.sscaiderealism.long_shaped_flint.tooltip": "§7Flint beaten into shape. Would make a decent pickaxe.",
+  "tooltip.sscaiderealism.thin_shaped_flint.tooltip": "§7Flint beaten into shape. Would make a decent hoe.",
+  "tooltip.sscaiderealism.random_crude_copper_tool.tooltip": "§7The copper is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
+  "tooltip.sscaiderealism.wide_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent shovel.",
+  "tooltip.sscaiderealism.fanned_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent axe.",
+  "tooltip.sscaiderealism.long_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent pickaxe.",
+  "tooltip.sscaiderealism.jagged_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent knife.",
+  "tooltip.sscaiderealism.thin_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent hoe.",
 
 
   "creativetab.sscaiderealism.sscr_items": "SSCR Items",

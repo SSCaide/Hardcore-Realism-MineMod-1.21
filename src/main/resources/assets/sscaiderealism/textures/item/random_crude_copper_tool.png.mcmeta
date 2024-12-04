@@ -1,0 +1,17 @@
+{
+    "blur": false,
+    "clamp": false,
+    "gui": {
+
+            "scaling": {
+                "type": "stretch"
+            }
+    },
+    "animation": {
+        "interpolate": false,
+        "frametime": 19,
+         "width": 16,
+        "height": 16
+
+    }
+}

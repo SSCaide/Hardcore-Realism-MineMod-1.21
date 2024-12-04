@@ -22,7 +22,20 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.CLUMP_OF_DIRT);
                         output.accept(ModItems.CLUMP_OF_MUD);
+                        output.accept(ModItems.PILE_OF_GRAVEL);
+                        output.accept(ModItems.PILE_OF_SAND);
+                        output.accept(ModItems.PILE_OF_RED_SAND);
+
                         output.accept(ModItems.ROCK);
+                        output.accept(ModItems.DEEPSLATE_ROCK);
+                        output.accept(ModItems.SANDSTONE_ROCK);
+                        output.accept(ModItems.RED_SANDSTONE_ROCK);
+                        output.accept(ModItems.GRANITE_ROCK);
+                        output.accept(ModItems.DIORITE_ROCK);
+                        output.accept(ModItems.ANDESITE_ROCK);
+                        output.accept(ModItems.CALCITE_ROCK);
+                        output.accept(ModItems.TUFF_ROCK);
+
                         output.accept(ModItems.VINE);
 
                         output.accept(ModItems.OAK_TIMBER);
@@ -46,6 +59,18 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.RAW_TIN);
                         output.accept(ModItems.TIN_INGOT);
+                        output.accept(ModItems.COPPER_DUST);
+
+                        output.accept(ModItems.WIDE_SHAPED_FLINT);
+                        output.accept(ModItems.FANNED_SHAPED_FLINT);
+                        output.accept(ModItems.LONG_SHAPED_FLINT);
+                        output.accept(ModItems.THIN_SHAPED_FLINT);
+
+                        output.accept(ModItems.WIDE_SHAPED_COPPER);
+                        output.accept(ModItems.FANNED_SHAPED_COPPER);
+                        output.accept(ModItems.LONG_SHAPED_COPPER);
+                        output.accept(ModItems.JAGGED_SHAPED_COPPER);
+                        output.accept(ModItems.THIN_SHAPED_COPPER);
                     }).build());
 
     public static final Supplier<CreativeModeTab> SSCR_BLOCKS_TAB = CREATIVE_MODE_TAB.register("sscr_blocks_tab",
@@ -77,9 +102,16 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.TIN_BULB);
 
 
-
                         output.accept(ModBlocks.DIRT_SLAB);
                         output.accept(ModBlocks.MUD_SLAB);
+                        output.accept(ModBlocks.CLAY_SLAB);
+                        output.accept(ModBlocks.GRAVEL_SLAB);
+                        output.accept(ModBlocks.SAND_SLAB);
+                        output.accept(ModBlocks.RED_SAND_SLAB);
+
+                        output.accept(ModBlocks.DEEPSLATE_SLAB);
+                        output.accept(ModBlocks.CALCITE_SLAB);
+
                     }).build());
 
     public static final Supplier<CreativeModeTab> SSCR_FOOD_TAB = CREATIVE_MODE_TAB.register("sscr_food_tab",
@@ -95,12 +127,29 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID, "sscr_food_tab"))
                     .title(Component.translatable("creativetab.sscaiderealism.sscr_tools"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.FLINT_KNIFE);
+                        output.accept(ModItems.SHARPENED_STICK);
+                        output.accept(ModItems.SHARPENED_ROCK);
+
+                        output.accept(ModItems.RANDOM_CRUDE_STONE_TOOL);
+                        output.accept(ModItems.CRUDE_STONE_KNIFE);
+                        output.accept(ModItems.CRUDE_STONE_PICK);
+                        output.accept(ModItems.CRUDE_STONE_HATCHET);
+                        output.accept(ModItems.CRUDE_STONE_SPADE);
+                        output.accept(ModItems.CRUDE_STONE_TILL);
+
                         output.accept(ModItems.RANDOM_FLINT_TOOL);
+                        output.accept(ModItems.FLINT_KNIFE);
                         output.accept(ModItems.FLINT_PICK);
                         output.accept(ModItems.FLINT_HATCHET);
                         output.accept(ModItems.FLINT_SPADE);
                         output.accept(ModItems.FLINT_TILL);
+
+                        output.accept(ModItems.RANDOM_CRUDE_COPPER_TOOL);
+                        output.accept(ModItems.CRUDE_COPPER_KNIFE);
+                        output.accept(ModItems.CRUDE_COPPER_PICK);
+                        output.accept(ModItems.CRUDE_COPPER_HATCHET);
+                        output.accept(ModItems.CRUDE_COPPER_SPADE);
+                        output.accept(ModItems.CRUDE_COPPER_TILL);
 
                         output.accept(ModItems.COPPER_SWORD);
                         output.accept(ModItems.COPPER_PICKAXE);

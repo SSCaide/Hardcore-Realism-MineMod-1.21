@@ -7,6 +7,7 @@ import net.sscaide.realismmod.block.ModBlocks;
 import net.sscaide.realismmod.component.ModDataComponents;
 import net.sscaide.realismmod.item.ModCreativeModeTabs;
 import net.sscaide.realismmod.item.ModItems;
+import net.sscaide.realismmod.util.ModItemProperties;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -67,7 +68,20 @@ public class RealismMod
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.CLUMP_OF_DIRT);
             event.accept(ModItems.CLUMP_OF_MUD);
+            event.accept(ModItems.PILE_OF_GRAVEL);
+            event.accept(ModItems.PILE_OF_SAND);
+            event.accept(ModItems.PILE_OF_RED_SAND);
+
             event.accept(ModItems.ROCK);
+            event.accept(ModItems.DEEPSLATE_ROCK);
+            event.accept(ModItems.SANDSTONE_ROCK);
+            event.accept(ModItems.RED_SANDSTONE_ROCK);
+            event.accept(ModItems.GRANITE_ROCK);
+            event.accept(ModItems.DIORITE_ROCK);
+            event.accept(ModItems.ANDESITE_ROCK);
+            event.accept(ModItems.CALCITE_ROCK);
+            event.accept(ModItems.TUFF_ROCK);
+
             event.accept(ModItems.VINE);
 
             event.accept(ModItems.OAK_TIMBER);
@@ -91,6 +105,18 @@ public class RealismMod
 
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
+            event.accept(ModItems.COPPER_DUST);
+
+            event.accept(ModItems.WIDE_SHAPED_FLINT);
+            event.accept(ModItems.FANNED_SHAPED_FLINT);
+            event.accept(ModItems.LONG_SHAPED_FLINT);
+            event.accept(ModItems.THIN_SHAPED_FLINT);
+
+            event.accept(ModItems.WIDE_SHAPED_COPPER);
+            event.accept(ModItems.FANNED_SHAPED_COPPER);
+            event.accept(ModItems.LONG_SHAPED_COPPER);
+            event.accept(ModItems.JAGGED_SHAPED_COPPER);
+            event.accept(ModItems.THIN_SHAPED_COPPER);
         }
 
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
@@ -98,7 +124,12 @@ public class RealismMod
         }
 
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.SHARPENED_STICK);
+            event.accept(ModItems.SHARPENED_ROCK);
+
+            event.accept(ModItems.CRUDE_STONE_KNIFE);
             event.accept(ModItems.FLINT_KNIFE);
+            event.accept(ModItems.CRUDE_COPPER_KNIFE);
 
             event.accept(ModItems.COPPER_SWORD);
             event.accept(ModItems.COPPER_HELMET);
@@ -108,11 +139,26 @@ public class RealismMod
         }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.SHARPENED_STICK);
+            event.accept(ModItems.SHARPENED_ROCK);
+
+            event.accept(ModItems.RANDOM_CRUDE_STONE_TOOL);
+            event.accept(ModItems.CRUDE_STONE_PICK);
+            event.accept(ModItems.CRUDE_STONE_HATCHET);
+            event.accept(ModItems.CRUDE_STONE_SPADE);
+            event.accept(ModItems.CRUDE_STONE_TILL);
+
             event.accept(ModItems.RANDOM_FLINT_TOOL);
             event.accept(ModItems.FLINT_PICK);
             event.accept(ModItems.FLINT_HATCHET);
             event.accept(ModItems.FLINT_SPADE);
             event.accept(ModItems.FLINT_TILL);
+
+            event.accept(ModItems.RANDOM_CRUDE_COPPER_TOOL);
+            event.accept(ModItems.CRUDE_COPPER_PICK);
+            event.accept(ModItems.CRUDE_COPPER_HATCHET);
+            event.accept(ModItems.CRUDE_COPPER_SPADE);
+            event.accept(ModItems.CRUDE_COPPER_TILL);
 
             event.accept(ModItems.COPPER_PICKAXE);
             event.accept(ModItems.COPPER_AXE);
@@ -144,6 +190,13 @@ public class RealismMod
 
             event.accept(ModBlocks.DIRT_SLAB);
             event.accept(ModBlocks.MUD_SLAB);
+            event.accept(ModBlocks.CLAY_SLAB);
+            event.accept(ModBlocks.GRAVEL_SLAB);
+            event.accept(ModBlocks.SAND_SLAB);
+            event.accept(ModBlocks.RED_SAND_SLAB);
+
+            event.accept(ModBlocks.DEEPSLATE_SLAB);
+            event.accept(ModBlocks.CALCITE_SLAB);
 
         }
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
@@ -165,7 +218,7 @@ public class RealismMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }

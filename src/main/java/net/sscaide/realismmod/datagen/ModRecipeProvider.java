@@ -33,18 +33,154 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CLUMP_OF_DIRT.get(), 4)
+                .requires(Blocks.DIRT)
+                .unlockedBy("has_dirt",
+                        has(Blocks.DIRT)).save(recipeOutput, "clumps_of_dirt_from_dirt");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CLUMP_OF_MUD.get(), 4)
+                .requires(Blocks.MUD)
+                .unlockedBy("has_mud",
+                        has(Blocks.MUD)).save(recipeOutput, "clumps_of_mud_from_mud");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.CLAY_BALL, 4)
+                .requires(Blocks.CLAY)
+                .unlockedBy("has_clay",
+                        has(Blocks.CLAY)).save(recipeOutput, "clay_balls_from_clay");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_GRAVEL.get(), 4)
+                .requires(Blocks.GRAVEL)
+                .unlockedBy("has_gravel",
+                        has(Blocks.GRAVEL)).save(recipeOutput, "piles_of_gravel_from_gravel");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_GRAVEL.get(), 1)
+                .requires(ModItems.SHARPENED_ROCK)
+                .requires(ModTags.Items.ROCKS)
+                .unlockedBy("has_any_rock",
+                        has(ModTags.Items.ROCKS)).save(recipeOutput, "pile_of_gravel_from_rocks");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_SAND.get(), 4)
+                .requires(Blocks.SAND)
+                .unlockedBy("has_sand",
+                        has(Blocks.SAND)).save(recipeOutput, "piles_of_sand_from_sand");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_RED_SAND.get(), 4)
+                .requires(Blocks.RED_SAND)
+                .unlockedBy("has_red_sand",
+                        has(Blocks.RED_SAND)).save(recipeOutput, "piles_of_red_sand_from_red_sand");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ROCK.get(), 4)
+                .requires(Blocks.COBBLESTONE)
+                .unlockedBy("has_cobblestone",
+                        has(Blocks.COBBLESTONE)).save(recipeOutput, "rocks_from_cobblestone");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DEEPSLATE_ROCK.get(), 4)
+                .requires(Blocks.COBBLED_DEEPSLATE)
+                .unlockedBy("has_cobbled_deepslate",
+                        has(Blocks.COBBLED_DEEPSLATE)).save(recipeOutput, "deepslate_rocks_from_cobbled_deepslate");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GRANITE_ROCK.get(), 4)
+                .requires(Blocks.GRANITE)
+                .unlockedBy("has_granite",
+                        has(Blocks.GRANITE)).save(recipeOutput, "granite_rocks_from_granite");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DIORITE_ROCK.get(), 4)
+                .requires(Blocks.DIORITE)
+                .unlockedBy("has_diorite",
+                        has(Blocks.DIORITE)).save(recipeOutput, "diorite_rocks_from_diorite");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ANDESITE_ROCK.get(), 4)
+                .requires(Blocks.ANDESITE)
+                .unlockedBy("has_andesite",
+                        has(Blocks.ANDESITE)).save(recipeOutput, "andesite_rocks_from_andesite");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CALCITE_ROCK.get(), 4)
+                .requires(Blocks.CALCITE)
+                .unlockedBy("has_calcite",
+                        has(Blocks.CALCITE)).save(recipeOutput, "calcite_rocks_from_calcite");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TUFF_ROCK.get(), 4)
+                .requires(Blocks.TUFF)
+                .unlockedBy("has_tuff",
+                        has(Blocks.TUFF)).save(recipeOutput, "tuff_rocks_from_tuff");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.WIDE_SHAPED_FLINT.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(Items.FLINT, 2)
+                .unlockedBy("has_flint", has(Items.FLINT)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.FANNED_SHAPED_FLINT.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.WIDE_SHAPED_FLINT)
+                .unlockedBy("has_wide_shaped_flint", has(ModItems.WIDE_SHAPED_FLINT)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.LONG_SHAPED_FLINT.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.FANNED_SHAPED_FLINT)
+                .unlockedBy("has_fanned_shaped_flint", has(ModItems.FANNED_SHAPED_FLINT)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.THIN_SHAPED_FLINT.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.LONG_SHAPED_FLINT)
+                .unlockedBy("has_long_shaped_flint", has(ModItems.LONG_SHAPED_FLINT)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_GRAVEL.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.THIN_SHAPED_FLINT)
+                .unlockedBy("has_thin_shaped_flint",
+                        has(ModItems.THIN_SHAPED_FLINT)).save(recipeOutput, "pile_of_gravel_from_shaped_flint");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.WIDE_SHAPED_COPPER.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(Items.RAW_COPPER, 2)
+                .unlockedBy("has_raw_copper", has(Items.RAW_COPPER)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.FANNED_SHAPED_COPPER.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.WIDE_SHAPED_COPPER)
+                .unlockedBy("has_wide_shaped_copper", has(ModItems.WIDE_SHAPED_COPPER)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.LONG_SHAPED_COPPER.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.FANNED_SHAPED_COPPER)
+                .unlockedBy("has_fanned_shaped_copper", has(ModItems.FANNED_SHAPED_COPPER)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.JAGGED_SHAPED_COPPER.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.LONG_SHAPED_COPPER)
+                .unlockedBy("has_long_shaped_copper", has(ModItems.LONG_SHAPED_COPPER)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.THIN_SHAPED_COPPER.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.JAGGED_SHAPED_COPPER)
+                .unlockedBy("has_jagged_shaped_copper", has(ModItems.JAGGED_SHAPED_COPPER)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COPPER_DUST.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.THIN_SHAPED_COPPER)
+                .unlockedBy("has_thin_shaped_copper",
+                        has(ModItems.THIN_SHAPED_COPPER)).save(recipeOutput, "copper_dust_from_shaped_flint");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_TIN.get(), 9)
-                        .requires(ModBlocks.RAW_TIN_BLOCK)
-                        .unlockedBy("has_raw_tin_block",
-                        has(ModBlocks.RAW_TIN_BLOCK)).save(recipeOutput);
+                .requires(ModBlocks.RAW_TIN_BLOCK)
+                .unlockedBy("has_raw_tin_block", has(ModBlocks.RAW_TIN_BLOCK)).save(recipeOutput);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 9)
                 .requires(ModBlocks.TIN_BLOCK)
-                .unlockedBy("has_tin_block",
-                        has(ModBlocks.TIN_BLOCK)).save(recipeOutput);
+                .unlockedBy("has_tin_block", has(ModBlocks.TIN_BLOCK)).save(recipeOutput);
         List<ItemLike> TIN_SMELTABLES = List.of(ModItems.RAW_TIN, ModBlocks.TIN_ORE);
             oreSmelting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 200, "tin");
             oreBlasting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 100, "tin");
 
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.SHARPENED_STICK.get(), 1)
+                        .requires(ModItems.SHARPENED_ROCK)
+                        .requires(ModTags.Items.TIMBER)
+                        .unlockedBy("has_any_timber", has(ModTags.Items.TIMBER)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SHARPENED_ROCK.get())
+                        .pattern("A ")
+                        .pattern(" A")
+                        .define('A', ModTags.Items.ROCKS)
+                        .unlockedBy("has_any_rock", has(ModTags.Items.ROCKS)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SHARPENED_ROCK.get())
+                        .pattern(" A")
+                        .pattern("A ")
+                        .define('A', ModTags.Items.ROCKS)
+                        .unlockedBy("has_any_rock", has(ModTags.Items.ROCKS)).save(recipeOutput, "sharpened_rock_2");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.RANDOM_CRUDE_STONE_TOOL.get())
+                .pattern("AB")
+                .pattern("AC")
+                .define('A', Items.STICK)
+                .define('B', ModItems.VINE)
+                .define('C', ModTags.Items.ROCKS)
+                .unlockedBy("has_any_rock", has(ModTags.Items.ROCKS)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_KNIFE.get())
+                        .pattern("BC")
+                        .pattern("A ")
+                        .define('A', Items.STICK)
+                        .define('B', ModItems.VINE)
+                        .define('C', Items.FLINT)
+                        .unlockedBy("has_flint", has(Items.FLINT)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.RANDOM_FLINT_TOOL.get())
                         .pattern("AB")
                         .pattern("AC")
@@ -52,6 +188,77 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .define('B', ModItems.VINE)
                         .define('C', Items.FLINT)
                         .unlockedBy("has_flint", has(Items.FLINT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_SPADE.get())
+                        .pattern("AB")
+                        .pattern("AC")
+                        .define('A', Items.STICK)
+                        .define('B', ModItems.VINE)
+                        .define('C', ModItems.WIDE_SHAPED_FLINT)
+                        .unlockedBy("has_wide_shaped_flint", has(ModItems.WIDE_SHAPED_FLINT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_HATCHET.get())
+                        .pattern("AB")
+                        .pattern("AC")
+                        .define('A', Items.STICK)
+                        .define('B', ModItems.VINE)
+                        .define('C', ModItems.FANNED_SHAPED_FLINT)
+                        .unlockedBy("has_fanned_shaped_flint", has(ModItems.FANNED_SHAPED_FLINT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_PICK.get())
+                        .pattern("AB")
+                        .pattern("AC")
+                        .define('A', Items.STICK)
+                        .define('B', ModItems.VINE)
+                        .define('C', ModItems.LONG_SHAPED_FLINT)
+                        .unlockedBy("has_long_shaped_flint", has(ModItems.LONG_SHAPED_FLINT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_TILL.get())
+                        .pattern("AB")
+                        .pattern("AC")
+                        .define('A', Items.STICK)
+                        .define('B', ModItems.VINE)
+                        .define('C', ModItems.THIN_SHAPED_FLINT)
+                        .unlockedBy("has_thin_shaped_flint", has(ModItems.THIN_SHAPED_FLINT)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.RANDOM_CRUDE_COPPER_TOOL.get())
+                .pattern("AB")
+                .pattern("AC")
+                .define('A', Items.STICK)
+                .define('B', ModItems.VINE)
+                .define('C', Items.RAW_COPPER)
+                .unlockedBy("has_raw_copper", has(Items.RAW_COPPER)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_COPPER_SPADE.get())
+                .pattern("AB")
+                .pattern("AC")
+                .define('A', Items.STICK)
+                .define('B', ModItems.VINE)
+                .define('C', ModItems.WIDE_SHAPED_COPPER)
+                .unlockedBy("has_wide_shaped_copper", has(ModItems.WIDE_SHAPED_COPPER)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_COPPER_HATCHET.get())
+                .pattern("AB")
+                .pattern("AC")
+                .define('A', Items.STICK)
+                .define('B', ModItems.VINE)
+                .define('C', ModItems.FANNED_SHAPED_COPPER)
+                .unlockedBy("has_fanned_shaped_copper", has(ModItems.FANNED_SHAPED_COPPER)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_COPPER_PICK.get())
+                .pattern("AB")
+                .pattern("AC")
+                .define('A', Items.STICK)
+                .define('B', ModItems.VINE)
+                .define('C', ModItems.LONG_SHAPED_COPPER)
+                .unlockedBy("has_long_shaped_copper", has(ModItems.LONG_SHAPED_COPPER)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_COPPER_KNIFE.get())
+                .pattern("AB")
+                .pattern("AC")
+                .define('A', Items.STICK)
+                .define('B', ModItems.VINE)
+                .define('C', ModItems.JAGGED_SHAPED_COPPER)
+                .unlockedBy("has_jagged_shaped_copper", has(ModItems.JAGGED_SHAPED_COPPER)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_COPPER_TILL.get())
+                .pattern("AB")
+                .pattern("AC")
+                .define('A', Items.STICK)
+                .define('B', ModItems.VINE)
+                .define('C', ModItems.THIN_SHAPED_COPPER)
+                .unlockedBy("has_thin_shaped_copper", has(ModItems.THIN_SHAPED_COPPER)).save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_SWORD.get())
                         .pattern(" A ")
@@ -118,6 +325,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_tin_ingot", has(ModItems.TIN_INGOT)).save(recipeOutput);
         wall(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.TIN_WALL.get(), ModItems.TIN_INGOT.get());
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.STICK, 2)
+                .requires(ModTags.Items.TIMBER)
+                .unlockedBy("has_any_timber",
+                        has(ModTags.Items.TIMBER)).save(recipeOutput);
         planksFromTimber(recipeOutput, Blocks.OAK_PLANKS, ModItems.OAK_TIMBER.get(), 1);
         planksFromTimber(recipeOutput, Blocks.SPRUCE_PLANKS, ModItems.SPRUCE_TIMBER.get(), 1);
         planksFromTimber(recipeOutput, Blocks.BIRCH_PLANKS, ModItems.BIRCH_TIMBER.get(), 1);
@@ -193,6 +404,131 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModTags.Items.SEEDS_FOR_CRAFTING)
                 .requires(ModTags.Items.SEEDS_FOR_CRAFTING)
                 .unlockedBy("has_mud", has(Blocks.MUD)).save(recipeOutput, "sscaiderealism:packed_mud_from_seeds");
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CLAY_SLAB.get(), Blocks.CLAY);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CLAY_SLAB.get())
+                .pattern("BB")
+                .define('B', Items.CLAY_BALL)
+                .unlockedBy("has_clay_ball", has(Items.CLAY_BALL)).save(recipeOutput, "sscaiderealism:clay_slab_from_balls");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.GRAVEL)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModTags.Items.GRAVEL_MATERIALS)
+                .unlockedBy("has_gravel_materials", has(ModTags.Items.GRAVEL_MATERIALS)).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAVEL_SLAB.get(), Blocks.GRAVEL);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAVEL_SLAB.get())
+                .pattern("BB")
+                .define('B', ModTags.Items.GRAVEL_MATERIALS)
+                .unlockedBy("has_gravel_materials", has(ModTags.Items.GRAVEL_MATERIALS)).save(recipeOutput, "sscaiderealism:gravel_slab_from_gravel_materials");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.SAND)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.PILE_OF_SAND.get())
+                .unlockedBy("has_sand_pile", has(ModItems.PILE_OF_SAND)).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SAND_SLAB.get(), Blocks.SAND);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SAND_SLAB.get())
+                .pattern("BB")
+                .define('B', ModItems.PILE_OF_SAND.get())
+                .unlockedBy("has_sand_pile", has(ModItems.PILE_OF_SAND)).save(recipeOutput, "sscaiderealism:sand_slab_from_piles");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.RED_SAND)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.PILE_OF_RED_SAND.get())
+                .unlockedBy("has_red_sand_pile", has(ModItems.PILE_OF_RED_SAND)).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_SAND_SLAB.get(), Blocks.RED_SAND);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_SAND_SLAB.get())
+                .pattern("BB")
+                .define('B', ModItems.PILE_OF_RED_SAND.get())
+                .unlockedBy("has_red_sand_pile", has(ModItems.PILE_OF_RED_SAND)).save(recipeOutput, "sscaiderealism:red_sand_slab_from_piles");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.COBBLED_DEEPSLATE)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.DEEPSLATE_ROCK.get())
+                .unlockedBy("has_deepslate_rock", has(ModItems.DEEPSLATE_ROCK)).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DEEPSLATE_SLAB.get(), Blocks.DEEPSLATE);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.COBBLED_DEEPSLATE_SLAB)
+                .pattern("BB")
+                .define('B', ModItems.DEEPSLATE_ROCK.get())
+                .unlockedBy("has_deepslate_rock", has(ModItems.DEEPSLATE_ROCK)).save(recipeOutput, "sscaiderealism:cobbled_deepslate_slab_from_rocks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.SANDSTONE)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.SANDSTONE_ROCK.get())
+                .unlockedBy("has_sandstone_rock", has(ModItems.SANDSTONE_ROCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.SANDSTONE_SLAB)
+                .pattern("BB")
+                .define('B', ModItems.SANDSTONE_ROCK.get())
+                .unlockedBy("has_sandstone_rock", has(ModItems.SANDSTONE_ROCK)).save(recipeOutput, "sscaiderealism:sandstone_slab_from_rocks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.RED_SANDSTONE)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.RED_SANDSTONE_ROCK.get())
+                .unlockedBy("has_red_sandstone_rock", has(ModItems.RED_SANDSTONE_ROCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.RED_SANDSTONE_SLAB)
+                .pattern("BB")
+                .define('B', ModItems.RED_SANDSTONE_ROCK.get())
+                .unlockedBy("has_red_sandstone_rock", has(ModItems.RED_SANDSTONE_ROCK)).save(recipeOutput, "sscaiderealism:red_sandstone_slab_from_rocks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.GRANITE)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.GRANITE_ROCK.get())
+                .unlockedBy("has_granite_rock", has(ModItems.GRANITE_ROCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.GRANITE_SLAB)
+                .pattern("BB")
+                .define('B', ModItems.GRANITE_ROCK.get())
+                .unlockedBy("has_granite_rock", has(ModItems.GRANITE_ROCK)).save(recipeOutput, "sscaiderealism:granite_slab_from_rocks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.DIORITE)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.DIORITE_ROCK.get())
+                .unlockedBy("has_diorite_rock", has(ModItems.DIORITE_ROCK)).save(recipeOutput, "sscaiderealism:diorite_from_rocks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.DIORITE_SLAB)
+                .pattern("BB")
+                .define('B', ModItems.DIORITE_ROCK.get())
+                .unlockedBy("has_diorite_rock", has(ModItems.DIORITE_ROCK)).save(recipeOutput, "sscaiderealism:diorite_slab_from_rocks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.ANDESITE)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.ANDESITE_ROCK.get())
+                .unlockedBy("has_andesite_rock", has(ModItems.ANDESITE_ROCK)).save(recipeOutput, "sscaiderealism:andesite_from_rocks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.ANDESITE_SLAB)
+                .pattern("BB")
+                .define('B', ModItems.ANDESITE_ROCK.get())
+                .unlockedBy("has_andesite_rock", has(ModItems.ANDESITE_ROCK)).save(recipeOutput, "sscaiderealism:andesite_slab_from_rocks");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.CALCITE)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.CALCITE_ROCK.get())
+                .unlockedBy("has_calcite_rock", has(ModItems.CALCITE_ROCK)).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CALCITE_SLAB.get(), Blocks.CALCITE);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CALCITE_SLAB.get())
+                .pattern("BB")
+                .define('B', ModItems.CALCITE_ROCK.get())
+                .unlockedBy("has_calcite_rock", has(ModItems.CALCITE_ROCK)).save(recipeOutput, "sscaiderealism:calcite_slab_from_rocks");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.TUFF)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.TUFF_ROCK.get())
+                .unlockedBy("has_tuff_rock", has(ModItems.TUFF_ROCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.TUFF_SLAB)
+                .pattern("BB")
+                .define('B', ModItems.TUFF_ROCK.get())
+                .unlockedBy("has_tuff_rock", has(ModItems.TUFF_ROCK)).save(recipeOutput, "sscaiderealism:tuff_slab_from_rocks");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Items.COBBLESTONE, 2)
+                .requires(ModTags.Items.ROCKS)
+                .requires(ModTags.Items.ROCKS)
+                .requires(ModTags.Items.ROCKS)
+                .requires(ModTags.Items.ROCKS)
+                .requires(ModTags.Items.ROCKS)
+                .requires(ModTags.Items.ROCKS)
+                .requires(ModTags.Items.ROCKS)
+                .requires(ModTags.Items.ROCKS)
+                .requires(ModTags.Items.ROCKS)
+                .unlockedBy("has_any_rock", has(ModTags.Items.ROCKS)).save(recipeOutput, "sscaiderealism:cobblestone_from_mixed_rocks");
 
 
         //trimSmithing(recipeOutput, ModItems.KAUPEN_SMITHING_TEMPLATE.get(), ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID, "kaupen"));
