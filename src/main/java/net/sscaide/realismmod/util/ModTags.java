@@ -38,6 +38,7 @@ public class ModTags {
         public static final TagKey<Item> COPPER_INGOT_SMELTABLES = createTag("copper_ingot_smeltables");
         public static final TagKey<Item> COPPER_NUGGET_SMELTABLES = createTag("copper_nugget_smeltables");
         public static final TagKey<Item> ROCKS = createTag("rocks");
+        public static final TagKey<Item> ROCKS_NO_SANDSTONE = createTag("rocks_no_sandstone");
 
         public static final TagKey<Item> SHARPENED_ROCKS = createTag("sharpened_rocks");
 

@@ -1,0 +1,10 @@
+{
+  "wasteland_funk": {
+    "sounds": [
+      {
+        "name": "sscaiderealism:wasteland_funk",
+        "stream": true
+      }
+    ]
+  }
+}

@@ -10,6 +10,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sscaide.realismmod.RealismMod;
+import net.sscaide.realismmod.block.custom.FlaxCropBlock;
 import net.sscaide.realismmod.block.custom.ToggleableBulb;
 import net.sscaide.realismmod.item.ModItems;
 
@@ -37,6 +38,44 @@ public class ModBlocks {
     public static final DeferredBlock<SlabBlock> RED_SAND_SLAB = registerBlock("red_sand_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of()
                     .strength(.5f).explosionResistance(.5f).sound(SoundType.SAND)));
+
+    public static final DeferredBlock<Block> WHITE_SAND = registerBlock("white_sand",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(.5f).explosionResistance(.5f).sound(SoundType.SAND)));
+    public static final DeferredBlock<SlabBlock> WHITE_SAND_SLAB = registerBlock("white_sand_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(.5f).explosionResistance(.5f).sound(SoundType.SAND)));
+    public static final DeferredBlock<Block> WHITE_SANDSTONE = registerBlock("white_sandstone",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(.8f).explosionResistance(.8f).sound(SoundType.STONE)));
+    public static final DeferredBlock<StairBlock> WHITE_SANDSTONE_STAIRS = registerBlock("white_sandstone_stairs",
+            () -> new StairBlock(ModBlocks.WHITE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.of()
+                    .strength(.8f).explosionResistance(.8f).sound(SoundType.STONE)));
+    public static final DeferredBlock<SlabBlock> WHITE_SANDSTONE_SLAB = registerBlock("white_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(.8f).explosionResistance(.8f).sound(SoundType.STONE)));
+    public static final DeferredBlock<WallBlock> WHITE_SANDSTONE_WALL = registerBlock("white_sandstone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .strength(.8f).explosionResistance(.8f).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> CHISELED_WHITE_SANDSTONE = registerBlock("chiseled_white_sandstone",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(.8f).explosionResistance(.8f).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> SMOOTH_WHITE_SANDSTONE = registerBlock("smooth_white_sandstone",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(2f).explosionResistance(6f).sound(SoundType.STONE)));
+    public static final DeferredBlock<StairBlock> SMOOTH_WHITE_SANDSTONE_STAIRS = registerBlock("smooth_white_sandstone_stairs",
+            () -> new StairBlock(ModBlocks.WHITE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.of()
+                    .strength(2f).explosionResistance(6f).sound(SoundType.STONE)));
+    public static final DeferredBlock<SlabBlock> SMOOTH_WHITE_SANDSTONE_SLAB = registerBlock("smooth_white_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(2f).explosionResistance(6f).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> CUT_WHITE_SANDSTONE = registerBlock("cut_white_sandstone",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(.8f).explosionResistance(.8f).sound(SoundType.STONE)));
+    public static final DeferredBlock<SlabBlock> CUT_WHITE_SANDSTONE_SLAB = registerBlock("cut_white_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .strength(.8f).explosionResistance(.8f).sound(SoundType.STONE)));
+
 
     public static final DeferredBlock<SlabBlock> DEEPSLATE_SLAB = registerBlock("deepslate_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of()
@@ -106,7 +145,12 @@ public class ModBlocks {
 
     public static final DeferredBlock<ToggleableBulb> TIN_BULB = registerBlock("tin_bulb",
             () -> new ToggleableBulb(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops().lightLevel(state -> state.getValue(ToggleableBulb.ACTIVE) ? 15 : 0)));
+                    .strength(3f).requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(ToggleableBulb.ACTIVE) ? 15 : 0)));
+
+
+    public static final DeferredBlock<Block> FLAX_CROP = BLOCKS.register("flax_crop",
+            () -> new FlaxCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

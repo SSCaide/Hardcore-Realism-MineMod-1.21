@@ -98,6 +98,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.SAND)
                 .add(ModBlocks.SAND_SLAB.get())
-                .add(ModBlocks.RED_SAND_SLAB.get());
+                .add(ModBlocks.RED_SAND_SLAB.get())
+                .add(ModBlocks.WHITE_SAND.get());
     }
 }

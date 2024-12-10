@@ -64,6 +64,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.ANDESITE_ROCK.get())
                 .add(ModItems.CALCITE_ROCK.get())
                 .add(ModItems.TUFF_ROCK.get());
+        tag(ModTags.Items.ROCKS_NO_SANDSTONE)
+                .add(ModItems.ROCK.get())
+                .add(ModItems.DEEPSLATE_ROCK.get())
+                .add(ModItems.GRANITE_ROCK.get())
+                .add(ModItems.DIORITE_ROCK.get())
+                .add(ModItems.ANDESITE_ROCK.get())
+                .add(ModItems.CALCITE_ROCK.get())
+                .add(ModItems.TUFF_ROCK.get());
 
 
         tag(ItemTags.SWORDS)

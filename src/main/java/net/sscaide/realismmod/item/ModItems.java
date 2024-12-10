@@ -5,10 +5,14 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sscaide.realismmod.RealismMod;
+import net.sscaide.realismmod.block.ModBlocks;
 import net.sscaide.realismmod.item.custom.RandomFlintToolItem;
 import net.sscaide.realismmod.item.custom.RandomToolItem;
 import net.sscaide.realismmod.item.custom.SharpenedRockItem;
 import net.sscaide.realismmod.item.custom.SimpleItemWithTooltip;
+import net.sscaide.realismmod.sound.ModSounds;
+
+import static net.sscaide.realismmod.component.ModDataComponents.SERVINGS;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(RealismMod.MOD_ID);
@@ -23,6 +27,8 @@ public class ModItems {
     public static final DeferredItem<Item> PILE_OF_SAND = ITEMS.register("pile_of_sand",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> PILE_OF_RED_SAND = ITEMS.register("pile_of_red_sand",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PILE_OF_WHITE_SAND = ITEMS.register("pile_of_white_sand",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> ROCK = ITEMS.register("rock",
@@ -45,6 +51,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> VINE = ITEMS.register("vine",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> FLAX = ITEMS.register("flax",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> OAK_TIMBER = ITEMS.register("oak_timber",
@@ -92,6 +100,11 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> COPPER_DUST = ITEMS.register("copper_dust",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> COPPER_NUGGET = ITEMS.register("copper_nugget",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> OBSIDIAN_SHARD = ITEMS.register("obsidian_shard",
+            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<SimpleItemWithTooltip> WIDE_SHAPED_FLINT = ITEMS.register("wide_shaped_flint",
             () -> new SimpleItemWithTooltip(new Item.Properties(), "tooltip.sscaiderealism.wide_shaped_flint.tooltip"));
@@ -114,9 +127,14 @@ public class ModItems {
             () -> new SimpleItemWithTooltip(new Item.Properties(), "tooltip.sscaiderealism.thin_shaped_copper.tooltip"));
 
 
-
     public static final DeferredItem<Item> ORANGE = ITEMS.register("orange",
             () -> new Item(new Item.Properties().food(ModFoodProperties.ORANGE)));
+
+    public static final DeferredItem<Item> FLAX_SEEDS = ITEMS.register("flax_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.FLAX_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> BOWL_OF_FLAX_SEEDS = ITEMS.register("bowl_of_flax_seeds",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BOWL_OF_FLAX_SEEDS)
+                    .stacksTo(1).component(SERVINGS.get(), new Integer(1))));
 
 
     public static final DeferredItem<SharpenedRockItem> SHARPENED_ROCK = ITEMS.register("sharpened_rock",
@@ -218,6 +236,10 @@ public class ModItems {
     public static final DeferredItem<Item> COPPER_HORSE_ARMOR = ITEMS.register("copper_horse_armor",
                     () -> new AnimalArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, AnimalArmorItem.BodyType.EQUESTRIAN,
                             false, new Item.Properties().stacksTo(1)));
+
+
+    public static final DeferredItem<Item> WASTELAND_FUNK_MUSIC_DISC = ITEMS.register("wasteland_funk_music_disc",
+            () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.WASTELAND_FUNK_KEY).stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

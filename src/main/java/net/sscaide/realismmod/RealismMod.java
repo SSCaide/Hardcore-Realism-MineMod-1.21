@@ -5,8 +5,11 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.sscaide.realismmod.block.ModBlocks;
 import net.sscaide.realismmod.component.ModDataComponents;
+import net.sscaide.realismmod.datagen.recipe.ModRecipeTypes;
+import net.sscaide.realismmod.effect.ModEffects;
 import net.sscaide.realismmod.item.ModCreativeModeTabs;
 import net.sscaide.realismmod.item.ModItems;
+import net.sscaide.realismmod.sound.ModSounds;
 import net.sscaide.realismmod.util.ModItemProperties;
 import org.slf4j.Logger;
 
@@ -46,10 +49,15 @@ public class RealismMod
 
         ModCreativeModeTabs.register(modEventBus);
 
+        ModRecipeTypes.register(modEventBus);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
         ModDataComponents.register(modEventBus);
+        ModSounds.register(modEventBus);
+
+        ModEffects.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -71,6 +79,7 @@ public class RealismMod
             event.accept(ModItems.PILE_OF_GRAVEL);
             event.accept(ModItems.PILE_OF_SAND);
             event.accept(ModItems.PILE_OF_RED_SAND);
+            event.accept(ModItems.PILE_OF_WHITE_SAND);
 
             event.accept(ModItems.ROCK);
             event.accept(ModItems.DEEPSLATE_ROCK);
@@ -106,6 +115,9 @@ public class RealismMod
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
             event.accept(ModItems.COPPER_DUST);
+            event.accept(ModItems.COPPER_NUGGET);
+
+            event.accept(ModItems.OBSIDIAN_SHARD);
 
             event.accept(ModItems.WIDE_SHAPED_FLINT);
             event.accept(ModItems.FANNED_SHAPED_FLINT);
@@ -194,6 +206,18 @@ public class RealismMod
             event.accept(ModBlocks.GRAVEL_SLAB);
             event.accept(ModBlocks.SAND_SLAB);
             event.accept(ModBlocks.RED_SAND_SLAB);
+            event.accept(ModBlocks.WHITE_SAND);
+            event.accept(ModBlocks.WHITE_SAND_SLAB);
+            event.accept(ModBlocks.WHITE_SANDSTONE);
+            event.accept(ModBlocks.WHITE_SANDSTONE_STAIRS);
+            event.accept(ModBlocks.WHITE_SANDSTONE_SLAB);
+            event.accept(ModBlocks.WHITE_SANDSTONE_WALL);
+            event.accept(ModBlocks.CHISELED_WHITE_SANDSTONE);
+            event.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE);
+            event.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE_STAIRS);
+            event.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE_SLAB);
+            event.accept(ModBlocks.CUT_WHITE_SANDSTONE);
+            event.accept(ModBlocks.CUT_WHITE_SANDSTONE_SLAB);
 
             event.accept(ModBlocks.DEEPSLATE_SLAB);
             event.accept(ModBlocks.CALCITE_SLAB);

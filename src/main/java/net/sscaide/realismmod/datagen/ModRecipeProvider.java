@@ -1,6 +1,7 @@
 package net.sscaide.realismmod.datagen;
 
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -8,19 +9,19 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.AbstractCookingRecipe;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
-import net.minecraft.world.item.crafting.BlastingRecipe;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sscaide.realismmod.RealismMod;
 import net.sscaide.realismmod.block.ModBlocks;
+import net.sscaide.realismmod.datagen.recipe.BowlFillingRecipe;
 import net.sscaide.realismmod.item.ModItems;
+import net.sscaide.realismmod.item.custom.MultiConsumableBowlItem;
 import net.sscaide.realismmod.util.ModTags;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -50,18 +51,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_gravel",
                         has(Blocks.GRAVEL)).save(recipeOutput, "piles_of_gravel_from_gravel");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_GRAVEL.get(), 1)
-                .requires(ModItems.SHARPENED_ROCK)
-                .requires(ModTags.Items.ROCKS)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModTags.Items.ROCKS_NO_SANDSTONE)
                 .unlockedBy("has_any_rock",
                         has(ModTags.Items.ROCKS)).save(recipeOutput, "pile_of_gravel_from_rocks");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_SAND.get(), 4)
                 .requires(Blocks.SAND)
                 .unlockedBy("has_sand",
                         has(Blocks.SAND)).save(recipeOutput, "piles_of_sand_from_sand");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_SAND.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.SANDSTONE_ROCK)
+                .unlockedBy("has_sandstone_rock",
+                        has(ModItems.SANDSTONE_ROCK)).save(recipeOutput, "pile_of_sand_from_sandstone_rock");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_RED_SAND.get(), 4)
                 .requires(Blocks.RED_SAND)
                 .unlockedBy("has_red_sand",
                         has(Blocks.RED_SAND)).save(recipeOutput, "piles_of_red_sand_from_red_sand");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_RED_SAND.get(), 1)
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(ModItems.RED_SANDSTONE_ROCK)
+                .unlockedBy("has_red_sandstone_rock",
+                        has(ModItems.RED_SANDSTONE_ROCK)).save(recipeOutput, "pile_of_red_sand_from_red_sandstone_rock");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PILE_OF_WHITE_SAND.get(), 4)
+                .requires(ModBlocks.WHITE_SAND)
+                .unlockedBy("has_white_sand",
+                        has(ModBlocks.WHITE_SAND)).save(recipeOutput, "piles_of_white_sand_from_white_sand");
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ROCK.get(), 4)
                 .requires(Blocks.COBBLESTONE)
@@ -147,8 +163,35 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.TIN_BLOCK)
                 .unlockedBy("has_tin_block", has(ModBlocks.TIN_BLOCK)).save(recipeOutput);
         List<ItemLike> TIN_SMELTABLES = List.of(ModItems.RAW_TIN, ModBlocks.TIN_ORE);
-            oreSmelting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 200, "tin");
-            oreBlasting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 100, "tin");
+        oreSmelting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 200, "tin");
+        oreBlasting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 100, "tin");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COPPER_NUGGET, 9)
+                .requires(Items.COPPER_INGOT, 1)
+                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.COPPER_INGOT, 1)
+                .requires(ModItems.COPPER_NUGGET, 9)
+                .unlockedBy("has_copper_nugget", has(ModItems.COPPER_NUGGET)).save(recipeOutput);
+        List<ItemLike> COPPER_INGOT_SMELTABLES = List.of(ModItems.WIDE_SHAPED_COPPER, ModItems.FANNED_SHAPED_COPPER);
+        oreSmelting(recipeOutput, COPPER_INGOT_SMELTABLES, RecipeCategory.MISC, Items.COPPER_INGOT, 0.25f, 200, "copper");
+        oreBlasting(recipeOutput, COPPER_INGOT_SMELTABLES, RecipeCategory.MISC, Items.COPPER_INGOT, 0.25f, 100, "copper");
+        List<ItemLike> COPPER_NUGGET_SMELTABLES = List.of(ModItems.LONG_SHAPED_COPPER, ModItems.JAGGED_SHAPED_COPPER, ModItems.THIN_SHAPED_COPPER, ModItems.COPPER_DUST);
+        oreSmelting(recipeOutput, COPPER_NUGGET_SMELTABLES, RecipeCategory.MISC, ModItems.COPPER_NUGGET, 0.25f, 200, "copper_nugget");
+        oreBlasting(recipeOutput, COPPER_NUGGET_SMELTABLES, RecipeCategory.MISC, ModItems.COPPER_NUGGET, 0.25f, 100, "copper_nugget");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.OBSIDIAN_SHARD, 9)
+                    .requires(Items.OBSIDIAN, 1)
+                            .unlockedBy("has_obsidian", has(Items.OBSIDIAN)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Items.OBSIDIAN, 1)
+                .requires(ModItems.OBSIDIAN_SHARD, 9)
+                .unlockedBy("has_obsidian_shard", has(ModItems.OBSIDIAN_SHARD)).save(recipeOutput);
+
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BOWL_OF_FLAX_SEEDS, 1)
+                .requires(Items.BOWL, 1)
+                .requires(ModItems.FLAX_SEEDS, 2)
+                .unlockedBy("has_flax_seeds", has(ModItems.FLAX_SEEDS)).save(recipeOutput);
+        //BowlFillingRecipe.
 
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.SHARPENED_STICK.get(), 1)
@@ -441,6 +484,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("BB")
                 .define('B', ModItems.PILE_OF_RED_SAND.get())
                 .unlockedBy("has_red_sand_pile", has(ModItems.PILE_OF_RED_SAND)).save(recipeOutput, "sscaiderealism:red_sand_slab_from_piles");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_SAND)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', ModItems.PILE_OF_WHITE_SAND.get())
+                .unlockedBy("has_white_sand_pile", has(ModItems.PILE_OF_WHITE_SAND)).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_SAND_SLAB.get(), ModBlocks.WHITE_SAND);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_SAND_SLAB.get())
+                .pattern("BB")
+                .define('B', ModItems.PILE_OF_WHITE_SAND.get())
+                .unlockedBy("has_white_sand_pile", has(ModItems.PILE_OF_WHITE_SAND)).save(recipeOutput, "sscaiderealism:white_sand_slab_from_piles");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.COBBLED_DEEPSLATE)
                 .pattern("BB")
@@ -542,6 +595,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .group("planks")
                 .unlockedBy("has_any_timber", has(ModTags.Items.TIMBER))
                 .save(recipeOutput, timber.getId(timber) + "_from_timber");
+    }
+
+    protected static void multiBowlFilling(RecipeOutput recipeOutput, MultiConsumableBowlItem bowl, Item ingredient, int ipb) {
+        //ipb = Ingredients Per Bowl
+
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

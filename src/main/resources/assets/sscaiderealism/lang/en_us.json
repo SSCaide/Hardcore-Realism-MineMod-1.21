@@ -4,6 +4,7 @@
   "item.sscaiderealism.pile_of_gravel": "Pile of Gravel",
   "item.sscaiderealism.pile_of_sand": "Pile of Sand",
   "item.sscaiderealism.pile_of_red_sand": "Pile of Red Sand",
+  "item.sscaiderealism.pile_of_white_sand": "Pile of White Sand",
 
   "item.sscaiderealism.rock": "Rock",
   "item.sscaiderealism.deepslate_rock": "Deepslate Rock",
@@ -16,6 +17,7 @@
   "item.sscaiderealism.tuff_rock": "Tuff Rock",
 
   "item.sscaiderealism.vine": "Vine",
+  "item.sscaiderealism.flax": "Flax",
 
   "item.sscaiderealism.oak_timber": "Oak Timber",
   "item.sscaiderealism.spruce_timber": "Spruce Timber",
@@ -40,6 +42,9 @@
   "item.sscaiderealism.raw_tin": "Raw Tin",
   "item.sscaiderealism.tin_ingot": "Tin Ingot",
   "item.sscaiderealism.copper_dust": "Copper Dust",
+  "item.sscaiderealism.copper_nugget": "Copper Nugget",
+
+  "item.sscaiderealism.obsidian_shard": "Obsidian Shard",
 
   "item.sscaiderealism.wide_shaped_flint": "Wide Shaped Flint",
   "item.sscaiderealism.fanned_shaped_flint": "Fanned Shaped Flint",
@@ -54,6 +59,8 @@
 
 
   "item.sscaiderealism.orange": "Orange",
+
+  "item.sscaiderealism.flax_seeds": "Flax Seeds",
 
 
   "item.sscaiderealism.sharpened_stick": "Sharpened Stick",
@@ -94,6 +101,13 @@
   "item.sscaiderealism.copper_horse_armor": "Copper Horse Armor",
 
 
+  "item.sscaiderealism.wasteland_funk_music_disc": "Wasteland Funk Music Disc",
+  "item.sscaiderealism.wasteland_funk_music_disc.desc": "Mythic Anorak - Wasteland Funk",
+
+
+  "trim_material.sscaiderealism.tin": "Tin Material",
+
+
   "block.sscaiderealism.palm_log": "Palm Log",
   "block.sscaiderealism.palm_wood": "Palm Wood",
   "block.sscaiderealism.stripped_palm_log": "Stripped Palm Log",
@@ -122,12 +136,31 @@
   "block.sscaiderealism.gravel_slab": "Gravel Slab",
   "block.sscaiderealism.sand_slab": "Sand Slab",
   "block.sscaiderealism.red_sand_slab": "Red Sand Slab",
+  "block.sscaiderealism.white_sand": "White Sand",
+  "block.sscaiderealism.white_sand_slab": "White Sand Slab",
+  "block.sscaiderealism.white_sandstone": "White Sandstone",
+  "block.sscaiderealism.white_sandstone_stairs": "White Sandstone Stairs",
+  "block.sscaiderealism.white_sandstone_slab": "White Sandstone Slab",
+  "block.sscaiderealism.white_sandstone_wall": "White Sandstone Wall",
+  "block.sscaiderealism.chiseled_white_sandstone": "Chiseled White Sandstone",
+  "block.sscaiderealism.smooth_white_sandstone": "Smooth White Sandstone",
+  "block.sscaiderealism.smooth_white_sandstone_stairs": "Smooth White Sandstone Stairs",
+  "block.sscaiderealism.smooth_white_sandstone_slab": "Smooth White Sandstone Slab",
+  "block.sscaiderealism.cut_white_sandstone": "Cut White Sandstone",
+  "block.sscaiderealism.cut_white_sandstone_slab": "Cut White Sandstone Slab",
 
   "block.sscaiderealism.deepslate_slab": "Deepslate Slab",
   "block.sscaiderealism.calcite_slab": "Calcite Slab",
 
 
-  "trim_material.sscaiderealism.tin": "Tin Material",
+  "block.sscaiderealism.flax_crop": "Flax Crop",
+
+
+  "painting.sscaiderealism.lii.title": "Lii",
+  "painting.sscaiderealism.lii.author": "Mythic Anorak",
+
+
+  "effect.sscaiderealism.bleeding": "Bleeding",
 
 
   "tooltip.sscaiderealism.random_crude_stone_tool.tooltip": "§7The rock is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
@@ -144,9 +177,13 @@
   "tooltip.sscaiderealism.thin_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent hoe.",
 
 
+  "death.attack.sscaiderealism.bleeding": "bled out.",
+
+
   "creativetab.sscaiderealism.sscr_items": "SSCR Items",
   "creativetab.sscaiderealism.sscr_blocks": "SSCR Blocks",
   "creativetab.sscaiderealism.sscr_food": "SSCR Food",
   "creativetab.sscaiderealism.sscr_tools": "SSCR Weapons & Tools",
-  "creativetab.sscaiderealism.sscr_armor": "SSCR Armor"
+  "creativetab.sscaiderealism.sscr_armor": "SSCR Armor",
+  "creativetab.sscaiderealism.sscr_misc": "SSCR Misc."
 }

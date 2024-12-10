@@ -46,6 +46,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.PILE_OF_GRAVEL.get());
         basicItem(ModItems.PILE_OF_SAND.get());
         basicItem(ModItems.PILE_OF_RED_SAND.get());
+        basicItem(ModItems.PILE_OF_WHITE_SAND.get());
 
         basicItem(ModItems.ROCK.get());
         basicItem(ModItems.DEEPSLATE_ROCK.get());
@@ -58,6 +59,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TUFF_ROCK.get());
 
         basicItem(ModItems.VINE.get());
+        basicItem(ModItems.FLAX.get());
 
         basicItem(ModItems.OAK_TIMBER.get());
         basicItem(ModItems.SPRUCE_TIMBER.get());
@@ -82,6 +84,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_TIN.get());
         basicItem(ModItems.TIN_INGOT.get());
         basicItem(ModItems.COPPER_DUST.get());
+        basicItem(ModItems.COPPER_NUGGET.get());
+
+        basicItem(ModItems.OBSIDIAN_SHARD.get());
 
         basicItem(ModItems.WIDE_SHAPED_FLINT.get());
         basicItem(ModItems.FANNED_SHAPED_FLINT.get());
@@ -96,6 +101,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 
         basicItem(ModItems.ORANGE.get());
+
+        basicItem(ModItems.FLAX_SEEDS.get());
 
 
         handheldItem(ModItems.SHARPENED_STICK);
@@ -136,9 +143,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.COPPER_HORSE_ARMOR.get());
 
 
+        basicItem(ModItems.WASTELAND_FUNK_MUSIC_DISC.get());
+
+
         buttonItem(ModBlocks.PALM_BUTTON, ModBlocks.PALM_PLANKS);
+
         fenceItem(ModBlocks.PALM_FENCE, ModBlocks.PALM_PLANKS);
+
         wallItem(ModBlocks.TIN_WALL, ModBlocks.TIN_BLOCK);
+        wallItem(ModBlocks.WHITE_SANDSTONE_WALL, ModBlocks.WHITE_SANDSTONE);
+
         basicItem(ModBlocks.PALM_DOOR.asItem());
 
     }
