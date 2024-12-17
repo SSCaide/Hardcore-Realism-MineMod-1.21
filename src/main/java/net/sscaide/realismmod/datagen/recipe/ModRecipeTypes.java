@@ -24,6 +24,12 @@ public class ModRecipeTypes {
         public ItemStack getBowl() {
             return bowl;
         }
+        public ItemStack getIngredient() {
+            return ingredient;
+        }
+        public int getIngredientAmount() {
+            return ingredientAmount;
+        }
 
         @Override
         public ItemStack getItem(int index) {

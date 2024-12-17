@@ -61,6 +61,7 @@
   "item.sscaiderealism.orange": "Orange",
 
   "item.sscaiderealism.flax_seeds": "Flax Seeds",
+  "item.sscaiderealism.bowl_of_flax_seeds": "Bowl of Flax Seeds",
 
 
   "item.sscaiderealism.sharpened_stick": "Sharpened Stick",
@@ -164,17 +165,22 @@
 
 
   "tooltip.sscaiderealism.random_crude_stone_tool.tooltip": "§7The rock is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
+
   "tooltip.sscaiderealism.random_flint_tool.tooltip": "§7The flint is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
   "tooltip.sscaiderealism.wide_shaped_flint.tooltip": "§7Flint beaten into shape. Would make a decent shovel.",
   "tooltip.sscaiderealism.fanned_shaped_flint.tooltip": "§7Flint beaten into shape. Would make a decent axe.",
   "tooltip.sscaiderealism.long_shaped_flint.tooltip": "§7Flint beaten into shape. Would make a decent pickaxe.",
   "tooltip.sscaiderealism.thin_shaped_flint.tooltip": "§7Flint beaten into shape. Would make a decent hoe.",
+
   "tooltip.sscaiderealism.random_crude_copper_tool.tooltip": "§7The copper is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
   "tooltip.sscaiderealism.wide_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent shovel.",
   "tooltip.sscaiderealism.fanned_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent axe.",
   "tooltip.sscaiderealism.long_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent pickaxe.",
   "tooltip.sscaiderealism.jagged_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent knife.",
   "tooltip.sscaiderealism.thin_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent hoe.",
+
+  "tooltip.sscaiderealism.multiBowl1.tooltip": "§7This bowl can be filled multiple times. Currently at §7",
+  "tooltip.sscaiderealism.multiBowl2.tooltip": "/16 §7servings.",
 
 
   "death.attack.sscaiderealism.bleeding": "bled out.",

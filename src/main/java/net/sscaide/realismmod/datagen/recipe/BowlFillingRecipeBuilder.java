@@ -79,6 +79,8 @@ public class BowlFillingRecipeBuilder implements RecipeBuilder {
     public BowlFillingRecipeBuilder requiresBowl(Ingredient ingredient) {
         this.ingredients.add(ingredient);
         //this.bowlServings = ingredient.g
+
+        return this;
     }
 
     public BowlFillingRecipeBuilder unlockedBy(String name, Criterion<?> criterion) {

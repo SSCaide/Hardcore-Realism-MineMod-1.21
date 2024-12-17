@@ -33,7 +33,7 @@ public class RealismMod
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "sscaiderealism";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
@@ -92,6 +92,7 @@ public class RealismMod
             event.accept(ModItems.TUFF_ROCK);
 
             event.accept(ModItems.VINE);
+            event.accept(ModItems.FLAX);
 
             event.accept(ModItems.OAK_TIMBER);
             event.accept(ModItems.OAK_BARK);
@@ -133,6 +134,9 @@ public class RealismMod
 
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.ORANGE);
+
+            event.accept(ModItems.FLAX_SEEDS);
+            event.accept(ModItems.BOWL_OF_FLAX_SEEDS);
         }
 
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {

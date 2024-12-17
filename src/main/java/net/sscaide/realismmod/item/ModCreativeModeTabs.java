@@ -140,6 +140,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ORANGE);
 
                         output.accept(ModItems.FLAX_SEEDS);
+                        output.accept(ModItems.BOWL_OF_FLAX_SEEDS);
                     }).build());
 
     public static final Supplier<CreativeModeTab> SSCR_TOOLS_TAB = CREATIVE_MODE_TAB.register("sscr_tools_tab",

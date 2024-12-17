@@ -103,6 +103,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ORANGE.get());
 
         basicItem(ModItems.FLAX_SEEDS.get());
+        basicItem(ModItems.BOWL_OF_FLAX_SEEDS.get());
 
 
         handheldItem(ModItems.SHARPENED_STICK);

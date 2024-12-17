@@ -6,10 +6,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sscaide.realismmod.RealismMod;
 import net.sscaide.realismmod.block.ModBlocks;
-import net.sscaide.realismmod.item.custom.RandomFlintToolItem;
-import net.sscaide.realismmod.item.custom.RandomToolItem;
-import net.sscaide.realismmod.item.custom.SharpenedRockItem;
-import net.sscaide.realismmod.item.custom.SimpleItemWithTooltip;
+import net.sscaide.realismmod.item.custom.*;
 import net.sscaide.realismmod.sound.ModSounds;
 
 import static net.sscaide.realismmod.component.ModDataComponents.SERVINGS;
@@ -133,8 +130,8 @@ public class ModItems {
     public static final DeferredItem<Item> FLAX_SEEDS = ITEMS.register("flax_seeds",
             () -> new ItemNameBlockItem(ModBlocks.FLAX_CROP.get(), new Item.Properties()));
     public static final DeferredItem<Item> BOWL_OF_FLAX_SEEDS = ITEMS.register("bowl_of_flax_seeds",
-            () -> new Item(new Item.Properties().food(ModFoodProperties.BOWL_OF_FLAX_SEEDS)
-                    .stacksTo(1).component(SERVINGS.get(), new Integer(1))));
+            () -> new MultiConsumableBowlItem(new MultiConsumableBowlItem.Properties().food(ModFoodProperties.BOWL_OF_FLAX_SEEDS)
+                    .stacksTo(1).component(SERVINGS.get(), new Integer(1)), "tooltip.sscaiderealism.multiBowl1.tooltip" , "tooltip.sscaiderealism.multiBowl2.tooltip"));
 
 
     public static final DeferredItem<SharpenedRockItem> SHARPENED_ROCK = ITEMS.register("sharpened_rock",

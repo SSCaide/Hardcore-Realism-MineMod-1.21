@@ -7,8 +7,8 @@ import net.sscaide.realismmod.component.ModDataComponents;
 import net.sscaide.realismmod.item.ModItems;
 
 public class ModItemProperties {
-    /*public static void addCustomItemProperties() {
+    public static void addCustomItemProperties() {
         ItemProperties.register(ModItems.BOWL_OF_FLAX_SEEDS.get(), ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID
-                        , "servings"), (stack, level, entity, seed) -> stack.get(ModDataComponents.SERVINGS))
-    }*/
+                        , "servings"), (stack, level, entity, seed) -> stack.get(ModDataComponents.SERVINGS));
+    }
 }
