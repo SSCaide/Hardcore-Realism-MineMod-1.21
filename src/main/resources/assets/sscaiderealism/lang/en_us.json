@@ -179,7 +179,7 @@
   "tooltip.sscaiderealism.jagged_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent knife.",
   "tooltip.sscaiderealism.thin_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent hoe.",
 
-  "tooltip.sscaiderealism.multiBowl1.tooltip": "§7This bowl can be filled multiple times. Currently at §7",
+  "tooltip.sscaiderealism.multiBowl1.tooltip": "§7This bowl can be filled multiple times. Currently at §f%d/16 §7servings.",
   "tooltip.sscaiderealism.multiBowl2.tooltip": "/16 §7servings.",
 
 

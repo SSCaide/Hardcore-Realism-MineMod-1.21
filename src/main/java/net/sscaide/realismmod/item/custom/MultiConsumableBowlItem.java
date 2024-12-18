@@ -34,7 +34,7 @@ public class MultiConsumableBowlItem extends Item {
         String theTooltip = this.getTooltip();
         String theTooltip2 = this.getTooltip2();
         String value = stack.get(ModDataComponents.SERVINGS).toString();
-        tooltipComponents.add(Component.translatable(theTooltip + value + theTooltip2));
+        tooltipComponents.add(Component.translatable(theTooltip, value));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 
