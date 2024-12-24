@@ -1,4 +1,4 @@
-package net.sscaide.realismmod.datagen.recipe;
+package net.sscaide.realismmod.data.recipes;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
@@ -46,10 +46,6 @@ public class BowlFillingRecipe extends ShapelessRecipe {
         this.isSimple = ingredients.stream().allMatch(Ingredient::isSimple);
         this.result = result;
         this.resultToReturn = result;
-    }
-
-    public static BowlFillingRecipe bowlFilling(ItemLike bowl, String group, CraftingBookCategory category, ItemStack result, NonNullList<Ingredient> ingredients) {
-        return new BowlFillingRecipe(group, category, result, ingredients);
     }
 
     public Item getResult() {
@@ -121,7 +117,7 @@ public class BowlFillingRecipe extends ShapelessRecipe {
     }
 
 
-    public class Serializer implements RecipeSerializer<BowlFillingRecipe>{
+    public static class Serializer implements RecipeSerializer<BowlFillingRecipe>{
         public static final StreamCodec<RegistryFriendlyByteBuf, BowlFillingRecipe> STREAM_CODEC = StreamCodec.of(Serializer::toNetwork, Serializer::fromNetwork);
         private static final MapCodec<BowlFillingRecipe> CODEC = RecordCodecBuilder.mapCodec((p_340779_) -> p_340779_.group(Codec.STRING.optionalFieldOf("group", "").forGetter((p_301127_) -> p_301127_.group), CraftingBookCategory.CODEC.fieldOf("category").orElse(CraftingBookCategory.MISC).forGetter((p_301133_) -> p_301133_.category), ItemStack.STRICT_CODEC.fieldOf("result").forGetter((p_301142_) -> p_301142_.result), Ingredient.CODEC_NONEMPTY.listOf().fieldOf("ingredients").flatXmap((p_301021_) -> {
             Ingredient[] aingredient = p_301021_.toArray((x$0) -> new Ingredient[x$0]);
@@ -132,6 +128,7 @@ public class BowlFillingRecipe extends ShapelessRecipe {
             }
         }, DataResult::success).forGetter((p_300975_) -> p_300975_.getIngredients())).apply(p_340779_, BowlFillingRecipe::new));
 
+        public Serializer() {}
 
         private static BowlFillingRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
             String s = buffer.readUtf();

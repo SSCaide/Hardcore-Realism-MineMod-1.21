@@ -1,12 +1,9 @@
 package net.sscaide.realismmod.datagen;
 
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
+import net.sscaide.realismmod.data.recipes.BowlFillingRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
@@ -14,14 +11,11 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sscaide.realismmod.RealismMod;
 import net.sscaide.realismmod.block.ModBlocks;
-import net.sscaide.realismmod.datagen.recipe.BowlFillingRecipe;
 import net.sscaide.realismmod.item.ModItems;
 import net.sscaide.realismmod.item.custom.MultiConsumableBowlItem;
 import net.sscaide.realismmod.util.ModTags;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -191,7 +185,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.BOWL, 1)
                 .requires(ModItems.FLAX_SEEDS, 2)
                 .unlockedBy("has_flax_seeds", has(ModItems.FLAX_SEEDS)).save(recipeOutput);
-        BowlFillingRecipe.bowlFilling(ModItems.BOWL_OF_FLAX_SEEDS, ModItems.FLAX_SEEDS, 2);
+        BowlFillingRecipeBuilder.bowlFilling(RecipeCategory.FOOD, ModItems.BOWL_OF_FLAX_SEEDS)
+                .requires(ModItems.BOWL_OF_FLAX_SEEDS)
+                .requires(ModItems.FLAX_SEEDS, 2)
+                .unlockedBy("has_bowl_of_flax_seeds", has(ModItems.BOWL_OF_FLAX_SEEDS)).save(recipeOutput);
 
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.SHARPENED_STICK.get(), 1)

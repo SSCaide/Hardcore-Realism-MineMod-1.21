@@ -5,7 +5,7 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.sscaide.realismmod.block.ModBlocks;
 import net.sscaide.realismmod.component.ModDataComponents;
-import net.sscaide.realismmod.datagen.recipe.ModRecipes;
+import net.sscaide.realismmod.data.recipes.ModRecipes;
 import net.sscaide.realismmod.effect.ModEffects;
 import net.sscaide.realismmod.item.ModCreativeModeTabs;
 import net.sscaide.realismmod.item.ModItems;

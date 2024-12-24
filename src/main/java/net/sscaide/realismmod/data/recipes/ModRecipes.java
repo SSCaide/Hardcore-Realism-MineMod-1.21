@@ -1,4 +1,4 @@
-package net.sscaide.realismmod.datagen.recipe;
+package net.sscaide.realismmod.data.recipes;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
