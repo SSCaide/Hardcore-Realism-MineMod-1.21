@@ -183,11 +183,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BOWL_OF_FLAX_SEEDS, 1)
                 .requires(Items.BOWL, 1)
-                .requires(ModItems.FLAX_SEEDS, 2)
+                .requires(ModItems.FLAX_SEEDS, 4)
                 .unlockedBy("has_flax_seeds", has(ModItems.FLAX_SEEDS)).save(recipeOutput);
         BowlFillingRecipeBuilder.bowlFilling(RecipeCategory.FOOD, ModItems.BOWL_OF_FLAX_SEEDS)
                 .requires(ModItems.BOWL_OF_FLAX_SEEDS)
-                .requires(ModItems.FLAX_SEEDS, 2)
+                .requires(ModItems.FLAX_SEEDS, 4)
                 .unlockedBy("has_bowl_of_flax_seeds", has(ModItems.BOWL_OF_FLAX_SEEDS)).save(recipeOutput);
 
 
