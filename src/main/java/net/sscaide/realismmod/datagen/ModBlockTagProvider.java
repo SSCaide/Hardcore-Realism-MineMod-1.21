@@ -4,6 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.sscaide.realismmod.RealismMod;
@@ -53,31 +54,44 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.TIN_WALL.get())
 
                 .add(ModBlocks.TIN_BULB.get());
+
         tag(ModTags.Blocks.NEEDS_SHARPENED_ROCK)
                 .addTag(BlockTags.NEEDS_STONE_TOOL);
         tag(ModTags.Blocks.INCORRECT_FOR_SHARPENED_ROCK)
                 .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
                 .remove(ModTags.Blocks.NEEDS_SHARPENED_ROCK);
+
         tag(ModTags.Blocks.NEEDS_CRUDE_STONE_TOOL)
                 .addTag(BlockTags.NEEDS_STONE_TOOL);
         tag(ModTags.Blocks.INCORRECT_FOR_CRUDE_STONE_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
                 .remove(ModTags.Blocks.NEEDS_CRUDE_STONE_TOOL);
+
         tag(ModTags.Blocks.NEEDS_FLINT_TOOL)
                 .addTag(BlockTags.NEEDS_STONE_TOOL);
         tag(ModTags.Blocks.INCORRECT_FOR_FLINT_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
                 .remove(ModTags.Blocks.NEEDS_FLINT_TOOL);
+
         tag(ModTags.Blocks.NEEDS_CRUDE_COPPER_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_COPPER_TOOL);
-        tag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL)
+        tag(ModTags.Blocks.INCORRECT_FOR_CRUDE_COPPER_TOOL)
                 .addTag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL)
                 .remove(ModTags.Blocks.NEEDS_CRUDE_COPPER_TOOL);
+
         tag(ModTags.Blocks.NEEDS_COPPER_TOOL)
                 .addTag(BlockTags.NEEDS_STONE_TOOL);
         tag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
                 .remove(ModTags.Blocks.NEEDS_COPPER_TOOL);
+
+        tag(ModTags.Blocks.NEEDS_CRUDE_IRON_TOOL)
+                .addTag(BlockTags.NEEDS_IRON_TOOL);
+        tag(ModTags.Blocks.INCORRECT_FOR_CRUDE_IRON_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .remove(ModTags.Blocks.NEEDS_CRUDE_IRON_TOOL)
+                .addTag(Tags.Blocks.ORES_DIAMOND);
+
 
 
         tag(ModTags.Blocks.PALM_LOGS)

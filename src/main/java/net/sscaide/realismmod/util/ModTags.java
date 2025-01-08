@@ -22,6 +22,8 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_CRUDE_COPPER_TOOL = createTag("incorrect_for_crude_copper_tool");
         public static final TagKey<Block> NEEDS_COPPER_TOOL = createTag("needs_copper_tool");
         public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = createTag("incorrect_for_copper_tool");
+        public static final TagKey<Block> NEEDS_CRUDE_IRON_TOOL = createTag("needs_crude_iron_tool");
+        public static final TagKey<Block> INCORRECT_FOR_CRUDE_IRON_TOOL = createTag("incorrect_for_crude_iron_tool");
 
         public static final TagKey<Block> PALM_LOGS = createTag("palm_logs");
 
@@ -34,13 +36,17 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> SEEDS_FOR_CRAFTING = createTag("seeds_for_crafting");
         public static final TagKey<Item> TIMBER = createTag("timber");
+        public static final TagKey<Item> ROPES_FOR_CRAFTING_INCLUDE_VINE = createTag("ropes_for_crafting_include_vine");
         public static final TagKey<Item> GRAVEL_MATERIALS = createTag("gravel_materials");
         public static final TagKey<Item> COPPER_INGOT_SMELTABLES = createTag("copper_ingot_smeltables");
         public static final TagKey<Item> COPPER_NUGGET_SMELTABLES = createTag("copper_nugget_smeltables");
+        public static final TagKey<Item> IRON_INGOT_SMELTABLES = createTag("iron_ingot_smeltables");
+        public static final TagKey<Item> IRON_NUGGET_SMELTABLES = createTag("iron_nugget_smeltables");
         public static final TagKey<Item> ROCKS = createTag("rocks");
         public static final TagKey<Item> ROCKS_NO_SANDSTONE = createTag("rocks_no_sandstone");
 
         public static final TagKey<Item> SHARPENED_ROCKS = createTag("sharpened_rocks");
+        public static final TagKey<Item> UPGRADED_SHARPENED_ROCKS = createTag("upgraded_sharpened_rocks");
 
         public static final TagKey<Item> PALM_LOGS = createTag("palm_logs");
 

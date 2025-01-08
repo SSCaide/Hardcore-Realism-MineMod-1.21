@@ -99,6 +99,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> COPPER_NUGGET = ITEMS.register("copper_nugget",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> IRON_DUST = ITEMS.register("iron_dust",
+            () -> new Item(new Item.Properties()));
+
 
     public static final DeferredItem<Item> OBSIDIAN_SHARD = ITEMS.register("obsidian_shard",
             () -> new Item(new Item.Properties()));
@@ -123,9 +126,23 @@ public class ModItems {
     public static final DeferredItem<SimpleItemWithTooltip> THIN_SHAPED_COPPER = ITEMS.register("thin_shaped_copper",
             () -> new SimpleItemWithTooltip(new Item.Properties(), "tooltip.sscaiderealism.thin_shaped_copper.tooltip"));
 
+    public static final DeferredItem<SimpleItemWithTooltip> WIDE_SHAPED_IRON = ITEMS.register("wide_shaped_iron",
+            () -> new SimpleItemWithTooltip(new Item.Properties(), "tooltip.sscaiderealism.wide_shaped_iron.tooltip"));
+    public static final DeferredItem<SimpleItemWithTooltip> FANNED_SHAPED_IRON = ITEMS.register("fanned_shaped_iron",
+            () -> new SimpleItemWithTooltip(new Item.Properties(), "tooltip.sscaiderealism.fanned_shaped_iron.tooltip"));
+    public static final DeferredItem<SimpleItemWithTooltip> LONG_SHAPED_IRON = ITEMS.register("long_shaped_iron",
+            () -> new SimpleItemWithTooltip(new Item.Properties(), "tooltip.sscaiderealism.long_shaped_iron.tooltip"));
+    public static final DeferredItem<SimpleItemWithTooltip> JAGGED_SHAPED_IRON = ITEMS.register("jagged_shaped_iron",
+            () -> new SimpleItemWithTooltip(new Item.Properties(), "tooltip.sscaiderealism.jagged_shaped_iron.tooltip"));
+    public static final DeferredItem<SimpleItemWithTooltip> THIN_SHAPED_IRON = ITEMS.register("thin_shaped_iron",
+            () -> new SimpleItemWithTooltip(new Item.Properties(), "tooltip.sscaiderealism.thin_shaped_iron.tooltip"));
+
 
     public static final DeferredItem<Item> ORANGE = ITEMS.register("orange",
             () -> new Item(new Item.Properties().food(ModFoodProperties.ORANGE)));
+
+    public static final DeferredItem<Item> BLUEBERRIES = ITEMS.register("blueberries",
+            () -> new ItemNameBlockItem(ModBlocks.BLUEBERRY_BUSH.get(), new Item.Properties().food(ModFoodProperties.BLUEBERRIES)));
 
     public static final DeferredItem<Item> FLAX_SEEDS = ITEMS.register("flax_seeds",
             () -> new ItemNameBlockItem(ModBlocks.FLAX_CROP.get(), new Item.Properties()));
@@ -138,6 +155,15 @@ public class ModItems {
             () -> new SharpenedRockItem(ModToolTiers.SHARPENED_ROCK, new Item.Properties().stacksTo(1).setNoRepair()
                     .attributes(PickaxeItem.createAttributes(ModToolTiers.SHARPENED_ROCK, .5f, -2.8f))
                     .craftRemainder(ModItems.ROCK.get())));
+    public static final DeferredItem<SharpenedRockItem> SHARPENED_COPPER_CHUNK = ITEMS.register("sharpened_copper_chunk",
+            () -> new SharpenedRockItem(ModToolTiers.SHARPENED_COPPER_CHUNK, new Item.Properties().stacksTo(1).setNoRepair()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.SHARPENED_COPPER_CHUNK, .6f, -2.8f))
+                    .craftRemainder(ModItems.ROCK.get())));
+    public static final DeferredItem<SharpenedRockItem> SHARPENED_IRON_CHUNK = ITEMS.register("sharpened_iron_chunk",
+            () -> new SharpenedRockItem(ModToolTiers.SHARPENED_IRON_CHUNK, new Item.Properties().stacksTo(1).setNoRepair()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.SHARPENED_IRON_CHUNK, .7f, -2.8f))
+                    .craftRemainder(ModItems.ROCK.get())));
+
     public static final DeferredItem<PickaxeItem> SHARPENED_STICK = ITEMS.register("sharpened_stick",
             () -> new PickaxeItem(ModToolTiers.SHARPENED_STICK, new Item.Properties().stacksTo(1).setNoRepair()
                     .attributes(PickaxeItem.createAttributes(ModToolTiers.SHARPENED_STICK, .5f, -2.8f))));
@@ -200,6 +226,26 @@ public class ModItems {
     public static final DeferredItem<HoeItem> CRUDE_COPPER_TILL = ITEMS.register("crude_copper_till",
             () -> new HoeItem(ModToolTiers.CRUDE_COPPER, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.CRUDE_COPPER, 0, -3.0f))));
+
+    public static final DeferredItem<RandomToolItem> RANDOM_CRUDE_IRON_TOOL = ITEMS.register("random_crude_iron_tool",
+            () -> new RandomToolItem(new Item.Properties().stacksTo(1), "tooltip.sscaiderealism.random_crude_iron_tool.tooltip",
+                    ModItems.CRUDE_IRON_KNIFE, ModItems.CRUDE_IRON_PICK, ModItems.CRUDE_IRON_HATCHET, ModItems.CRUDE_IRON_SPADE,
+                    ModItems.CRUDE_IRON_TILL));
+    public static final DeferredItem<SwordItem> CRUDE_IRON_KNIFE = ITEMS.register("crude_iron_knife",
+            () -> new SwordItem(ModToolTiers.CRUDE_IRON, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.CRUDE_IRON, 3, -2.4f))));
+    public static final DeferredItem<PickaxeItem> CRUDE_IRON_PICK = ITEMS.register("crude_iron_pick",
+            () -> new PickaxeItem(ModToolTiers.CRUDE_IRON, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.CRUDE_IRON, 1, -2.8f))));
+    public static final DeferredItem<ShovelItem> CRUDE_IRON_SPADE = ITEMS.register("crude_iron_spade",
+            () -> new ShovelItem(ModToolTiers.CRUDE_IRON, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.CRUDE_IRON, 1.5f, -3.0f))));
+    public static final DeferredItem<AxeItem> CRUDE_IRON_HATCHET = ITEMS.register("crude_iron_hatchet",
+            () -> new AxeItem(ModToolTiers.CRUDE_IRON, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.CRUDE_IRON, 6, -3.2f))));
+    public static final DeferredItem<HoeItem> CRUDE_IRON_TILL = ITEMS.register("crude_iron_till",
+            () -> new HoeItem(ModToolTiers.CRUDE_IRON, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.CRUDE_IRON, 0, -3.0f))));
 
     public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.register("copper_sword",
             () -> new SwordItem(ModToolTiers.COPPER, new Item.Properties()

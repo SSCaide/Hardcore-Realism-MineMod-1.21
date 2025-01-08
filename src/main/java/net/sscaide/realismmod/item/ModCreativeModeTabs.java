@@ -63,6 +63,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TIN_INGOT);
                         output.accept(ModItems.COPPER_DUST);
                         output.accept(ModItems.COPPER_NUGGET);
+                        output.accept(ModItems.IRON_DUST);
+
 
                         output.accept(ModItems.OBSIDIAN_SHARD);
 
@@ -76,6 +78,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LONG_SHAPED_COPPER);
                         output.accept(ModItems.JAGGED_SHAPED_COPPER);
                         output.accept(ModItems.THIN_SHAPED_COPPER);
+
+                        output.accept(ModItems.WIDE_SHAPED_IRON);
+                        output.accept(ModItems.FANNED_SHAPED_IRON);
+                        output.accept(ModItems.LONG_SHAPED_IRON);
+                        output.accept(ModItems.JAGGED_SHAPED_IRON);
+                        output.accept(ModItems.THIN_SHAPED_IRON);
                     }).build());
 
     public static final Supplier<CreativeModeTab> SSCR_BLOCKS_TAB = CREATIVE_MODE_TAB.register("sscr_blocks_tab",
@@ -139,6 +147,8 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ORANGE);
 
+                        output.accept(ModItems.BLUEBERRIES);
+
                         output.accept(ModItems.FLAX_SEEDS);
                         output.accept(ModItems.BOWL_OF_FLAX_SEEDS);
                     }).build());
@@ -150,22 +160,21 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.SHARPENED_STICK);
                         output.accept(ModItems.SHARPENED_ROCK);
+                        output.accept(ModItems.SHARPENED_COPPER_CHUNK);
+                        output.accept(ModItems.SHARPENED_IRON_CHUNK);
 
-                        output.accept(ModItems.RANDOM_CRUDE_STONE_TOOL);
                         output.accept(ModItems.CRUDE_STONE_KNIFE);
                         output.accept(ModItems.CRUDE_STONE_PICK);
                         output.accept(ModItems.CRUDE_STONE_HATCHET);
                         output.accept(ModItems.CRUDE_STONE_SPADE);
                         output.accept(ModItems.CRUDE_STONE_TILL);
 
-                        output.accept(ModItems.RANDOM_FLINT_TOOL);
                         output.accept(ModItems.FLINT_KNIFE);
                         output.accept(ModItems.FLINT_PICK);
                         output.accept(ModItems.FLINT_HATCHET);
                         output.accept(ModItems.FLINT_SPADE);
                         output.accept(ModItems.FLINT_TILL);
 
-                        output.accept(ModItems.RANDOM_CRUDE_COPPER_TOOL);
                         output.accept(ModItems.CRUDE_COPPER_KNIFE);
                         output.accept(ModItems.CRUDE_COPPER_PICK);
                         output.accept(ModItems.CRUDE_COPPER_HATCHET);
@@ -177,6 +186,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPPER_AXE);
                         output.accept(ModItems.COPPER_SHOVEL);
                         output.accept(ModItems.COPPER_HOE);
+
+                        output.accept(ModItems.CRUDE_IRON_KNIFE);
+                        output.accept(ModItems.CRUDE_IRON_PICK);
+                        output.accept(ModItems.CRUDE_IRON_HATCHET);
+                        output.accept(ModItems.CRUDE_IRON_SPADE);
+                        output.accept(ModItems.CRUDE_IRON_TILL);
+
                     }).build());
 
     public static final Supplier<CreativeModeTab> SSCR_ARMOR_TAB = CREATIVE_MODE_TAB.register("sscr_armor_tab",
@@ -197,6 +213,12 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.sscaiderealism.sscr_misc"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.WASTELAND_FUNK_MUSIC_DISC);
+
+                        output.accept(ModItems.RANDOM_CRUDE_STONE_TOOL);
+                        output.accept(ModItems.RANDOM_FLINT_TOOL);
+                        output.accept(ModItems.RANDOM_CRUDE_COPPER_TOOL);
+                        output.accept(ModItems.RANDOM_CRUDE_IRON_TOOL);
+
                     }).build());
 
     public static void register(IEventBus eventBus) {

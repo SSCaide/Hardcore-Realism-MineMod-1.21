@@ -3,10 +3,7 @@ package net.sscaide.realismmod.datagen;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
@@ -16,6 +13,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.sscaide.realismmod.RealismMod;
 import net.sscaide.realismmod.block.ModBlocks;
+import net.sscaide.realismmod.block.custom.BlueberryBushBlock;
 import net.sscaide.realismmod.block.custom.FlaxCropBlock;
 import net.sscaide.realismmod.block.custom.ToggleableBulb;
 
@@ -97,6 +95,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         makeCrop(((CropBlock) ModBlocks.FLAX_CROP.get()), "flax_crop_stage", "flax_crop_stage");
 
+        makeBush(((SweetBerryBushBlock) ModBlocks.BLUEBERRY_BUSH.get()), "blueberry_bush_stage","blueberry_bush_stage");
+
+    }
+
+    public void makeBush(SweetBerryBushBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> states(state, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+    private ConfiguredModel[] states(BlockState state, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().cross(modelName + state.getValue(BlueberryBushBlock.AGE),
+                ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID, "block/" + textureName + state.getValue(BlueberryBushBlock.AGE))).renderType("cutout"));
+
+        return models;
     }
 
     public void makeCrop(CropBlock block, String modelName, String textureName) {
@@ -104,7 +117,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         getVariantBuilder(block).forAllStates(function);
     }
-
     private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((FlaxCropBlock) block).getAgeProperty()),

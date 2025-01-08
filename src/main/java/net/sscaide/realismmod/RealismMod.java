@@ -158,6 +158,8 @@ public class RealismMod
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.SHARPENED_STICK);
             event.accept(ModItems.SHARPENED_ROCK);
+            event.accept(ModItems.SHARPENED_COPPER_CHUNK);
+            event.accept(ModItems.SHARPENED_IRON_CHUNK);
 
             event.accept(ModItems.RANDOM_CRUDE_STONE_TOOL);
             event.accept(ModItems.CRUDE_STONE_PICK);
@@ -181,6 +183,15 @@ public class RealismMod
             event.accept(ModItems.COPPER_AXE);
             event.accept(ModItems.COPPER_SHOVEL);
             event.accept(ModItems.COPPER_HOE);
+
+            event.accept(ModItems.RANDOM_CRUDE_IRON_TOOL);
+            event.accept(ModItems.CRUDE_IRON_PICK);
+            event.accept(ModItems.CRUDE_IRON_HATCHET);
+            event.accept(ModItems.CRUDE_IRON_SPADE);
+            event.accept(ModItems.CRUDE_IRON_TILL);
+
+
+            event.accept(ModItems.WASTELAND_FUNK_MUSIC_DISC);
 
         }
 

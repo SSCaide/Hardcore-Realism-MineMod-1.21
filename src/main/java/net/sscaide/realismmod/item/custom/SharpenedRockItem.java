@@ -37,5 +37,11 @@ public class SharpenedRockItem extends PickaxeItem {
         }
     }
 
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        tooltipComponents.add(Component.translatable("tooltip.sscaiderealism.sharpened_rocks.tooltip"));
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+    }
+
 
 }

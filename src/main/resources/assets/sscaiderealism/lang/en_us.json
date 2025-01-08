@@ -43,6 +43,8 @@
   "item.sscaiderealism.tin_ingot": "Tin Ingot",
   "item.sscaiderealism.copper_dust": "Copper Dust",
   "item.sscaiderealism.copper_nugget": "Copper Nugget",
+  "item.sscaiderealism.iron_dust": "Iron Dust",
+
 
   "item.sscaiderealism.obsidian_shard": "Obsidian Shard",
 
@@ -54,11 +56,19 @@
   "item.sscaiderealism.wide_shaped_copper": "Wide Shaped Copper",
   "item.sscaiderealism.fanned_shaped_copper": "Fanned Shaped Copper",
   "item.sscaiderealism.long_shaped_copper": "Long Shaped Copper",
-  "item.sscaiderealism.jagged_shaped_copper": "Long Shaped Copper",
+  "item.sscaiderealism.jagged_shaped_copper": "Jagged Shaped Copper",
   "item.sscaiderealism.thin_shaped_copper": "Thin Shaped Copper",
+
+  "item.sscaiderealism.wide_shaped_iron": "Wide Shaped Iron",
+  "item.sscaiderealism.fanned_shaped_iron": "Fanned Shaped Iron",
+  "item.sscaiderealism.long_shaped_iron": "Long Shaped Iron",
+  "item.sscaiderealism.jagged_shaped_iron": "Jagged Shaped Iron",
+  "item.sscaiderealism.thin_shaped_iron": "Thin Shaped Iron",
 
 
   "item.sscaiderealism.orange": "Orange",
+
+  "item.sscaiderealism.blueberries": "Blueberries",
 
   "item.sscaiderealism.flax_seeds": "Flax Seeds",
   "item.sscaiderealism.bowl_of_flax_seeds": "Bowl of Flax Seeds",
@@ -66,6 +76,8 @@
 
   "item.sscaiderealism.sharpened_stick": "Sharpened Stick",
   "item.sscaiderealism.sharpened_rock": "Sharpened Rock",
+  "item.sscaiderealism.sharpened_copper_chunk": "Sharpened Copper Chunk",
+  "item.sscaiderealism.sharpened_iron_chunk": "Sharpened Iron Chunk",
 
   "item.sscaiderealism.random_flint_tool": "Random Flint Tool",
   "item.sscaiderealism.flint_knife": "Flint Knife",
@@ -93,6 +105,13 @@
   "item.sscaiderealism.copper_axe": "Copper Axe",
   "item.sscaiderealism.copper_shovel": "Copper Shovel",
   "item.sscaiderealism.copper_hoe": "Copper Hoe",
+
+  "item.sscaiderealism.random_crude_iron_tool": "Random Crude Iron Tool",
+  "item.sscaiderealism.crude_iron_knife": "Crude Iron Knife",
+  "item.sscaiderealism.crude_iron_pick": "Crude Iron Pick",
+  "item.sscaiderealism.crude_iron_hatchet": "Crude Iron Hatchet",
+  "item.sscaiderealism.crude_iron_spade": "Crude Iron Spade",
+  "item.sscaiderealism.crude_iron_till": "Crude Iron Till",
 
 
   "item.sscaiderealism.copper_helmet": "Copper Helmet",
@@ -156,6 +175,8 @@
 
   "block.sscaiderealism.flax_crop": "Flax Crop",
 
+  "block.sscaiderealism.blueberry_bush": "Blueberry Bush",
+
 
   "painting.sscaiderealism.lii.title": "Lii",
   "painting.sscaiderealism.lii.author": "Mythic Anorak",
@@ -164,6 +185,7 @@
   "effect.sscaiderealism.bleeding": "Bleeding",
 
 
+  "tooltip.sscaiderealism.sharpened_rocks.tooltip": "§7Can be used to crush or shape rocks & ores.",
   "tooltip.sscaiderealism.random_crude_stone_tool.tooltip": "§7The rock is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
 
   "tooltip.sscaiderealism.random_flint_tool.tooltip": "§7The flint is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
@@ -178,6 +200,13 @@
   "tooltip.sscaiderealism.long_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent pickaxe.",
   "tooltip.sscaiderealism.jagged_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent knife.",
   "tooltip.sscaiderealism.thin_shaped_copper.tooltip": "§7Raw copper beaten into shape. Would make a decent hoe.",
+
+  "tooltip.sscaiderealism.random_crude_iron_tool.tooltip": "§7The iron is jagged and misshapen, and you lack the means to shape it. The tool you create will be random.",
+  "tooltip.sscaiderealism.wide_shaped_iron.tooltip": "§7Raw iron beaten into shape. Would make a decent shovel.",
+  "tooltip.sscaiderealism.fanned_shaped_iron.tooltip": "§7Raw iron beaten into shape. Would make a decent axe.",
+  "tooltip.sscaiderealism.long_shaped_iron.tooltip": "§7Raw iron beaten into shape. Would make a decent pickaxe.",
+  "tooltip.sscaiderealism.jagged_shaped_iron.tooltip": "§7Raw iron beaten into shape. Would make a decent knife.",
+  "tooltip.sscaiderealism.thin_shaped_iron.tooltip": "§7Raw iron beaten into shape. Would make a decent hoe.",
 
   "tooltip.sscaiderealism.multiBowl1.tooltip": "§7This bowl can be filled multiple times. Currently at §f%d/16 §7servings.",
   "tooltip.sscaiderealism.multiBowl2.tooltip": "/16 §7servings.",

@@ -85,6 +85,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TIN_INGOT.get());
         basicItem(ModItems.COPPER_DUST.get());
         basicItem(ModItems.COPPER_NUGGET.get());
+        basicItem(ModItems.IRON_DUST.get());
 
         basicItem(ModItems.OBSIDIAN_SHARD.get());
 
@@ -99,15 +100,25 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.JAGGED_SHAPED_COPPER.get());
         basicItem(ModItems.THIN_SHAPED_COPPER.get());
 
+        basicItem(ModItems.WIDE_SHAPED_IRON.get());
+        basicItem(ModItems.FANNED_SHAPED_IRON.get());
+        basicItem(ModItems.LONG_SHAPED_IRON.get());
+        basicItem(ModItems.JAGGED_SHAPED_IRON.get());
+        basicItem(ModItems.THIN_SHAPED_IRON.get());
+
 
         basicItem(ModItems.ORANGE.get());
+
+        basicItem(ModItems.BLUEBERRIES.get());
 
         basicItem(ModItems.FLAX_SEEDS.get());
         basicItem(ModItems.BOWL_OF_FLAX_SEEDS.get());
 
 
         handheldItem(ModItems.SHARPENED_STICK);
-        handheldItem(ModItems.SHARPENED_ROCK);
+        handheldItem(ModItems.SHARPENED_ROCK, 1);
+        handheldItem(ModItems.SHARPENED_COPPER_CHUNK, 1);
+        handheldItem(ModItems.SHARPENED_IRON_CHUNK, 1);
 
         basicItem(ModItems.RANDOM_CRUDE_STONE_TOOL.get());
         handheldItem(ModItems.CRUDE_STONE_KNIFE);
@@ -135,6 +146,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.COPPER_AXE);
         handheldItem(ModItems.COPPER_SHOVEL);
         handheldItem(ModItems.COPPER_HOE);
+
+        basicItem(ModItems.RANDOM_CRUDE_IRON_TOOL.get());
+        handheldItem(ModItems.CRUDE_IRON_KNIFE);
+        handheldItem(ModItems.CRUDE_IRON_PICK);
+        handheldItem(ModItems.CRUDE_IRON_HATCHET);
+        handheldItem(ModItems.CRUDE_IRON_SPADE);
+        handheldItem(ModItems.CRUDE_IRON_TILL);
 
 
         trimmedArmorItem(ModItems.COPPER_HELMET);
@@ -225,6 +243,11 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID,"item/" + item.getId().getPath()));
+    }
+    private ItemModelBuilder handheldItem(DeferredItem<?> item, int lol) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.fromNamespaceAndPath(modid, "item/handheld_rock")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID,"item/" + item.getId().getPath()));
     }
 }

@@ -10,6 +10,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sscaide.realismmod.RealismMod;
+import net.sscaide.realismmod.block.custom.BlueberryBushBlock;
 import net.sscaide.realismmod.block.custom.FlaxCropBlock;
 import net.sscaide.realismmod.block.custom.ToggleableBulb;
 import net.sscaide.realismmod.item.ModItems;
@@ -151,6 +152,10 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> FLAX_CROP = BLOCKS.register("flax_crop",
             () -> new FlaxCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
+
+
+    public static final DeferredBlock<Block> BLUEBERRY_BUSH = BLOCKS.register("blueberry_bush",
+            () -> new BlueberryBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

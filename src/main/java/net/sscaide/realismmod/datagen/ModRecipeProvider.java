@@ -148,7 +148,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModTags.Items.SHARPENED_ROCKS)
                 .requires(ModItems.THIN_SHAPED_COPPER)
                 .unlockedBy("has_thin_shaped_copper",
-                        has(ModItems.THIN_SHAPED_COPPER)).save(recipeOutput, "copper_dust_from_shaped_flint");
+                        has(ModItems.THIN_SHAPED_COPPER)).save(recipeOutput, "copper_dust_from_shaped_copper");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.WIDE_SHAPED_IRON.get(), 1)
+                .requires(ModTags.Items.UPGRADED_SHARPENED_ROCKS)
+                .requires(Items.RAW_IRON, 2)
+                .unlockedBy("has_raw_iron", has(Items.RAW_IRON)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.FANNED_SHAPED_IRON.get(), 1)
+                .requires(ModTags.Items.UPGRADED_SHARPENED_ROCKS)
+                .requires(ModItems.WIDE_SHAPED_IRON)
+                .unlockedBy("has_wide_shaped_iron", has(ModItems.WIDE_SHAPED_IRON)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.LONG_SHAPED_IRON.get(), 1)
+                .requires(ModTags.Items.UPGRADED_SHARPENED_ROCKS)
+                .requires(ModItems.FANNED_SHAPED_IRON)
+                .unlockedBy("has_fanned_shaped_iron", has(ModItems.FANNED_SHAPED_IRON)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.JAGGED_SHAPED_IRON.get(), 1)
+                .requires(ModTags.Items.UPGRADED_SHARPENED_ROCKS)
+                .requires(ModItems.LONG_SHAPED_IRON)
+                .unlockedBy("has_long_shaped_iron", has(ModItems.LONG_SHAPED_IRON)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.THIN_SHAPED_IRON.get(), 1)
+                .requires(ModTags.Items.UPGRADED_SHARPENED_ROCKS)
+                .requires(ModItems.JAGGED_SHAPED_IRON)
+                .unlockedBy("has_jagged_shaped_iron", has(ModItems.JAGGED_SHAPED_IRON)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.IRON_DUST.get(), 1)
+                .requires(ModTags.Items.UPGRADED_SHARPENED_ROCKS)
+                .requires(ModItems.THIN_SHAPED_IRON)
+                .unlockedBy("has_thin_shaped_iron",
+                        has(ModItems.THIN_SHAPED_IRON)).save(recipeOutput, "iron_dust_from_shaped_iron");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_TIN.get(), 9)
                 .requires(ModBlocks.RAW_TIN_BLOCK)
@@ -173,6 +199,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(recipeOutput, COPPER_NUGGET_SMELTABLES, RecipeCategory.MISC, ModItems.COPPER_NUGGET, 0.25f, 200, "copper_nugget");
         oreBlasting(recipeOutput, COPPER_NUGGET_SMELTABLES, RecipeCategory.MISC, ModItems.COPPER_NUGGET, 0.25f, 100, "copper_nugget");
 
+        List<ItemLike> IRON_INGOT_SMELTABLES = List.of(ModItems.WIDE_SHAPED_IRON, ModItems.FANNED_SHAPED_IRON);
+        oreSmelting(recipeOutput, IRON_INGOT_SMELTABLES, RecipeCategory.MISC, Items.IRON_INGOT, 0.25f, 200, "iron");
+        oreBlasting(recipeOutput, IRON_INGOT_SMELTABLES, RecipeCategory.MISC, Items.IRON_INGOT, 0.25f, 100, "iron");
+        List<ItemLike> IRON_NUGGET_SMELTABLES = List.of(ModItems.LONG_SHAPED_IRON, ModItems.JAGGED_SHAPED_IRON, ModItems.THIN_SHAPED_IRON, ModItems.IRON_DUST);
+        oreSmelting(recipeOutput, IRON_NUGGET_SMELTABLES, RecipeCategory.MISC, Items.IRON_NUGGET, 0.25f, 200, "iron_nugget");
+        oreBlasting(recipeOutput, IRON_NUGGET_SMELTABLES, RecipeCategory.MISC, Items.IRON_NUGGET, 0.25f, 100, "iron_nugget");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.OBSIDIAN_SHARD, 9)
                     .requires(Items.OBSIDIAN, 1)
                             .unlockedBy("has_obsidian", has(Items.OBSIDIAN)).save(recipeOutput);
@@ -188,13 +221,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         BowlFillingRecipeBuilder.bowlFilling(RecipeCategory.FOOD, ModItems.BOWL_OF_FLAX_SEEDS)
                 .requires(ModItems.BOWL_OF_FLAX_SEEDS)
                 .requires(ModItems.FLAX_SEEDS, 4)
-                .unlockedBy("has_bowl_of_flax_seeds", has(ModItems.BOWL_OF_FLAX_SEEDS)).save(recipeOutput);
+                .unlockedBy("has_bowl_of_flax_seeds", has(ModItems.BOWL_OF_FLAX_SEEDS)).save(recipeOutput, "bowl_of_flax_seeds_filling");
 
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.SHARPENED_STICK.get(), 1)
-                        .requires(ModItems.SHARPENED_ROCK)
+                        .requires(ModTags.Items.SHARPENED_ROCKS)
                         .requires(ModTags.Items.TIMBER)
                         .unlockedBy("has_any_timber", has(ModTags.Items.TIMBER)).save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SHARPENED_ROCK.get())
                         .pattern("A ")
                         .pattern(" A")
@@ -206,6 +240,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .define('A', ModTags.Items.ROCKS)
                         .unlockedBy("has_any_rock", has(ModTags.Items.ROCKS)).save(recipeOutput, "sharpened_rock_2");
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.SHARPENED_COPPER_CHUNK.get())
+                .requires(ModTags.Items.SHARPENED_ROCKS)
+                .requires(Items.RAW_COPPER)
+                .unlockedBy("has_raw_copper", has(Items.RAW_COPPER)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.SHARPENED_IRON_CHUNK.get())
+                .requires(ModTags.Items.UPGRADED_SHARPENED_ROCKS)
+                .requires(Items.RAW_IRON)
+                .unlockedBy("has_raw_iron", has(Items.RAW_IRON)).save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.RANDOM_CRUDE_STONE_TOOL.get())
                 .pattern("AB")
                 .pattern("AC")
@@ -215,90 +258,140 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_any_rock", has(ModTags.Items.ROCKS)).save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_KNIFE.get())
+                        .pattern("CB")
+                        .pattern("A ")
+                        .define('A', Items.STICK)
+                        .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
+                        .define('C', Items.FLINT)
+                        .unlockedBy("has_flint", has(Items.FLINT)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_KNIFE.get())
+                        .pattern("C ")
+                        .pattern("AB")
+                        .define('A', Items.STICK)
+                        .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
+                        .define('C', Items.FLINT)
+                        .unlockedBy("has_flint", has(Items.FLINT)).save(recipeOutput, "flint_knife_2");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.RANDOM_FLINT_TOOL.get())
                         .pattern("BC")
                         .pattern("A ")
                         .define('A', Items.STICK)
-                        .define('B', ModItems.VINE)
-                        .define('C', Items.FLINT)
-                        .unlockedBy("has_flint", has(Items.FLINT)).save(recipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.RANDOM_FLINT_TOOL.get())
-                        .pattern("AB")
-                        .pattern("AC")
-                        .define('A', Items.STICK)
-                        .define('B', ModItems.VINE)
+                        .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                         .define('C', Items.FLINT)
                         .unlockedBy("has_flint", has(Items.FLINT)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_SPADE.get())
-                        .pattern("AB")
-                        .pattern("AC")
+                        .pattern("BC")
+                        .pattern("A ")
                         .define('A', Items.STICK)
-                        .define('B', ModItems.VINE)
+                        .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                         .define('C', ModItems.WIDE_SHAPED_FLINT)
                         .unlockedBy("has_wide_shaped_flint", has(ModItems.WIDE_SHAPED_FLINT)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_HATCHET.get())
-                        .pattern("AB")
-                        .pattern("AC")
+                        .pattern("BC")
+                        .pattern("A ")
                         .define('A', Items.STICK)
-                        .define('B', ModItems.VINE)
+                        .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                         .define('C', ModItems.FANNED_SHAPED_FLINT)
                         .unlockedBy("has_fanned_shaped_flint", has(ModItems.FANNED_SHAPED_FLINT)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_PICK.get())
-                        .pattern("AB")
-                        .pattern("AC")
+                        .pattern("BC")
+                        .pattern("A ")
                         .define('A', Items.STICK)
-                        .define('B', ModItems.VINE)
+                        .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                         .define('C', ModItems.LONG_SHAPED_FLINT)
                         .unlockedBy("has_long_shaped_flint", has(ModItems.LONG_SHAPED_FLINT)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.FLINT_TILL.get())
-                        .pattern("AB")
-                        .pattern("AC")
+                        .pattern("BC")
+                        .pattern("A ")
                         .define('A', Items.STICK)
-                        .define('B', ModItems.VINE)
+                        .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                         .define('C', ModItems.THIN_SHAPED_FLINT)
                         .unlockedBy("has_thin_shaped_flint", has(ModItems.THIN_SHAPED_FLINT)).save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.RANDOM_CRUDE_COPPER_TOOL.get())
-                .pattern("AB")
-                .pattern("AC")
+                .pattern("BC")
+                .pattern("A ")
                 .define('A', Items.STICK)
-                .define('B', ModItems.VINE)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                 .define('C', Items.RAW_COPPER)
                 .unlockedBy("has_raw_copper", has(Items.RAW_COPPER)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_COPPER_SPADE.get())
-                .pattern("AB")
-                .pattern("AC")
+                .pattern("BC")
+                .pattern("A ")
                 .define('A', Items.STICK)
-                .define('B', ModItems.VINE)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                 .define('C', ModItems.WIDE_SHAPED_COPPER)
                 .unlockedBy("has_wide_shaped_copper", has(ModItems.WIDE_SHAPED_COPPER)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_COPPER_HATCHET.get())
-                .pattern("AB")
-                .pattern("AC")
+                .pattern("BC")
+                .pattern("A ")
                 .define('A', Items.STICK)
-                .define('B', ModItems.VINE)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                 .define('C', ModItems.FANNED_SHAPED_COPPER)
                 .unlockedBy("has_fanned_shaped_copper", has(ModItems.FANNED_SHAPED_COPPER)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_COPPER_PICK.get())
-                .pattern("AB")
-                .pattern("AC")
+                .pattern("BC")
+                .pattern("A ")
                 .define('A', Items.STICK)
-                .define('B', ModItems.VINE)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                 .define('C', ModItems.LONG_SHAPED_COPPER)
                 .unlockedBy("has_long_shaped_copper", has(ModItems.LONG_SHAPED_COPPER)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_COPPER_KNIFE.get())
-                .pattern("AB")
-                .pattern("AC")
+                .pattern("BC")
+                .pattern("A ")
                 .define('A', Items.STICK)
-                .define('B', ModItems.VINE)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                 .define('C', ModItems.JAGGED_SHAPED_COPPER)
                 .unlockedBy("has_jagged_shaped_copper", has(ModItems.JAGGED_SHAPED_COPPER)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_COPPER_TILL.get())
-                .pattern("AB")
-                .pattern("AC")
+                .pattern("BC")
+                .pattern("A ")
                 .define('A', Items.STICK)
-                .define('B', ModItems.VINE)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                 .define('C', ModItems.THIN_SHAPED_COPPER)
                 .unlockedBy("has_thin_shaped_copper", has(ModItems.THIN_SHAPED_COPPER)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.RANDOM_CRUDE_IRON_TOOL.get())
+                .pattern("BC")
+                .pattern("A ")
+                .define('A', Items.STICK)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
+                .define('C', Items.RAW_IRON)
+                .unlockedBy("has_raw_iron", has(Items.RAW_IRON)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_IRON_SPADE.get())
+                .pattern("BC")
+                .pattern("A ")
+                .define('A', Items.STICK)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
+                .define('C', ModItems.WIDE_SHAPED_IRON)
+                .unlockedBy("has_wide_shaped_iron", has(ModItems.WIDE_SHAPED_IRON)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_IRON_HATCHET.get())
+                .pattern("BC")
+                .pattern("A ")
+                .define('A', Items.STICK)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
+                .define('C', ModItems.FANNED_SHAPED_IRON)
+                .unlockedBy("has_fanned_shaped_iron", has(ModItems.FANNED_SHAPED_IRON)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_IRON_PICK.get())
+                .pattern("BC")
+                .pattern("A ")
+                .define('A', Items.STICK)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
+                .define('C', ModItems.LONG_SHAPED_IRON)
+                .unlockedBy("has_long_shaped_iron", has(ModItems.LONG_SHAPED_IRON)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_IRON_KNIFE.get())
+                .pattern("BC")
+                .pattern("A ")
+                .define('A', Items.STICK)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
+                .define('C', ModItems.JAGGED_SHAPED_IRON)
+                .unlockedBy("has_jagged_shaped_iron", has(ModItems.JAGGED_SHAPED_IRON)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.CRUDE_IRON_TILL.get())
+                .pattern("BC")
+                .pattern("A ")
+                .define('A', Items.STICK)
+                .define('B', ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
+                .define('C', ModItems.THIN_SHAPED_IRON)
+                .unlockedBy("has_thin_shaped_iron", has(ModItems.THIN_SHAPED_IRON)).save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_SWORD.get())
                         .pattern(" A ")
