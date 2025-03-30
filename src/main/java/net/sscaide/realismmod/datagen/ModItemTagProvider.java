@@ -30,6 +30,29 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.PUMPKIN_SEEDS)
                 .add(Items.TORCHFLOWER_SEEDS);
 
+        tag(ModTags.Items.PACKED_MUD_BINDING_AGENTS)
+                .add(ModItems.VINE.get())
+                .add(ModItems.FLAX.get())
+                .add(ModItems.CLUMP_OF_MOSS.get());
+
+        tag(ModTags.Items.DYES)
+                .add(Items.WHITE_DYE)
+                .add(Items.LIGHT_GRAY_DYE)
+                .add(Items.GRAY_DYE)
+                .add(Items.BLACK_DYE)
+                .add(Items.BROWN_DYE)
+                .add(Items.RED_DYE)
+                .add(Items.ORANGE_DYE)
+                .add(Items.YELLOW_DYE)
+                .add(Items.LIME_DYE)
+                .add(Items.GREEN_DYE)
+                .add(Items.CYAN_DYE)
+                .add(Items.LIGHT_BLUE_DYE)
+                .add(Items.BLUE_DYE)
+                .add(Items.PURPLE_DYE)
+                .add(Items.MAGENTA_DYE)
+                .add(Items.PINK_DYE);
+
         tag(ModTags.Items.TIMBER)
                 .add(ModItems.OAK_TIMBER.get())
                 .add(ModItems.SPRUCE_TIMBER.get())
@@ -40,6 +63,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.MANGROVE_TIMBER.get())
                 .add(ModItems.CHERRY_TIMBER.get())
                 .add(ModItems.PALM_TIMBER.get());
+        tag(ModTags.Items.PLANK_MATERIALS)
+                .add(ModItems.OAK_PLANK.get())
+                .add(ModItems.SPRUCE_PLANK.get())
+                .add(ModItems.BIRCH_PLANK.get())
+                .add(ModItems.JUNGLE_PLANK.get())
+                .add(ModItems.ACACIA_PLANK.get())
+                .add(ModItems.DARK_OAK_PLANK.get())
+                .add(ModItems.MANGROVE_PLANK.get())
+                .add(ModItems.CHERRY_PLANK.get())
+                .add(ModItems.PALM_PLANK.get());
 
         tag(ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
                 .add(ModItems.VINE.get());
@@ -59,7 +92,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.LONG_SHAPED_COPPER.get())
                 .add(ModItems.JAGGED_SHAPED_COPPER.get())
                 .add(ModItems.THIN_SHAPED_COPPER.get())
-                .add(ModItems.COPPER_DUST.get());
+                .add(ModItems.COPPER_DUST.get())
+                .add(ModItems.RAW_COPPER_NUGGET.get());
 
         tag(ModTags.Items.IRON_INGOT_SMELTABLES)
                 .add(ModItems.WIDE_SHAPED_IRON.get())
@@ -68,18 +102,25 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.LONG_SHAPED_IRON.get())
                 .add(ModItems.JAGGED_SHAPED_IRON.get())
                 .add(ModItems.THIN_SHAPED_IRON.get())
-                .add(ModItems.IRON_DUST.get());
+                .add(ModItems.IRON_DUST.get())
+                .add(ModItems.RAW_IRON_NUGGET.get());
 
         tag(ModTags.Items.ROCKS)
                 .add(ModItems.ROCK.get())
                 .add(ModItems.DEEPSLATE_ROCK.get())
                 .add(ModItems.SANDSTONE_ROCK.get())
                 .add(ModItems.RED_SANDSTONE_ROCK.get())
+                .add(ModItems.WHITE_SANDSTONE_ROCK.get())
                 .add(ModItems.GRANITE_ROCK.get())
                 .add(ModItems.DIORITE_ROCK.get())
                 .add(ModItems.ANDESITE_ROCK.get())
                 .add(ModItems.CALCITE_ROCK.get())
-                .add(ModItems.TUFF_ROCK.get());
+                .add(ModItems.TUFF_ROCK.get())
+                .add(ModItems.DRIPSTONE_ROCK.get())
+                .add(ModItems.NETHERROCK.get())
+                .add(ModItems.BLACKROCK.get())
+                .add(ModItems.BASALT_ROCK.get())
+                .add(ModItems.END_ROCK.get());
         tag(ModTags.Items.ROCKS_NO_SANDSTONE)
                 .add(ModItems.ROCK.get())
                 .add(ModItems.DEEPSLATE_ROCK.get())
@@ -89,15 +130,28 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.CALCITE_ROCK.get())
                 .add(ModItems.TUFF_ROCK.get());
 
+        tag(ModTags.Items.STONE_BRICK_MATERIALS)
+                .add(ModItems.STONE_BRICK.get())
+                .add(ModItems.DEEPSLATE_BRICK.get())
+                .add(ModItems.TUFF_BRICK.get())
+                .add(ModItems.BLACKSTONE_BRICK.get())
+                .add(ModItems.END_BRICK.get());
+
 
         tag(ItemTags.SWORDS)
                 .add(ModItems.SHARPENED_STICK.get())
                 .add(ModItems.SHARPENED_ROCK.get())
+                .add(ModItems.COPPER_SWORD.get());
+        tag(ModTags.Items.DAGGERS)
                 .add(ModItems.CRUDE_STONE_KNIFE.get())
                 .add(ModItems.FLINT_KNIFE.get())
                 .add(ModItems.CRUDE_COPPER_KNIFE.get())
-                .add(ModItems.COPPER_SWORD.get())
-                .add(ModItems.CRUDE_IRON_KNIFE.get());
+                .add(ModItems.CRUDE_IRON_KNIFE.get())
+                .add(ModItems.STONE_DAGGER.get())
+                .add(ModItems.GOLD_DAGGER.get())
+                .add(ModItems.IRON_DAGGER.get())
+                .add(ModItems.DIAMOND_DAGGER.get())
+                .add(ModItems.NETHERITE_DAGGER.get());
         tag(ItemTags.PICKAXES)
                 .add(ModItems.SHARPENED_STICK.get())
                 .add(ModItems.SHARPENED_ROCK.get())
@@ -127,13 +181,41 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.COPPER_HOE.get())
                 .add(ModItems.CRUDE_IRON_TILL.get());
 
-        tag(ModTags.Items.SHARPENED_ROCKS)
+        tag(ModTags.Items.CRUSHING_CRAFTING)
                 .add(ModItems.SHARPENED_ROCK.get())
                 .add(ModItems.SHARPENED_COPPER_CHUNK.get())
                 .add(ModItems.SHARPENED_IRON_CHUNK.get());
-        tag(ModTags.Items.UPGRADED_SHARPENED_ROCKS)
+        tag(ModTags.Items.CRUSHING_CRAFTING_COPPER_PLUS)
                 .add(ModItems.SHARPENED_COPPER_CHUNK.get())
                 .add(ModItems.SHARPENED_IRON_CHUNK.get());
+        tag(ModTags.Items.CRUDE_SHARPENING_CRAFTING)
+                .add(ModItems.SHARPENED_ROCK.get())
+                .add(ModItems.SHARPENED_COPPER_CHUNK.get())
+                .add(ModItems.SHARPENED_IRON_CHUNK.get())
+                .add(ModItems.CRUDE_STONE_KNIFE.get())
+                .add(ModItems.FLINT_KNIFE.get())
+                .add(ModItems.CRUDE_COPPER_KNIFE.get())
+                .add(ModItems.CRUDE_IRON_KNIFE.get());
+        tag(ModTags.Items.CRUDE_CARVING_CRAFTING)
+                .add(ModItems.CRUDE_STONE_KNIFE.get())
+                .add(ModItems.FLINT_KNIFE.get())
+                .add(ModItems.CRUDE_COPPER_KNIFE.get())
+                .add(ModItems.CRUDE_IRON_KNIFE.get());
+        tag(ModTags.Items.CARVING_CRAFTING)
+                .add(ModItems.COPPER_DAGGER.get())
+                .add(ModItems.IRON_DAGGER.get())
+                .add(ModItems.DIAMOND_DAGGER.get())
+                .add(ModItems.NETHERITE_DAGGER.get())
+                .add(ModItems.COPPER_CHISEL.get())
+                .add(ModItems.IRON_CHISEL.get())
+                .add(ModItems.DIAMOND_CHISEL.get())
+                .add(ModItems.NETHERITE_CHISEL.get());
+        tag(ModTags.Items.CHISEL_CRAFTING)
+                .add(ModItems.COPPER_CHISEL.get())
+                .add(ModItems.IRON_CHISEL.get())
+                .add(ModItems.DIAMOND_CHISEL.get())
+                .add(ModItems.NETHERITE_CHISEL.get());
+
 
         this.tag(ItemTags.TRIMMABLE_ARMOR)
                         .add(ModItems.COPPER_HELMET.get())
@@ -146,7 +228,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.PLANKS)
                 .add(ModBlocks.PALM_PLANKS.asItem());
-        tag(ItemTags.LOGS)
+        tag(ItemTags.LOGS_THAT_BURN)
                 .add(ModBlocks.PALM_LOG.asItem())
                 .add(ModBlocks.PALM_WOOD.asItem())
                 .add(ModBlocks.STRIPPED_PALM_LOG.asItem())

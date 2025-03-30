@@ -29,7 +29,7 @@ public class SharpenedRockItem extends PickaxeItem {
         ItemStack stack2 = new ItemStack(stack.getItem());
         stack2.getItem().setDamage(stack2, getDamage(stack)+2);
         int dam = stack2.getDamageValue();
-        if(dam >= 18)
+        if(dam >= stack2.getMaxDamage())
         {
             return ItemStack.EMPTY;
         } else {

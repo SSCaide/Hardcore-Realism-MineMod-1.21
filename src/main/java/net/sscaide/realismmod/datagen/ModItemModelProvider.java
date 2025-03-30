@@ -41,26 +41,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        basicItem(ModItems.CLUMP_OF_DIRT.get());
-        basicItem(ModItems.CLUMP_OF_MUD.get());
-        basicItem(ModItems.PILE_OF_GRAVEL.get());
-        basicItem(ModItems.PILE_OF_SAND.get());
-        basicItem(ModItems.PILE_OF_RED_SAND.get());
-        basicItem(ModItems.PILE_OF_WHITE_SAND.get());
-
-        basicItem(ModItems.ROCK.get());
-        basicItem(ModItems.DEEPSLATE_ROCK.get());
-        basicItem(ModItems.SANDSTONE_ROCK.get());
-        basicItem(ModItems.RED_SANDSTONE_ROCK.get());
-        basicItem(ModItems.GRANITE_ROCK.get());
-        basicItem(ModItems.DIORITE_ROCK.get());
-        basicItem(ModItems.ANDESITE_ROCK.get());
-        basicItem(ModItems.CALCITE_ROCK.get());
-        basicItem(ModItems.TUFF_ROCK.get());
-
-        basicItem(ModItems.VINE.get());
-        basicItem(ModItems.FLAX.get());
-
         basicItem(ModItems.OAK_TIMBER.get());
         basicItem(ModItems.SPRUCE_TIMBER.get());
         basicItem(ModItems.BIRCH_TIMBER.get());
@@ -70,6 +50,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.MANGROVE_TIMBER.get());
         basicItem(ModItems.CHERRY_TIMBER.get());
         basicItem(ModItems.PALM_TIMBER.get());
+
+        basicItem(ModItems.OAK_PLANK.get());
+        basicItem(ModItems.SPRUCE_PLANK.get());
+        basicItem(ModItems.BIRCH_PLANK.get());
+        basicItem(ModItems.JUNGLE_PLANK.get());
+        basicItem(ModItems.ACACIA_PLANK.get());
+        basicItem(ModItems.DARK_OAK_PLANK.get());
+        basicItem(ModItems.MANGROVE_PLANK.get());
+        basicItem(ModItems.CHERRY_PLANK.get());
+        basicItem(ModItems.PALM_PLANK.get());
 
         basicItem(ModItems.OAK_BARK.get());
         basicItem(ModItems.SPRUCE_BARK.get());
@@ -81,10 +71,66 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.CHERRY_BARK.get());
         basicItem(ModItems.PALM_BARK.get());
 
+        basicItem(ModItems.CLUMP_OF_DIRT.get());
+        basicItem(ModItems.CLUMP_OF_MUD.get());
+        basicItem(ModItems.CLAY_BRICK.get());
+        basicItem(ModItems.PILE_OF_GRAVEL.get());
+        basicItem(ModItems.PILE_OF_SAND.get());
+        basicItem(ModItems.PILE_OF_RED_SAND.get());
+        basicItem(ModItems.PILE_OF_WHITE_SAND.get());
+        basicItem(ModItems.CLUMP_OF_MOSS.get());
+        basicItem(ModItems.CLUMP_OF_SOUL_SOIL.get());
+        basicItem(ModItems.PILE_OF_SOUL_SAND.get());
+
+        basicItem(ModItems.ROCK.get());
+        basicItem(ModItems.DEEPSLATE_ROCK.get());
+        basicItem(ModItems.SANDSTONE_ROCK.get());
+        basicItem(ModItems.RED_SANDSTONE_ROCK.get());
+        basicItem(ModItems.WHITE_SANDSTONE_ROCK.get());
+        basicItem(ModItems.GRANITE_ROCK.get());
+        basicItem(ModItems.DIORITE_ROCK.get());
+        basicItem(ModItems.ANDESITE_ROCK.get());
+        basicItem(ModItems.CALCITE_ROCK.get());
+        basicItem(ModItems.TUFF_ROCK.get());
+        basicItem(ModItems.DRIPSTONE_ROCK.get());
+        basicItem(ModItems.NETHERROCK.get());
+        basicItem(ModItems.BLACKROCK.get());
+        basicItem(ModItems.BASALT_ROCK.get());
+        basicItem(ModItems.END_ROCK.get());
+
+        basicItem(ModItems.STONE_BRICK.get());
+        basicItem(ModItems.DEEPSLATE_BRICK.get());
+        basicItem(ModItems.TUFF_BRICK.get());
+        basicItem(ModItems.BLACKSTONE_BRICK.get());
+        basicItem(ModItems.END_BRICK.get());
+
+        basicItem(ModItems.VINE.get());
+        basicItem(ModItems.FLAX.get());
+
+        basicItem(ModItems.BLACK_PETALS.get());
+        basicItem(ModItems.BLUE_PETALS.get());
+        basicItem(ModItems.CYAN_PETALS.get());
+        basicItem(ModItems.GRAY_PETALS.get());
+        basicItem(ModItems.LIGHT_BLUE_PETALS.get());
+        basicItem(ModItems.LIGHT_GRAY_PETALS.get());
+        basicItem(ModItems.MAGENTA_PETALS.get());
+        basicItem(ModItems.ORANGE_PETALS.get());
+        basicItem(ModItems.PINK_PETALS.get());
+        basicItem(ModItems.RED_PETALS.get());
+        basicItem(ModItems.WHITE_PETALS.get());
+        basicItem(ModItems.YELLOW_PETALS.get());
+
+
         basicItem(ModItems.RAW_TIN.get());
         basicItem(ModItems.TIN_INGOT.get());
+
+        basicItem(ModItems.RAW_COPPER_NUGGET.get());
         basicItem(ModItems.COPPER_DUST.get());
         basicItem(ModItems.COPPER_NUGGET.get());
+
+        basicItem(ModItems.RAW_GOLD_NUGGET.get());
+
+        basicItem(ModItems.RAW_IRON_NUGGET.get());
         basicItem(ModItems.IRON_DUST.get());
 
         basicItem(ModItems.OBSIDIAN_SHARD.get());
@@ -141,18 +187,34 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.CRUDE_COPPER_SPADE);
         handheldItem(ModItems.CRUDE_COPPER_TILL);
 
-        handheldItem(ModItems.COPPER_SWORD);
-        handheldItem(ModItems.COPPER_PICKAXE);
-        handheldItem(ModItems.COPPER_AXE);
-        handheldItem(ModItems.COPPER_SHOVEL);
-        handheldItem(ModItems.COPPER_HOE);
-
         basicItem(ModItems.RANDOM_CRUDE_IRON_TOOL.get());
         handheldItem(ModItems.CRUDE_IRON_KNIFE);
         handheldItem(ModItems.CRUDE_IRON_PICK);
         handheldItem(ModItems.CRUDE_IRON_HATCHET);
         handheldItem(ModItems.CRUDE_IRON_SPADE);
         handheldItem(ModItems.CRUDE_IRON_TILL);
+
+        handheldItem(ModItems.COPPER_SWORD);
+        handheldItem(ModItems.COPPER_DAGGER);
+        handheldItem(ModItems.COPPER_PICKAXE);
+        handheldItem(ModItems.COPPER_AXE);
+        handheldItem(ModItems.COPPER_SHOVEL);
+        handheldItem(ModItems.COPPER_HOE);
+        handheldItem(ModItems.COPPER_CHISEL);
+
+        handheldItem(ModItems.STONE_DAGGER);
+
+        handheldItem(ModItems.GOLD_DAGGER);
+        handheldItem(ModItems.GOLD_CHISEL);
+
+        handheldItem(ModItems.IRON_DAGGER);
+        handheldItem(ModItems.IRON_CHISEL);
+
+        handheldItem(ModItems.DIAMOND_DAGGER);
+        handheldItem(ModItems.DIAMOND_CHISEL);
+
+        handheldItem(ModItems.NETHERITE_DAGGER);
+        handheldItem(ModItems.NETHERITE_CHISEL);
 
 
         trimmedArmorItem(ModItems.COPPER_HELMET);
@@ -165,6 +227,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.WASTELAND_FUNK_MUSIC_DISC.get());
 
 
+        withExistingParent(ModItems.GECKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+
+        basicItem(ModBlocks.PALM_SAPLING.asItem());
         buttonItem(ModBlocks.PALM_BUTTON, ModBlocks.PALM_PLANKS);
 
         fenceItem(ModBlocks.PALM_FENCE, ModBlocks.PALM_PLANKS);

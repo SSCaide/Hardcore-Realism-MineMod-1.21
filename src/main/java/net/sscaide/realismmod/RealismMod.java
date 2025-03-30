@@ -1,5 +1,8 @@
 package net.sscaide.realismmod;
 
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
@@ -7,10 +10,15 @@ import net.sscaide.realismmod.block.ModBlocks;
 import net.sscaide.realismmod.component.ModDataComponents;
 import net.sscaide.realismmod.data.recipes.ModRecipes;
 import net.sscaide.realismmod.effect.ModEffects;
+import net.sscaide.realismmod.entity.ModEntities;
+import net.sscaide.realismmod.entity.client.BoarRenderer;
+import net.sscaide.realismmod.entity.client.GeckoRenderer;
 import net.sscaide.realismmod.item.ModCreativeModeTabs;
 import net.sscaide.realismmod.item.ModItems;
 import net.sscaide.realismmod.sound.ModSounds;
 import net.sscaide.realismmod.util.ModItemProperties;
+import net.sscaide.realismmod.worldgen.tree.ModFoliagePlacerTypes;
+import net.sscaide.realismmod.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -55,13 +63,15 @@ public class RealismMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModEntities.register(modEventBus);
+
         ModDataComponents.register(modEventBus);
         ModSounds.register(modEventBus);
-
         ModEffects.register(modEventBus);
 
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
+        ModTrunkPlacerTypes.register(modEventBus);
+        ModFoliagePlacerTypes.register(modEventBus);
+
         //Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -71,178 +81,7 @@ public class RealismMod
 
     }
 
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.CLUMP_OF_DIRT);
-            event.accept(ModItems.CLUMP_OF_MUD);
-            event.accept(ModItems.PILE_OF_GRAVEL);
-            event.accept(ModItems.PILE_OF_SAND);
-            event.accept(ModItems.PILE_OF_RED_SAND);
-            event.accept(ModItems.PILE_OF_WHITE_SAND);
 
-            event.accept(ModItems.ROCK);
-            event.accept(ModItems.DEEPSLATE_ROCK);
-            event.accept(ModItems.SANDSTONE_ROCK);
-            event.accept(ModItems.RED_SANDSTONE_ROCK);
-            event.accept(ModItems.GRANITE_ROCK);
-            event.accept(ModItems.DIORITE_ROCK);
-            event.accept(ModItems.ANDESITE_ROCK);
-            event.accept(ModItems.CALCITE_ROCK);
-            event.accept(ModItems.TUFF_ROCK);
-
-            event.accept(ModItems.VINE);
-            event.accept(ModItems.FLAX);
-
-            event.accept(ModItems.OAK_TIMBER);
-            event.accept(ModItems.OAK_BARK);
-            event.accept(ModItems.SPRUCE_TIMBER);
-            event.accept(ModItems.SPRUCE_BARK);
-            event.accept(ModItems.BIRCH_TIMBER);
-            event.accept(ModItems.BIRCH_BARK);
-            event.accept(ModItems.JUNGLE_TIMBER);
-            event.accept(ModItems.JUNGLE_BARK);
-            event.accept(ModItems.ACACIA_TIMBER);
-            event.accept(ModItems.ACACIA_BARK);
-            event.accept(ModItems.DARK_OAK_TIMBER);
-            event.accept(ModItems.DARK_OAK_BARK);
-            event.accept(ModItems.MANGROVE_TIMBER);
-            event.accept(ModItems.MANGROVE_BARK);
-            event.accept(ModItems.CHERRY_TIMBER);
-            event.accept(ModItems.CHERRY_BARK);
-            event.accept(ModItems.PALM_TIMBER);
-            event.accept(ModItems.PALM_BARK);
-
-            event.accept(ModItems.RAW_TIN);
-            event.accept(ModItems.TIN_INGOT);
-            event.accept(ModItems.COPPER_DUST);
-            event.accept(ModItems.COPPER_NUGGET);
-
-            event.accept(ModItems.OBSIDIAN_SHARD);
-
-            event.accept(ModItems.WIDE_SHAPED_FLINT);
-            event.accept(ModItems.FANNED_SHAPED_FLINT);
-            event.accept(ModItems.LONG_SHAPED_FLINT);
-            event.accept(ModItems.THIN_SHAPED_FLINT);
-
-            event.accept(ModItems.WIDE_SHAPED_COPPER);
-            event.accept(ModItems.FANNED_SHAPED_COPPER);
-            event.accept(ModItems.LONG_SHAPED_COPPER);
-            event.accept(ModItems.JAGGED_SHAPED_COPPER);
-            event.accept(ModItems.THIN_SHAPED_COPPER);
-        }
-
-        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ModItems.ORANGE);
-
-            event.accept(ModItems.FLAX_SEEDS);
-            event.accept(ModItems.BOWL_OF_FLAX_SEEDS);
-        }
-
-        if(event.getTabKey() == CreativeModeTabs.COMBAT) {
-            event.accept(ModItems.SHARPENED_STICK);
-            event.accept(ModItems.SHARPENED_ROCK);
-
-            event.accept(ModItems.CRUDE_STONE_KNIFE);
-            event.accept(ModItems.FLINT_KNIFE);
-            event.accept(ModItems.CRUDE_COPPER_KNIFE);
-
-            event.accept(ModItems.COPPER_SWORD);
-            event.accept(ModItems.COPPER_HELMET);
-            event.accept(ModItems.COPPER_CHESTPLATE);
-            event.accept(ModItems.COPPER_LEGGINGS);
-            event.accept(ModItems.COPPER_BOOTS);
-        }
-
-        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(ModItems.SHARPENED_STICK);
-            event.accept(ModItems.SHARPENED_ROCK);
-            event.accept(ModItems.SHARPENED_COPPER_CHUNK);
-            event.accept(ModItems.SHARPENED_IRON_CHUNK);
-
-            event.accept(ModItems.RANDOM_CRUDE_STONE_TOOL);
-            event.accept(ModItems.CRUDE_STONE_PICK);
-            event.accept(ModItems.CRUDE_STONE_HATCHET);
-            event.accept(ModItems.CRUDE_STONE_SPADE);
-            event.accept(ModItems.CRUDE_STONE_TILL);
-
-            event.accept(ModItems.RANDOM_FLINT_TOOL);
-            event.accept(ModItems.FLINT_PICK);
-            event.accept(ModItems.FLINT_HATCHET);
-            event.accept(ModItems.FLINT_SPADE);
-            event.accept(ModItems.FLINT_TILL);
-
-            event.accept(ModItems.RANDOM_CRUDE_COPPER_TOOL);
-            event.accept(ModItems.CRUDE_COPPER_PICK);
-            event.accept(ModItems.CRUDE_COPPER_HATCHET);
-            event.accept(ModItems.CRUDE_COPPER_SPADE);
-            event.accept(ModItems.CRUDE_COPPER_TILL);
-
-            event.accept(ModItems.COPPER_PICKAXE);
-            event.accept(ModItems.COPPER_AXE);
-            event.accept(ModItems.COPPER_SHOVEL);
-            event.accept(ModItems.COPPER_HOE);
-
-            event.accept(ModItems.RANDOM_CRUDE_IRON_TOOL);
-            event.accept(ModItems.CRUDE_IRON_PICK);
-            event.accept(ModItems.CRUDE_IRON_HATCHET);
-            event.accept(ModItems.CRUDE_IRON_SPADE);
-            event.accept(ModItems.CRUDE_IRON_TILL);
-
-
-            event.accept(ModItems.WASTELAND_FUNK_MUSIC_DISC);
-
-        }
-
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.PALM_LOG);
-            event.accept(ModBlocks.PALM_WOOD);
-            event.accept(ModBlocks.STRIPPED_PALM_LOG);
-            event.accept(ModBlocks.STRIPPED_PALM_WOOD);
-            event.accept(ModBlocks.PALM_PLANKS);
-            event.accept(ModBlocks.PALM_STAIRS);
-            event.accept(ModBlocks.PALM_SLAB);
-            event.accept(ModBlocks.PALM_FENCE);
-
-            event.accept(ModBlocks.PALM_FENCE_GATE);
-            event.accept(ModBlocks.PALM_DOOR);
-            event.accept(ModBlocks.PALM_TRAPDOOR);
-            event.accept(ModBlocks.PALM_PRESSURE_PLATE);
-            event.accept(ModBlocks.PALM_BUTTON);
-
-            event.accept(ModBlocks.TIN_ORE);
-            event.accept(ModBlocks.RAW_TIN_BLOCK);
-            event.accept(ModBlocks.TIN_BLOCK);
-            event.accept(ModBlocks.TIN_WALL);
-
-            event.accept(ModBlocks.DIRT_SLAB);
-            event.accept(ModBlocks.MUD_SLAB);
-            event.accept(ModBlocks.CLAY_SLAB);
-            event.accept(ModBlocks.GRAVEL_SLAB);
-            event.accept(ModBlocks.SAND_SLAB);
-            event.accept(ModBlocks.RED_SAND_SLAB);
-            event.accept(ModBlocks.WHITE_SAND);
-            event.accept(ModBlocks.WHITE_SAND_SLAB);
-            event.accept(ModBlocks.WHITE_SANDSTONE);
-            event.accept(ModBlocks.WHITE_SANDSTONE_STAIRS);
-            event.accept(ModBlocks.WHITE_SANDSTONE_SLAB);
-            event.accept(ModBlocks.WHITE_SANDSTONE_WALL);
-            event.accept(ModBlocks.CHISELED_WHITE_SANDSTONE);
-            event.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE);
-            event.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE_STAIRS);
-            event.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE_SLAB);
-            event.accept(ModBlocks.CUT_WHITE_SANDSTONE);
-            event.accept(ModBlocks.CUT_WHITE_SANDSTONE_SLAB);
-
-            event.accept(ModBlocks.DEEPSLATE_SLAB);
-            event.accept(ModBlocks.CALCITE_SLAB);
-
-        }
-        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            event.accept(ModBlocks.TIN_BULB);
-        }
-    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
@@ -259,6 +98,19 @@ public class RealismMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             ModItemProperties.addCustomItemProperties();
+
+            EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
+            //EntityRenderers.register(ModEntities.BOAR.get(), BoarRenderer::new);
+
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_OAK_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_SPRUCE_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_BIRCH_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_JUNGLE_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_ACACIA_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_DARK_OAK_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_MANGROVE_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_CHERRY_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_PALM_BLOCK.get(), RenderType.translucent());
         }
     }
 }
