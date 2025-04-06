@@ -196,22 +196,33 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.MOSS_SLAB);
 
+                        output.accept(ModBlocks.CRACKED_STONE);
                         output.accept(ModBlocks.DEEPSLATE_SLAB);
+                        output.accept(ModBlocks.CRACKED_DEEPSLATE);
+                        output.accept(ModBlocks.CRACKED_GRANITE);
                         output.accept(ModBlocks.COBBLED_GRANITE);
+                        output.accept(ModBlocks.CRACKED_DIORITE);
                         output.accept(ModBlocks.COBBLED_DIORITE);
+                        output.accept(ModBlocks.CRACKED_ANDESITE);
                         output.accept(ModBlocks.COBBLED_ANDESITE);
                         output.accept(ModBlocks.CALCITE_SLAB);
+                        output.accept(ModBlocks.CRACKED_CALCITE);
                         output.accept(ModBlocks.COBBLED_CALCITE);
+                        output.accept(ModBlocks.CRACKED_TUFF);
                         output.accept(ModBlocks.COBBLED_TUFF);
                         output.accept(ModBlocks.DRIPSTONE_SLAB);
+                        output.accept(ModBlocks.CRACKED_DRIPSTONE);
                         output.accept(ModBlocks.COBBLED_DRIPSTONE);
                         output.accept(ModBlocks.NETHERRACK_SLAB);
+                        output.accept(ModBlocks.COBBLED_NETHERRACK);
                         output.accept(ModBlocks.COBBLED_BLACKSTONE);
                         output.accept(ModBlocks.BASALT_SLAB);
+                        output.accept(ModBlocks.CRACKED_BASALT);
                         output.accept(ModBlocks.COBBLED_BASALT);
                         output.accept(ModBlocks.SMOOTH_BASALT_SLAB);
-                        output.accept(ModBlocks.COBBLED_END_STONE);
                         output.accept(ModBlocks.END_STONE_SLAB);
+                        output.accept(ModBlocks.CRACKED_END_STONE);
+                        output.accept(ModBlocks.COBBLED_END_STONE);
 
                     }).build());
 

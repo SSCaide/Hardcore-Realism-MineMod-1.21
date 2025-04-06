@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.sscaide.realismmod.block.ModBlocks;
+import net.sscaide.realismmod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
@@ -35,9 +36,11 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
         if(context.getItemInHand().getItem() instanceof AxeItem) {
             if(state.is(ModBlocks.PALM_LOG)){
+                popResource(context.getLevel(), context.getClickedPos(), ModItems.PALM_BARK.toStack(4));
                 return ModBlocks.STRIPPED_PALM_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }else if(state.is(ModBlocks.PALM_WOOD)){
-                return ModBlocks.STRIPPED_PALM_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+                popResource(context.getLevel(), context.getClickedPos(), ModItems.PALM_BARK.toStack(6));
+                return ModBlocks.STRIPPED_PALM_WOOD.get().defaultBlockState();
             }
         }
         return super.getToolModifiedState(state, context, itemAbility, simulate);

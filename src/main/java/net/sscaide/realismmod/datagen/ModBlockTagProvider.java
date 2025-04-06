@@ -23,6 +23,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.IRON_BREAKABLE_BLOCK.get())
+
                 .add(ModBlocks.DEEPSLATE_SLAB.get())
                 .add(ModBlocks.CALCITE_SLAB.get())
                 .add(ModBlocks.DRIPSTONE_SLAB.get())
@@ -31,7 +33,40 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SMOOTH_BASALT_SLAB.get())
                 .add(ModBlocks.END_STONE_SLAB.get())
 
+                .add(ModBlocks.WHITE_SANDSTONE.get())
+                .add(ModBlocks.WHITE_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.WHITE_SANDSTONE_SLAB.get())
+                .add(ModBlocks.WHITE_SANDSTONE_WALL.get())
+                .add(ModBlocks.CHISELED_WHITE_SANDSTONE.get())
+                .add(ModBlocks.SMOOTH_WHITE_SANDSTONE.get())
+                .add(ModBlocks.SMOOTH_WHITE_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.SMOOTH_WHITE_SANDSTONE_SLAB.get())
+                .add(ModBlocks.CUT_WHITE_SANDSTONE.get())
+                .add(ModBlocks.CUT_WHITE_SANDSTONE_SLAB.get())
+
+                .add(ModBlocks.CRACKED_STONE.get())
+                .add(ModBlocks.CRACKED_DEEPSLATE.get())
                 .add(ModBlocks.COBBLED_SANDSTONE.get())
+                .add(ModBlocks.COBBLED_RED_SANDSTONE.get())
+                .add(ModBlocks.COBBLED_WHITE_SANDSTONE.get())
+                .add(ModBlocks.CRACKED_GRANITE.get())
+                .add(ModBlocks.COBBLED_GRANITE.get())
+                .add(ModBlocks.CRACKED_DIORITE.get())
+                .add(ModBlocks.COBBLED_DIORITE.get())
+                .add(ModBlocks.CRACKED_ANDESITE.get())
+                .add(ModBlocks.COBBLED_ANDESITE.get())
+                .add(ModBlocks.CRACKED_CALCITE.get())
+                .add(ModBlocks.COBBLED_CALCITE.get())
+                .add(ModBlocks.CRACKED_TUFF.get())
+                .add(ModBlocks.COBBLED_TUFF.get())
+                .add(ModBlocks.CRACKED_DRIPSTONE.get())
+                .add(ModBlocks.COBBLED_DRIPSTONE.get())
+                .add(ModBlocks.COBBLED_NETHERRACK.get())
+                .add(ModBlocks.COBBLED_BLACKSTONE.get())
+                .add(ModBlocks.CRACKED_BASALT.get())
+                .add(ModBlocks.COBBLED_BASALT.get())
+                .add(ModBlocks.CRACKED_END_STONE.get())
+                .add(ModBlocks.COBBLED_END_STONE.get())
 
                 .add(ModBlocks.TIN_ORE.get())
                 .add(ModBlocks.DEEPSLATE_TIN_ORE.get())
@@ -130,6 +165,22 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .remove(ModTags.Blocks.NEEDS_CRUDE_IRON_TOOL)
                 .addTag(Tags.Blocks.ORES_DIAMOND);
 
+        tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.IRON_BREAKABLE_BLOCK.get());
+
+
+        tag(ModTags.Blocks.CRACKED_STONE)
+                .add(ModBlocks.CRACKED_STONE.get())
+                .add(ModBlocks.CRACKED_DEEPSLATE.get())
+                .add(ModBlocks.CRACKED_GRANITE.get())
+                .add(ModBlocks.CRACKED_DIORITE.get())
+                .add(ModBlocks.CRACKED_ANDESITE.get())
+                .add(ModBlocks.CRACKED_CALCITE.get())
+                .add(ModBlocks.CRACKED_TUFF.get())
+                .add(ModBlocks.CRACKED_DRIPSTONE.get())
+                .add(ModBlocks.CRACKED_BASALT.get())
+                .add(ModBlocks.CRACKED_END_STONE.get())
+        ;
 
         tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.PALM_LOG.get())

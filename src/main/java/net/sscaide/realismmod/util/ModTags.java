@@ -25,6 +25,7 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_CRUDE_IRON_TOOL = createTag("needs_crude_iron_tool");
         public static final TagKey<Block> INCORRECT_FOR_CRUDE_IRON_TOOL = createTag("incorrect_for_crude_iron_tool");
 
+        public static final TagKey<Block> CRACKED_STONE = createTag("cracked_stone");
         public static final TagKey<Block> PALM_LOGS = createTag("palm_logs");
 
 

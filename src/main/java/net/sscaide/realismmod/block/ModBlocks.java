@@ -28,6 +28,12 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(RealismMod.MOD_ID);
 
+
+
+    public static final DeferredBlock<Block> IRON_BREAKABLE_BLOCK = BLOCKS.register("iron_breakable_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE)));
+
+
     public static final DeferredBlock<ModColoredFallingSlabBlock> DIRT_SLAB = registerBlock("dirt_slab",
             () -> new ModColoredFallingSlabBlock(new ColorRGBA(13337634), BlockBehaviour.Properties.of()
                     .strength(.5f).explosionResistance(.5f).sound(SoundType.GRAVEL)));
@@ -54,7 +60,7 @@ public class ModBlocks {
             () -> new ModColoredFallingSlabBlock(new ColorRGBA(15659736), BlockBehaviour.Properties.of()
                     .strength(.5f).explosionResistance(.5f).sound(SoundType.SAND)));
     public static final DeferredBlock<Block> WHITE_SANDSTONE = registerBlock("white_sandstone",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
                     .strength(.8f).explosionResistance(.8f).sound(SoundType.STONE)));
     public static final DeferredBlock<StairBlock> WHITE_SANDSTONE_STAIRS = registerBlock("white_sandstone_stairs",
             () -> new StairBlock(ModBlocks.WHITE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.of()
@@ -119,8 +125,8 @@ public class ModBlocks {
 
     public static final DeferredBlock<RotatedPillarBlock> PALM_LOG = registerBlock("palm_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
-    public static final DeferredBlock<Block> PALM_WOOD = registerBlock("palm_wood",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
+    public static final DeferredBlock<RotatedPillarBlock> PALM_WOOD = registerBlock("palm_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
     public static final DeferredBlock<RotatedPillarBlock> STRIPPED_PALM_LOG = registerBlock("stripped_palm_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
     public static final DeferredBlock<Block> STRIPPED_PALM_WOOD = registerBlock("stripped_palm_wood",
@@ -429,53 +435,108 @@ public class ModBlocks {
             });
 
 
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_SANDSTONE = registerBlock("cobbled_sandstone",
-            () -> new ColoredFallingBlock(new ColorRGBA(14406560), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<CrackedStoneBlock> CRACKED_STONE = registerBlock("cracked_stone",
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
+                    .strength(1.75f).requiresCorrectToolForDrops().explosionResistance(6f)
+                    .sound(SoundType.STONE)));
+    public static final DeferredBlock<CrackedStoneBlock> CRACKED_DEEPSLATE = registerBlock("cracked_deepslate",
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
+                    .strength(3.25f).requiresCorrectToolForDrops().explosionResistance(6f)
+                    .sound(SoundType.DEEPSLATE)));
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_SANDSTONE = registerBlock("cobbled_sandstone",
+            () -> new ModCobblestone(new ColorRGBA(14406560), BlockBehaviour.Properties.of()
                     .strength(2f).requiresCorrectToolForDrops().explosionResistance(6f)
                     .sound(SoundType.STONE)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_RED_SANDSTONE = registerBlock("cobbled_red_sandstone",
-            () -> new ColoredFallingBlock(new ColorRGBA(11098145), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<ModCobblestone> COBBLED_RED_SANDSTONE = registerBlock("cobbled_red_sandstone",
+            () -> new ModCobblestone(new ColorRGBA(11098145), BlockBehaviour.Properties.of()
                     .strength(2f).requiresCorrectToolForDrops().explosionResistance(6f)
                     .sound(SoundType.STONE)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_WHITE_SANDSTONE = registerBlock("cobbled_white_sandstone",
-            () -> new ColoredFallingBlock(new ColorRGBA(15659736), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<ModCobblestone> COBBLED_WHITE_SANDSTONE = registerBlock("cobbled_white_sandstone",
+            () -> new ModCobblestone(new ColorRGBA(15659736), BlockBehaviour.Properties.of()
                     .strength(2f).requiresCorrectToolForDrops().explosionResistance(6f)
                     .sound(SoundType.STONE)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_GRANITE = registerBlock("cobbled_granite",
-            () -> new ColoredFallingBlock(new ColorRGBA(13337413), BlockBehaviour.Properties.of()
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_GRANITE = registerBlock("cobbled_granite",
+            () -> new ModCobblestone(new ColorRGBA(13337413), BlockBehaviour.Properties.of()
                     .strength(2f).requiresCorrectToolForDrops().explosionResistance(6f)
                     .sound(SoundType.STONE)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_DIORITE = registerBlock("cobbled_diorite",
-            () -> new ColoredFallingBlock(new ColorRGBA(15067386), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<CrackedStoneBlock> CRACKED_GRANITE = registerBlock("cracked_granite",
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
+                    .strength(1.75f).requiresCorrectToolForDrops().explosionResistance(6f)
+                    .sound(SoundType.STONE)));
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_DIORITE = registerBlock("cobbled_diorite",
+            () -> new ModCobblestone(new ColorRGBA(15067386), BlockBehaviour.Properties.of()
                     .strength(2f).requiresCorrectToolForDrops().explosionResistance(6f)
                     .sound(SoundType.STONE)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_ANDESITE = registerBlock("cobbled_andesite",
-            () -> new ColoredFallingBlock(new ColorRGBA(7898487), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<CrackedStoneBlock> CRACKED_DIORITE = registerBlock("cracked_diorite",
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
+                    .strength(1.75f).requiresCorrectToolForDrops().explosionResistance(6f)
+                    .sound(SoundType.STONE)));
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_ANDESITE = registerBlock("cobbled_andesite",
+            () -> new ModCobblestone(new ColorRGBA(7898487), BlockBehaviour.Properties.of()
                     .strength(2f).requiresCorrectToolForDrops().explosionResistance(6f)
                     .sound(SoundType.STONE)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_CALCITE = registerBlock("cobbled_calcite",
-            () -> new ColoredFallingBlock(new ColorRGBA(15659736), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<CrackedStoneBlock> CRACKED_ANDESITE = registerBlock("cracked_andesite",
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
+                    .strength(1.75f).requiresCorrectToolForDrops().explosionResistance(6f)
+                    .sound(SoundType.STONE)));
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_CALCITE = registerBlock("cobbled_calcite",
+            () -> new ModCobblestone(new ColorRGBA(15659736), BlockBehaviour.Properties.of()
                     .strength(1f).requiresCorrectToolForDrops().explosionResistance(.75f)
                     .sound(SoundType.CALCITE)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_TUFF = registerBlock("cobbled_tuff",
-            () -> new ColoredFallingBlock(new ColorRGBA(6385257), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<CrackedStoneBlock> CRACKED_CALCITE = registerBlock("cracked_calcite",
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
+                    .strength(1.25f).requiresCorrectToolForDrops().explosionResistance(6f)
+                    .sound(SoundType.CALCITE)));
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_TUFF = registerBlock("cobbled_tuff",
+            () -> new ModCobblestone(new ColorRGBA(6385257), BlockBehaviour.Properties.of()
                     .strength(2f).requiresCorrectToolForDrops().explosionResistance(6f)
                     .sound(SoundType.TUFF)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_DRIPSTONE = registerBlock("cobbled_dripstone",
-            () -> new ColoredFallingBlock(new ColorRGBA(10705701), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<CrackedStoneBlock> CRACKED_TUFF = registerBlock("cracked_tuff",
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
+                    .strength(1.75f).requiresCorrectToolForDrops().explosionResistance(6f)
+                    .sound(SoundType.TUFF)));
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_DRIPSTONE = registerBlock("cobbled_dripstone",
+            () -> new ModCobblestone(new ColorRGBA(10705701), BlockBehaviour.Properties.of()
                     .strength(2f).requiresCorrectToolForDrops().explosionResistance(1f)
                     .sound(SoundType.DRIPSTONE_BLOCK)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_BLACKSTONE = registerBlock("cobbled_blackstone",
-            () -> new ColoredFallingBlock(new ColorRGBA(1246469), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<CrackedStoneBlock> CRACKED_DRIPSTONE = registerBlock("cracked_dripstone",
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
+                    .strength(1.75f).requiresCorrectToolForDrops().explosionResistance(1f)
+                    .sound(SoundType.DRIPSTONE_BLOCK)));
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_NETHERRACK = registerBlock("cobbled_netherrack",
+            () -> new ModCobblestone(new ColorRGBA(5902629), BlockBehaviour.Properties.of()
                     .strength(2f).requiresCorrectToolForDrops().explosionResistance(6f)
+                    .sound(SoundType.NETHERRACK)));
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_BLACKSTONE = registerBlock("cobbled_blackstone",
+            () -> new ModCobblestone(new ColorRGBA(1246469), BlockBehaviour.Properties.of()
+                    .strength(.9f).requiresCorrectToolForDrops().explosionResistance(.4f)
                     .sound(SoundType.STONE)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_BASALT = registerBlock("cobbled_basalt",
-            () -> new ColoredFallingBlock(new ColorRGBA(525593), BlockBehaviour.Properties.of()
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_BASALT = registerBlock("cobbled_basalt",
+            () -> new ModCobblestone(new ColorRGBA(525593), BlockBehaviour.Properties.of()
                     .strength(1.75f).requiresCorrectToolForDrops().explosionResistance(4.2f)
                     .sound(SoundType.STONE)));
-    public static final DeferredBlock<ColoredFallingBlock> COBBLED_END_STONE = registerBlock("cobbled_end_stone",
-            () -> new ColoredFallingBlock(new ColorRGBA(15857701), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<CrackedStoneBlock> CRACKED_BASALT = registerBlock("cracked_basalt",
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
+                    .strength(1.75f).requiresCorrectToolForDrops().explosionResistance(4.2f)
+                    .sound(SoundType.STONE)));
+
+    public static final DeferredBlock<ModCobblestone> COBBLED_END_STONE = registerBlock("cobbled_end_stone",
+            () -> new ModCobblestone(new ColorRGBA(15857701), BlockBehaviour.Properties.of()
                     .strength(3.5f).requiresCorrectToolForDrops().explosionResistance(9f)
+                    .sound(SoundType.STONE)));
+    public static final DeferredBlock<CrackedStoneBlock> CRACKED_END_STONE = registerBlock("cracked_end_stone",
+            () -> new CrackedStoneBlock(BlockBehaviour.Properties.of()
+                    .strength(3.25f).requiresCorrectToolForDrops().explosionResistance(9f)
                     .sound(SoundType.STONE)));
 
 
@@ -509,6 +570,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> BLUEBERRY_BUSH = BLOCKS.register("blueberry_bush",
             () -> new BlueberryBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH)));
+
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

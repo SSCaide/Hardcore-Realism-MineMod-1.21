@@ -11,6 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -19,6 +20,7 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.sscaide.realismmod.block.ModBlocks;
 import net.sscaide.realismmod.block.custom.FlaxCropBlock;
@@ -127,17 +129,38 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block ->   createMultipleOreDrops(ModBlocks.CRUDE_PALM_BLOCK.get(), ModItems.PALM_TIMBER.get(), 4, 4));
 
 
+        add(ModBlocks.CRACKED_STONE.get(),
+                block -> createCobble(ModBlocks.CRACKED_STONE.get(), Blocks.COBBLESTONE.asItem()));
+        add(ModBlocks.CRACKED_DEEPSLATE.get(),
+                block -> createCobble(ModBlocks.CRACKED_DEEPSLATE.get(), Blocks.COBBLED_DEEPSLATE.asItem()));
         dropSelf(ModBlocks.COBBLED_SANDSTONE.get());
         dropSelf(ModBlocks.COBBLED_RED_SANDSTONE.get());
         dropSelf(ModBlocks.COBBLED_WHITE_SANDSTONE.get());
         dropSelf(ModBlocks.COBBLED_GRANITE.get());
+        add(ModBlocks.CRACKED_GRANITE.get(),
+                block -> createCobble(ModBlocks.CRACKED_GRANITE.get(), ModBlocks.COBBLED_GRANITE.asItem()));
+        add(ModBlocks.CRACKED_DIORITE.get(),
+                block -> createCobble(ModBlocks.CRACKED_DIORITE.get(), ModBlocks.COBBLED_DIORITE.asItem()));
         dropSelf(ModBlocks.COBBLED_DIORITE.get());
+        add(ModBlocks.CRACKED_ANDESITE.get(),
+                block -> createCobble(ModBlocks.CRACKED_ANDESITE.get(), ModBlocks.COBBLED_ANDESITE.asItem()));
         dropSelf(ModBlocks.COBBLED_ANDESITE.get());
+        add(ModBlocks.CRACKED_CALCITE.get(),
+                block -> createCobble(ModBlocks.CRACKED_CALCITE.get(), ModBlocks.COBBLED_CALCITE.asItem()));
         dropSelf(ModBlocks.COBBLED_CALCITE.get());
+        add(ModBlocks.CRACKED_TUFF.get(),
+                block -> createCobble(ModBlocks.CRACKED_TUFF.get(), ModBlocks.COBBLED_TUFF.asItem()));
         dropSelf(ModBlocks.COBBLED_TUFF.get());
+        add(ModBlocks.CRACKED_DRIPSTONE.get(),
+                block -> createCobble(ModBlocks.CRACKED_DRIPSTONE.get(), ModBlocks.COBBLED_DRIPSTONE.asItem()));
         dropSelf(ModBlocks.COBBLED_DRIPSTONE.get());
+        dropSelf(ModBlocks.COBBLED_NETHERRACK.get());
         dropSelf(ModBlocks.COBBLED_BLACKSTONE.get());
+        add(ModBlocks.CRACKED_BASALT.get(),
+                block -> createCobble(ModBlocks.CRACKED_BASALT.get(), ModBlocks.COBBLED_BASALT.asItem()));
         dropSelf(ModBlocks.COBBLED_BASALT.get());
+        add(ModBlocks.CRACKED_END_STONE.get(),
+                block -> createCobble(ModBlocks.CRACKED_END_STONE.get(), ModBlocks.COBBLED_END_STONE.asItem()));
         dropSelf(ModBlocks.COBBLED_END_STONE.get());
 
 
@@ -174,6 +197,15 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
                                 .apply(ApplyBonusCount.addUniformBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))
                 )));
+
+
+        dropSelf(ModBlocks.IRON_BREAKABLE_BLOCK.get());
+    }
+
+    protected LootTable.Builder createCobble(Block pBlock, Item item) {
+        return this.createSilkTouchDispatchTable(pBlock,
+                this.applyExplosionDecay(pBlock, LootItem.lootTableItem(item)
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
