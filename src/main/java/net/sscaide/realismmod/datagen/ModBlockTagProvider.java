@@ -5,6 +5,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -187,6 +188,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.PALM_WOOD.get())
                 .add(ModBlocks.STRIPPED_PALM_LOG.get())
                 .add(ModBlocks.STRIPPED_PALM_WOOD.get());
+        tag(BlockTags.LEAVES)
+                .add(ModBlocks.PALM_LEAVES.get());
         tag(ModTags.Blocks.PALM_LOGS)
                 .add(ModBlocks.PALM_LOG.get())
                 .add(ModBlocks.PALM_WOOD.get())

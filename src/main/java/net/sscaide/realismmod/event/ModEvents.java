@@ -7,6 +7,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.animal.Sheep;
@@ -25,6 +26,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.extensions.ILevelReaderExtension;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.sscaide.realismmod.RealismMod;
 import net.sscaide.realismmod.block.ModBlocks;
@@ -48,6 +50,97 @@ public class ModEvents {
     }*/
 
     @SubscribeEvent
+    public static void toolsBasedDrops(BlockDropsEvent event) {
+        BlockState state = event.getState();
+        Block block = event.getState().getBlock();
+        ItemStack tool = event.getTool();
+        Level level = event.getLevel();
+        BlockPos pos = event.getPos();
+        Block ironOrBetter = ModBlocks.IRON_BREAKABLE_BLOCK.get();
+        boolean silk;
+        if(tool != ItemStack.EMPTY) {
+            var enchants = tool.get(DataComponents.ENCHANTMENTS);
+            var server = level.getServer();
+            var enchantmentHolder = server.registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(Enchantments.SILK_TOUCH);
+            silk = enchants.getLevel(enchantmentHolder) != 0;
+        } else { silk = false; }
+        Random rand = new Random();
+        int rng;
+
+        if((!tool.isCorrectToolForDrops(ironOrBetter.defaultBlockState()) && !silk) || !(event.getBreaker() instanceof Player)) {
+            if(state.is(Blocks.COBBLESTONE)) {
+                block.popResource(level, pos, ModItems.ROCK.toStack(1));
+                event.setCanceled(true);
+            } else if(state.is(Blocks.COBBLED_DEEPSLATE)) {
+                block.popResource(level, pos, ModItems.DEEPSLATE_ROCK.toStack(1));
+                event.setCanceled(true);
+            }
+
+            if(state.is(Blocks.DIRT) || state.is(Blocks.COARSE_DIRT) || state.is(Blocks.ROOTED_DIRT) || state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.DIRT_PATH) || state.is(Blocks.MYCELIUM) || state.is(Blocks.PODZOL) || state.is(Blocks.FARMLAND)) {
+                rng = rand.nextInt(5-2) + 2;
+                block.popResource(level, pos, ModItems.CLUMP_OF_DIRT.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(ModBlocks.DIRT_SLAB)) {
+                rng = rand.nextInt(2) + 1;
+                block.popResource(level, pos, ModItems.CLUMP_OF_DIRT.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(Blocks.MUD)) {
+                rng = rand.nextInt(5-2) + 2;
+                block.popResource(level, pos, ModItems.CLUMP_OF_MUD.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(ModBlocks.MUD_SLAB)) {
+                rng = rand.nextInt(2) + 1;
+                block.popResource(level, pos, ModItems.CLUMP_OF_MUD.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(ModBlocks.CLAY_SLAB)) {
+                rng = rand.nextInt(2) + 1;
+                ItemStack clay = new ItemStack(Items.CLAY_BALL, rng);
+                block.popResource(level, pos, clay);
+                event.setCanceled(true);
+            } else if(state.is(Blocks.GRAVEL)) {
+                rng = rand.nextInt(5-2) + 2;
+                block.popResource(level, pos, ModItems.PILE_OF_GRAVEL.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(ModBlocks.GRAVEL_SLAB)) {
+                rng = rand.nextInt(2) + 1;
+                block.popResource(level, pos, ModItems.PILE_OF_GRAVEL.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(Blocks.SAND)) {
+                rng = rand.nextInt(5-2) + 2;
+                block.popResource(level, pos, ModItems.PILE_OF_SAND.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(ModBlocks.SAND_SLAB)) {
+                rng = rand.nextInt(2) + 1;
+                block.popResource(level, pos, ModItems.PILE_OF_SAND.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(Blocks.RED_SAND)) {
+                rng = rand.nextInt(5-2) + 2;
+                block.popResource(level, pos, ModItems.PILE_OF_RED_SAND.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(ModBlocks.RED_SAND_SLAB)) {
+                rng = rand.nextInt(2) + 1;
+                block.popResource(level, pos, ModItems.PILE_OF_RED_SAND.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(ModBlocks.WHITE_SAND)) {
+                rng = rand.nextInt(5-2) + 2;
+                block.popResource(level, pos, ModItems.PILE_OF_WHITE_SAND.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(ModBlocks.MUD_SLAB)) {
+                rng = rand.nextInt(2) + 1;
+                block.popResource(level, pos, ModItems.PILE_OF_WHITE_SAND.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(Blocks.MOSS_BLOCK)) {
+                rng = rand.nextInt(5-2) + 2;
+                block.popResource(level, pos, ModItems.CLUMP_OF_MOSS.toStack(rng));
+                event.setCanceled(true);
+            } else if(state.is(Blocks.MOSS_CARPET)) {
+                block.popResource(level, pos, ModItems.CLUMP_OF_MOSS.toStack(1));
+                event.setCanceled(true);
+            }
+        }
+    }
+
+    @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
         Block block = event.getState().getBlock();
         Player player = event.getPlayer();
@@ -56,10 +149,13 @@ public class ModEvents {
         BlockPos pos = event.getPos();
         Block replacer;
         Block ironOrBetter = ModBlocks.IRON_BREAKABLE_BLOCK.get();
-        var enchants = player.getMainHandItem().get(DataComponents.ENCHANTMENTS);
-        var server = level.getServer();
-        var enchantmentHolder = server.registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(Enchantments.SILK_TOUCH);
-        boolean silk = enchants.getLevel(enchantmentHolder) != 0;
+        boolean silk;
+        if(player.getMainHandItem() != ItemStack.EMPTY) {
+            var enchants = player.getMainHandItem().get(DataComponents.ENCHANTMENTS);
+            var server = level.getServer();
+            var enchantmentHolder = server.registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(Enchantments.SILK_TOUCH);
+            silk = enchants.getLevel(enchantmentHolder) != 0;
+        } else { silk = false; }
         Random rand = new Random();
         int rng;
 
@@ -71,23 +167,11 @@ public class ModEvents {
                     level.setBlockAndUpdate(pos, replacer.defaultBlockState());
                 }
                 event.setCanceled(true);
-            } else if(state.is(Blocks.COBBLESTONE)) {
-                block.popResource(level, pos, ModItems.ROCK.toStack(1));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
             } else if(state.is(Blocks.DEEPSLATE)) {
                 block.popResource(level, pos, ModItems.DEEPSLATE_ROCK.toStack(1));
                 replacer = ModBlocks.CRACKED_DEEPSLATE.get();
                 if(!level.isClientSide) {
                     level.setBlockAndUpdate(pos, replacer.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(Blocks.COBBLED_DEEPSLATE)) {
-                block.popResource(level, pos, ModItems.DEEPSLATE_ROCK.toStack(1));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
                 }
                 event.setCanceled(true);
             } else if(state.is(Blocks.SANDSTONE)) {
@@ -176,113 +260,6 @@ public class ModEvents {
                 event.setCanceled(true);
             }
 
-            if(state.is(Blocks.DIRT) || state.is(Blocks.COARSE_DIRT) || state.is(Blocks.ROOTED_DIRT) || state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.DIRT_PATH) || state.is(Blocks.MYCELIUM) || state.is(Blocks.PODZOL) || state.is(Blocks.FARMLAND)) {
-                rng = rand.nextInt(5-2) + 2;
-                block.popResource(level, pos, ModItems.CLUMP_OF_DIRT.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(ModBlocks.DIRT_SLAB)) {
-                rng = rand.nextInt(2) + 1;
-                block.popResource(level, pos, ModItems.CLUMP_OF_DIRT.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(Blocks.MUD)) {
-                rng = rand.nextInt(5-2) + 2;
-                block.popResource(level, pos, ModItems.CLUMP_OF_MUD.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(ModBlocks.MUD_SLAB)) {
-                rng = rand.nextInt(2) + 1;
-                block.popResource(level, pos, ModItems.CLUMP_OF_MUD.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(ModBlocks.CLAY_SLAB)) {
-                rng = rand.nextInt(2) + 1;
-                ItemStack clay = new ItemStack(Items.CLAY_BALL, rng);
-                block.popResource(level, pos, clay);
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(Blocks.GRAVEL)) {
-                rng = rand.nextInt(5-2) + 2;
-                block.popResource(level, pos, ModItems.PILE_OF_GRAVEL.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(ModBlocks.GRAVEL_SLAB)) {
-                rng = rand.nextInt(2) + 1;
-                block.popResource(level, pos, ModItems.PILE_OF_GRAVEL.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(Blocks.SAND)) {
-                rng = rand.nextInt(5-2) + 2;
-                block.popResource(level, pos, ModItems.PILE_OF_SAND.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(ModBlocks.SAND_SLAB)) {
-                rng = rand.nextInt(2) + 1;
-                block.popResource(level, pos, ModItems.PILE_OF_SAND.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(Blocks.RED_SAND)) {
-                rng = rand.nextInt(5-2) + 2;
-                block.popResource(level, pos, ModItems.PILE_OF_RED_SAND.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(ModBlocks.RED_SAND_SLAB)) {
-                rng = rand.nextInt(2) + 1;
-                block.popResource(level, pos, ModItems.PILE_OF_RED_SAND.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(ModBlocks.WHITE_SAND)) {
-                rng = rand.nextInt(5-2) + 2;
-                block.popResource(level, pos, ModItems.PILE_OF_WHITE_SAND.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(ModBlocks.MUD_SLAB)) {
-                rng = rand.nextInt(2) + 1;
-                block.popResource(level, pos, ModItems.PILE_OF_WHITE_SAND.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(Blocks.MOSS_BLOCK)) {
-                rng = rand.nextInt(5-2) + 2;
-                block.popResource(level, pos, ModItems.CLUMP_OF_MOSS.toStack(rng));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            } else if(state.is(Blocks.MOSS_CARPET)) {
-                block.popResource(level, pos, ModItems.CLUMP_OF_MOSS.toStack(1));
-                if(!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                }
-                event.setCanceled(true);
-            }
-
         } else if(!player.isCreative() && player.getMainHandItem().isCorrectToolForDrops(ironOrBetter.defaultBlockState()) && !silk) {
             if(state.is(Blocks.SANDSTONE)) {
                 block.popResource(level, pos, ModBlocks.COBBLED_SANDSTONE.toStack(1));
@@ -356,6 +333,19 @@ public class ModEvents {
                     level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
                 }
                 event.setCanceled(true);
+            }
+        }
+
+
+
+        if(!player.isCreative() && !silk && !player.getMainHandItem().is(Items.SHEARS)) {
+            if(state.is(Blocks.VINE) || state.is(Blocks.CAVE_VINES)) {
+                block.popResource(level, pos, ModItems.VINE.toStack(1));
+            } else if(state.is(BlockTags.LEAVES)) {
+                rng = rand.nextInt(12);
+                if(rng == 0) {
+                    block.popResource(level, pos, ModItems.VINE.toStack(1));
+                }
             }
         }
     }
