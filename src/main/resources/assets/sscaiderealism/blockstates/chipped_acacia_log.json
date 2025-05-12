@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "sscaiderealism:block/chipped_acacia_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "sscaiderealism:block/chipped_acacia_log"
+    },
+    "axis=z": {
+      "model": "sscaiderealism:block/chipped_acacia_log",
+      "x": 90
+    }
+  }
+}

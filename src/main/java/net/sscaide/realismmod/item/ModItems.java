@@ -1,12 +1,6 @@
 package net.sscaide.realismmod.item;
 
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EquipmentSlotGroup;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -17,11 +11,12 @@ import net.sscaide.realismmod.entity.ModEntities;
 import net.sscaide.realismmod.item.custom.*;
 import net.sscaide.realismmod.sound.ModSounds;
 
-import static net.sscaide.realismmod.component.ModDataComponents.SERVINGS;
+import static net.sscaide.realismmod.component.ModDataComponents.*;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(RealismMod.MOD_ID);
 
+//MATERIALS
     public static final DeferredItem<Item> OAK_TIMBER = ITEMS.register("oak_timber",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SPRUCE_TIMBER = ITEMS.register("spruce_timber",
@@ -41,23 +36,23 @@ public class ModItems {
     public static final DeferredItem<Item> PALM_TIMBER = ITEMS.register("palm_timber",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> OAK_PLANK = ITEMS.register("oak_plank",
+    public static final DeferredItem<Item> OAK_BOARD = ITEMS.register("oak_board",
             () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> SPRUCE_PLANK = ITEMS.register("spruce_plank",
+    public static final DeferredItem<Item> SPRUCE_BOARD = ITEMS.register("spruce_board",
             () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> BIRCH_PLANK = ITEMS.register("birch_plank",
+    public static final DeferredItem<Item> BIRCH_BOARD = ITEMS.register("birch_board",
             () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> JUNGLE_PLANK = ITEMS.register("jungle_plank",
+    public static final DeferredItem<Item> JUNGLE_BOARD = ITEMS.register("jungle_board",
             () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> ACACIA_PLANK = ITEMS.register("acacia_plank",
+    public static final DeferredItem<Item> ACACIA_BOARD = ITEMS.register("acacia_board",
             () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> DARK_OAK_PLANK = ITEMS.register("dark_oak_plank",
+    public static final DeferredItem<Item> DARK_OAK_BOARD = ITEMS.register("dark_oak_board",
             () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> MANGROVE_PLANK = ITEMS.register("mangrove_plank",
+    public static final DeferredItem<Item> MANGROVE_BOARD = ITEMS.register("mangrove_board",
             () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> CHERRY_PLANK = ITEMS.register("cherry_plank",
+    public static final DeferredItem<Item> CHERRY_BOARD = ITEMS.register("cherry_board",
             () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> PALM_PLANK = ITEMS.register("palm_plank",
+    public static final DeferredItem<Item> PALM_BOARD = ITEMS.register("palm_board",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> OAK_BARK = ITEMS.register("oak_bark",
@@ -84,7 +79,7 @@ public class ModItems {
     public static final DeferredItem<Item> CLUMP_OF_MUD = ITEMS.register("clump_of_mud",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> CLAY_BRICK = ITEMS.register("clay_brick",
-            () -> new Item(new Item.Properties()));
+            () -> new ItemNameBlockItem(ModBlocks.WET_CLAY_BRICK.get(), new Item.Properties()));
     public static final DeferredItem<Item> PILE_OF_GRAVEL = ITEMS.register("pile_of_gravel",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> PILE_OF_SAND = ITEMS.register("pile_of_sand",
@@ -98,6 +93,9 @@ public class ModItems {
     public static final DeferredItem<Item> CLUMP_OF_SOUL_SOIL = ITEMS.register("clump_of_soul_soil",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> PILE_OF_SOUL_SAND = ITEMS.register("pile_of_soul_sand",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> PILE_OF_ASH = ITEMS.register("pile_of_ash",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> ROCK = ITEMS.register("rock",
@@ -173,9 +171,16 @@ public class ModItems {
     public static final DeferredItem<Item> YELLOW_PETALS = ITEMS.register("yellow_petals",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> COAL_NUGGET = ITEMS.register("coal_nugget",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> RAW_TIN = ITEMS.register("raw_tin",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_TIN_NUGGET = ITEMS.register("raw_tin_nugget",
+            () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> TIN_INGOT = ITEMS.register("tin_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> TIN_NUGGET = ITEMS.register("tin_nugget",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> RAW_COPPER_NUGGET = ITEMS.register("raw_copper_nugget",
@@ -195,6 +200,10 @@ public class ModItems {
 
 
     public static final DeferredItem<Item> OBSIDIAN_SHARD = ITEMS.register("obsidian_shard",
+            () -> new Item(new Item.Properties()));
+
+    //TOOL COMPONENTS
+    public static final DeferredItem<Item> SHORT_HAFT = ITEMS.register("short_haft",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<SimpleItemWithTooltip> WIDE_SHAPED_FLINT = ITEMS.register("wide_shaped_flint",
@@ -228,12 +237,13 @@ public class ModItems {
     public static final DeferredItem<SimpleItemWithTooltip> THIN_SHAPED_IRON = ITEMS.register("thin_shaped_iron",
             () -> new SimpleItemWithTooltip(new Item.Properties(), "tooltip.sscaiderealism.thin_shaped_iron.tooltip"));
 
-
+//FOOD/CROPS
     public static final DeferredItem<Item> ORANGE = ITEMS.register("orange",
             () -> new Item(new Item.Properties().food(ModFoodProperties.ORANGE)));
 
     public static final DeferredItem<Item> BLUEBERRIES = ITEMS.register("blueberries",
             () -> new ItemNameBlockItem(ModBlocks.BLUEBERRY_BUSH.get(), new Item.Properties().food(ModFoodProperties.BLUEBERRIES)));
+
 
     public static final DeferredItem<Item> FLAX_SEEDS = ITEMS.register("flax_seeds",
             () -> new ItemNameBlockItem(ModBlocks.FLAX_CROP.get(), new Item.Properties()));
@@ -242,6 +252,24 @@ public class ModItems {
                     .stacksTo(1).component(SERVINGS.get(), new Integer(1)), "tooltip.sscaiderealism.multiBowl1.tooltip" , "tooltip.sscaiderealism.multiBowl2.tooltip"));
 
 
+    public static final DeferredItem<Item> BURNT_POTATO = ITEMS.register("burnt_potato",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BURNT_FOOD)));
+    public static final DeferredItem<Item> BURNT_BEEF = ITEMS.register("burnt_beef",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BURNT_FOOD)));
+    public static final DeferredItem<Item> BURNT_PORKCHOP = ITEMS.register("burnt_porkchop",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BURNT_FOOD)));
+    public static final DeferredItem<Item> BURNT_MUTTON = ITEMS.register("burnt_mutton",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BURNT_FOOD)));
+    public static final DeferredItem<Item> BURNT_CHICKEN = ITEMS.register("burnt_chicken",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BURNT_FOOD)));
+    public static final DeferredItem<Item> BURNT_RABBIT = ITEMS.register("burnt_rabbit",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BURNT_FOOD)));
+    public static final DeferredItem<Item> BURNT_COD = ITEMS.register("burnt_cod",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BURNT_FOOD)));
+    public static final DeferredItem<Item> BURNT_SALMON = ITEMS.register("burnt_salmon",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BURNT_FOOD)));
+
+//TOOLS
     public static final DeferredItem<SharpenedRockItem> SHARPENED_ROCK = ITEMS.register("sharpened_rock",
             () -> new SharpenedRockItem(ModToolTiers.SHARPENED_ROCK, new Item.Properties().stacksTo(1).setNoRepair()
                     .attributes(PickaxeItem.createAttributes(ModToolTiers.SHARPENED_ROCK, .5f, -2.8f))
@@ -258,6 +286,14 @@ public class ModItems {
     public static final DeferredItem<PickaxeItem> SHARPENED_STICK = ITEMS.register("sharpened_stick",
             () -> new PickaxeItem(ModToolTiers.SHARPENED_STICK, new Item.Properties().stacksTo(1).setNoRepair()
                     .attributes(PickaxeItem.createAttributes(ModToolTiers.SHARPENED_STICK, .5f, -2.8f))));
+    public static final DeferredItem<FirePloughItem> FIRE_PLOUGH = ITEMS.register("fire_plough",
+            () -> new FirePloughItem(new Item.Properties().stacksTo(1).setNoRepair().durability(32)
+                    .component(FIRE_CHANCE.get(), new Integer(0)).component(IN_USE.get(), new Boolean(false))
+                    .component(TICKER.get(), new Integer(10)), 45, 4));
+    public static final DeferredItem<FirePloughItem> BOW_DRILL = ITEMS.register("bow_drill",
+            () -> new FirePloughItem(new Item.Properties().stacksTo(1).setNoRepair().durability(28)
+                    .component(FIRE_CHANCE.get(), new Integer(0)).component(IN_USE.get(), new Boolean(false))
+                    .component(TICKER.get(), new Integer(10)), 36, 3));
 
 
     public static final DeferredItem<RandomToolItem> RANDOM_CRUDE_STONE_TOOL = ITEMS.register("random_crude_stone_tool",
@@ -407,8 +443,7 @@ public class ModItems {
                     .attributes(ChiselItem.createAttributes(Tiers.NETHERITE, 1, -2.1f, -1))
                     .craftRemainder(ModItems.ROCK.get())));
 
-
-
+    //ARMOR
     public static final DeferredItem<ArmorItem> COPPER_HELMET = ITEMS.register("copper_helmet",
             () -> new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12))));
@@ -425,7 +460,7 @@ public class ModItems {
                     () -> new AnimalArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, AnimalArmorItem.BodyType.EQUESTRIAN,
                             false, new Item.Properties().stacksTo(1)));
 
-
+//MISC
     public static final DeferredItem<Item> WASTELAND_FUNK_MUSIC_DISC = ITEMS.register("wasteland_funk_music_disc",
             () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.WASTELAND_FUNK_KEY).stacksTo(1)));
 

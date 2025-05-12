@@ -1,0 +1,19 @@
+{
+    "variants": {
+      "facing=north": {
+        "model": "sscaiderealism:block/stone_anvil"
+      },
+      "facing=south": {
+        "model": "sscaiderealism:block/stone_anvil",
+        "y": 180
+      },
+      "facing=east": {
+        "model": "sscaiderealism:block/stone_anvil",
+        "y": 90
+      },
+      "facing=west": {
+        "model": "sscaiderealism:block/stone_anvil",
+        "y": 270
+      }
+    }
+}

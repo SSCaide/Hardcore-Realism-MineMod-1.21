@@ -5,9 +5,9 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -89,6 +89,25 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(ModBlocks.END_STONE_SLAB.get()));
 
 
+        dropSelf(ModBlocks.CHIPPED_OAK_LOG.get());
+        dropSelf(ModBlocks.THIN_OAK_LOG.get());
+        dropSelf(ModBlocks.CHIPPED_SPRUCE_LOG.get());
+        dropSelf(ModBlocks.THIN_SPRUCE_LOG.get());
+        dropSelf(ModBlocks.CHIPPED_BIRCH_LOG.get());
+        dropSelf(ModBlocks.THIN_BIRCH_LOG.get());
+        dropSelf(ModBlocks.CHIPPED_JUNGLE_LOG.get());
+        dropSelf(ModBlocks.THIN_JUNGLE_LOG.get());
+        dropSelf(ModBlocks.CHIPPED_ACACIA_LOG.get());
+        dropSelf(ModBlocks.THIN_ACACIA_LOG.get());
+        dropSelf(ModBlocks.CHIPPED_DARK_OAK_LOG.get());
+        dropSelf(ModBlocks.THIN_DARK_OAK_LOG.get());
+        dropSelf(ModBlocks.CHIPPED_MANGROVE_LOG.get());
+        dropSelf(ModBlocks.THIN_MANGROVE_LOG.get());
+        dropSelf(ModBlocks.CHIPPED_CHERRY_LOG.get());
+        dropSelf(ModBlocks.THIN_CHERRY_LOG.get());
+        dropSelf(ModBlocks.CHIPPED_PALM_LOG.get());
+        dropSelf(ModBlocks.THIN_PALM_LOG.get());
+
         dropSelf(ModBlocks.PALM_LOG.get());
         dropSelf(ModBlocks.PALM_WOOD.get());
         dropSelf(ModBlocks.STRIPPED_PALM_LOG.get());
@@ -131,37 +150,84 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         add(ModBlocks.CRACKED_STONE.get(),
                 block -> createCobble(ModBlocks.CRACKED_STONE.get(), Blocks.COBBLESTONE.asItem()));
+        dropSelf(ModBlocks.MOD_COBBLESTONE.get());
+        dropSelf(ModBlocks.MOD_COBBLESTONE_STAIRS.get());
+        add(ModBlocks.MOD_COBBLESTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.MOD_COBBLESTONE_SLAB.get()));
         add(ModBlocks.CRACKED_DEEPSLATE.get(),
                 block -> createCobble(ModBlocks.CRACKED_DEEPSLATE.get(), Blocks.COBBLED_DEEPSLATE.asItem()));
+        dropSelf(ModBlocks.MOD_COBBLED_DEEPSLATE.get());
+        dropSelf(ModBlocks.MOD_COBBLED_DEEPSLATE_STAIRS.get());
+        add(ModBlocks.MOD_COBBLED_DEEPSLATE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.MOD_COBBLED_DEEPSLATE_SLAB.get()));
         dropSelf(ModBlocks.COBBLED_SANDSTONE.get());
+        dropSelf(ModBlocks.COBBLED_SANDSTONE_STAIRS.get());
+        add(ModBlocks.COBBLED_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_SANDSTONE_SLAB.get()));
         dropSelf(ModBlocks.COBBLED_RED_SANDSTONE.get());
+        dropSelf(ModBlocks.COBBLED_RED_SANDSTONE_STAIRS.get());
+        add(ModBlocks.COBBLED_RED_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_RED_SANDSTONE_SLAB.get()));
         dropSelf(ModBlocks.COBBLED_WHITE_SANDSTONE.get());
-        dropSelf(ModBlocks.COBBLED_GRANITE.get());
+        dropSelf(ModBlocks.COBBLED_WHITE_SANDSTONE_STAIRS.get());
+        add(ModBlocks.COBBLED_WHITE_SANDSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_WHITE_SANDSTONE_SLAB.get()));
         add(ModBlocks.CRACKED_GRANITE.get(),
                 block -> createCobble(ModBlocks.CRACKED_GRANITE.get(), ModBlocks.COBBLED_GRANITE.asItem()));
+        dropSelf(ModBlocks.COBBLED_GRANITE.get());
+        dropSelf(ModBlocks.COBBLED_GRANITE_STAIRS.get());
+        add(ModBlocks.COBBLED_GRANITE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_GRANITE_SLAB.get()));
         add(ModBlocks.CRACKED_DIORITE.get(),
                 block -> createCobble(ModBlocks.CRACKED_DIORITE.get(), ModBlocks.COBBLED_DIORITE.asItem()));
         dropSelf(ModBlocks.COBBLED_DIORITE.get());
+        dropSelf(ModBlocks.COBBLED_DIORITE_STAIRS.get());
+        add(ModBlocks.COBBLED_DIORITE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_DIORITE_SLAB.get()));
         add(ModBlocks.CRACKED_ANDESITE.get(),
                 block -> createCobble(ModBlocks.CRACKED_ANDESITE.get(), ModBlocks.COBBLED_ANDESITE.asItem()));
         dropSelf(ModBlocks.COBBLED_ANDESITE.get());
+        dropSelf(ModBlocks.COBBLED_ANDESITE_STAIRS.get());
+        add(ModBlocks.COBBLED_ANDESITE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_ANDESITE_SLAB.get()));
         add(ModBlocks.CRACKED_CALCITE.get(),
                 block -> createCobble(ModBlocks.CRACKED_CALCITE.get(), ModBlocks.COBBLED_CALCITE.asItem()));
         dropSelf(ModBlocks.COBBLED_CALCITE.get());
+        dropSelf(ModBlocks.COBBLED_CALCITE_STAIRS.get());
+        add(ModBlocks.COBBLED_CALCITE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_CALCITE_SLAB.get()));
         add(ModBlocks.CRACKED_TUFF.get(),
                 block -> createCobble(ModBlocks.CRACKED_TUFF.get(), ModBlocks.COBBLED_TUFF.asItem()));
         dropSelf(ModBlocks.COBBLED_TUFF.get());
+        dropSelf(ModBlocks.COBBLED_TUFF_STAIRS.get());
+        add(ModBlocks.COBBLED_TUFF_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_TUFF_SLAB.get()));
         add(ModBlocks.CRACKED_DRIPSTONE.get(),
                 block -> createCobble(ModBlocks.CRACKED_DRIPSTONE.get(), ModBlocks.COBBLED_DRIPSTONE.asItem()));
         dropSelf(ModBlocks.COBBLED_DRIPSTONE.get());
+        dropSelf(ModBlocks.COBBLED_DRIPSTONE_STAIRS.get());
+        add(ModBlocks.COBBLED_DRIPSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_DRIPSTONE_SLAB.get()));
         dropSelf(ModBlocks.COBBLED_NETHERRACK.get());
+        dropSelf(ModBlocks.COBBLED_NETHERRACK_STAIRS.get());
+        add(ModBlocks.COBBLED_NETHERRACK_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_NETHERRACK_SLAB.get()));
         dropSelf(ModBlocks.COBBLED_BLACKSTONE.get());
+        dropSelf(ModBlocks.COBBLED_BLACKSTONE_STAIRS.get());
+        add(ModBlocks.COBBLED_BLACKSTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_BLACKSTONE_SLAB.get()));
         add(ModBlocks.CRACKED_BASALT.get(),
                 block -> createCobble(ModBlocks.CRACKED_BASALT.get(), ModBlocks.COBBLED_BASALT.asItem()));
         dropSelf(ModBlocks.COBBLED_BASALT.get());
+        dropSelf(ModBlocks.COBBLED_BASALT_STAIRS.get());
+        add(ModBlocks.COBBLED_BASALT_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_BASALT_SLAB.get()));
         add(ModBlocks.CRACKED_END_STONE.get(),
                 block -> createCobble(ModBlocks.CRACKED_END_STONE.get(), ModBlocks.COBBLED_END_STONE.asItem()));
         dropSelf(ModBlocks.COBBLED_END_STONE.get());
+        dropSelf(ModBlocks.COBBLED_END_STONE_STAIRS.get());
+        add(ModBlocks.COBBLED_END_STONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_END_STONE_SLAB.get()));
 
 
         add(ModBlocks.TIN_ORE.get(),
@@ -173,6 +239,14 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.TIN_WALL.get());
 
         dropSelf(ModBlocks.TIN_BULB.get());
+
+
+        dropOther(ModBlocks.WET_CLAY_BRICK.get(), ModItems.CLAY_BRICK);
+        dropOther(ModBlocks.DRIED_BRICK.get(), Items.BRICK);
+
+        dropSelf(ModBlocks.BRICK_FURNACE.get());
+        dropSelf(ModBlocks.BLOOMERY.get());
+        dropSelf(ModBlocks.STONE_ANVIL.get());
 
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.FLAX_CROP.get())
@@ -199,7 +273,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 )));
 
 
-        dropSelf(ModBlocks.IRON_BREAKABLE_BLOCK.get());
+        dropSelf(ModBlocks.IRON_BREAKABLE_STONE.get());
+        dropSelf(ModBlocks.IRON_BREAKABLE_SOIL.get());
+        dropSelf(ModBlocks.IRON_BREAKABLE_WOOD.get());
     }
 
     protected LootTable.Builder createCobble(Block pBlock, Item item) {

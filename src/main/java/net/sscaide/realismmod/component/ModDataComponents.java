@@ -18,8 +18,14 @@ public class ModDataComponents {
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<BlockPos>> COORDINATES
             = register("coordinates",  builder -> builder.persistent(BlockPos.CODEC));
 
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> TICKER
+            = register("ticker", builder -> builder.persistent(ExtraCodecs.intRange(-100, 100)).networkSynchronized(ByteBufCodecs.VAR_INT));
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> SERVINGS
             = register("servings", builder -> builder.persistent(ExtraCodecs.intRange(0, 16)).networkSynchronized(ByteBufCodecs.VAR_INT));
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> FIRE_CHANCE
+            = register("fire_chance", builder -> builder.persistent(ExtraCodecs.intRange(0, 40)).networkSynchronized(ByteBufCodecs.VAR_INT));
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> IN_USE
+            = register("in_use", builder -> builder.networkSynchronized(ByteBufCodecs.BOOL));
 
 
     private static <T> DeferredHolder<DataComponentType<?>, DataComponentType<T>> register(String name,

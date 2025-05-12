@@ -1,16 +1,12 @@
 package net.sscaide.realismmod.datagen;
 
-import com.google.gson.JsonElement;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.models.blockstates.*;
-import net.minecraft.data.models.model.TexturedModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.SlabType;
+import net.minecraft.world.level.block.state.properties.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -19,15 +15,9 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.sscaide.realismmod.RealismMod;
 import net.sscaide.realismmod.block.ModBlocks;
-import net.sscaide.realismmod.block.custom.BlueberryBushBlock;
-import net.sscaide.realismmod.block.custom.FlaxCropBlock;
-import net.sscaide.realismmod.block.custom.ModColoredFallingSlabBlock;
-import net.sscaide.realismmod.block.custom.ToggleableBulb;
+import net.sscaide.realismmod.block.custom.*;
 
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
@@ -133,28 +123,90 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
 
         blockWithItem(ModBlocks.CRACKED_STONE);
+        blockWithItem(ModBlocks.MOD_COBBLESTONE, "mod_cobblestone", blockTexture(Blocks.COBBLESTONE));
+        fallingStairsBlock(ModBlocks.MOD_COBBLESTONE_STAIRS.get(), "mod_cobblestone_stairs", blockTexture(Blocks.COBBLESTONE));
+        blockItem(ModBlocks.MOD_COBBLESTONE_STAIRS);
+        fallingSlabBlock(ModBlocks.MOD_COBBLESTONE_SLAB.get(), blockTexture(Blocks.COBBLESTONE), blockTexture(Blocks.COBBLESTONE));
+        blockItem(ModBlocks.MOD_COBBLESTONE_SLAB);
         blockWithItem(ModBlocks.CRACKED_DEEPSLATE);
+        blockWithItem(ModBlocks.MOD_COBBLED_DEEPSLATE, "mod_cobbled_deepslate", blockTexture(Blocks.COBBLED_DEEPSLATE));
+        fallingStairsBlock(ModBlocks.MOD_COBBLED_DEEPSLATE_STAIRS.get(), "mod_cobbled_deepslate_stairs", blockTexture(Blocks.COBBLED_DEEPSLATE));
+        blockItem(ModBlocks.MOD_COBBLED_DEEPSLATE_STAIRS);
+        fallingSlabBlock(ModBlocks.MOD_COBBLED_DEEPSLATE_SLAB.get(), blockTexture(Blocks.COBBLED_DEEPSLATE), blockTexture(Blocks.COBBLED_DEEPSLATE));
+        blockItem(ModBlocks.MOD_COBBLED_DEEPSLATE_SLAB);
         blockWithItem(ModBlocks.COBBLED_SANDSTONE);
+        fallingStairsBlock(ModBlocks.COBBLED_SANDSTONE_STAIRS.get(), "cobbled_sandstone_stairs", blockTexture(ModBlocks.COBBLED_SANDSTONE.get()));
+        blockItem(ModBlocks.COBBLED_SANDSTONE_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_SANDSTONE_SLAB.get(), blockTexture(ModBlocks.COBBLED_SANDSTONE.get()), blockTexture(ModBlocks.COBBLED_SANDSTONE.get()));
+        blockItem(ModBlocks.COBBLED_SANDSTONE_SLAB);
         blockWithItem(ModBlocks.COBBLED_RED_SANDSTONE);
+        fallingStairsBlock(ModBlocks.COBBLED_RED_SANDSTONE_STAIRS.get(), "cobbled_red_sandstone_stairs", blockTexture(ModBlocks.COBBLED_RED_SANDSTONE.get()));
+        blockItem(ModBlocks.COBBLED_RED_SANDSTONE_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_RED_SANDSTONE_SLAB.get(), blockTexture(ModBlocks.COBBLED_RED_SANDSTONE.get()), blockTexture(ModBlocks.COBBLED_RED_SANDSTONE.get()));
+        blockItem(ModBlocks.COBBLED_RED_SANDSTONE_SLAB);
         blockWithItem(ModBlocks.COBBLED_WHITE_SANDSTONE);
+        fallingStairsBlock(ModBlocks.COBBLED_WHITE_SANDSTONE_STAIRS.get(), "cobbled_white_sandstone_stairs", blockTexture(ModBlocks.COBBLED_WHITE_SANDSTONE.get()));
+        blockItem(ModBlocks.COBBLED_WHITE_SANDSTONE_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_WHITE_SANDSTONE_SLAB.get(), blockTexture(ModBlocks.COBBLED_WHITE_SANDSTONE.get()), blockTexture(ModBlocks.COBBLED_WHITE_SANDSTONE.get()));
+        blockItem(ModBlocks.COBBLED_WHITE_SANDSTONE_SLAB);
         blockWithItem(ModBlocks.CRACKED_GRANITE);
         blockWithItem(ModBlocks.COBBLED_GRANITE);
+        fallingStairsBlock(ModBlocks.COBBLED_GRANITE_STAIRS.get(), "cobbled_granite_stairs", blockTexture(ModBlocks.COBBLED_GRANITE.get()));
+        blockItem(ModBlocks.COBBLED_GRANITE_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_GRANITE_SLAB.get(), blockTexture(ModBlocks.COBBLED_GRANITE.get()), blockTexture(ModBlocks.COBBLED_GRANITE.get()));
+        blockItem(ModBlocks.COBBLED_GRANITE_SLAB);
         blockWithItem(ModBlocks.CRACKED_DIORITE);
         blockWithItem(ModBlocks.COBBLED_DIORITE);
+        fallingStairsBlock(ModBlocks.COBBLED_DIORITE_STAIRS.get(), "cobbled_diorite_stairs", blockTexture(ModBlocks.COBBLED_DIORITE.get()));
+        blockItem(ModBlocks.COBBLED_DIORITE_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_DIORITE_SLAB.get(), blockTexture(ModBlocks.COBBLED_DIORITE.get()), blockTexture(ModBlocks.COBBLED_DIORITE.get()));
+        blockItem(ModBlocks.COBBLED_DIORITE_SLAB);
         blockWithItem(ModBlocks.CRACKED_ANDESITE);
         blockWithItem(ModBlocks.COBBLED_ANDESITE);
+        fallingStairsBlock(ModBlocks.COBBLED_ANDESITE_STAIRS.get(), "cobbled_andesite_stairs", blockTexture(ModBlocks.COBBLED_ANDESITE.get()));
+        blockItem(ModBlocks.COBBLED_ANDESITE_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_ANDESITE_SLAB.get(), blockTexture(ModBlocks.COBBLED_ANDESITE.get()), blockTexture(ModBlocks.COBBLED_ANDESITE.get()));
+        blockItem(ModBlocks.COBBLED_ANDESITE_SLAB);
         blockWithItem(ModBlocks.CRACKED_CALCITE);
         blockWithItem(ModBlocks.COBBLED_CALCITE);
+        fallingStairsBlock(ModBlocks.COBBLED_CALCITE_STAIRS.get(), "cobbled_calcite_stairs", blockTexture(ModBlocks.COBBLED_CALCITE.get()));
+        blockItem(ModBlocks.COBBLED_CALCITE_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_CALCITE_SLAB.get(), blockTexture(ModBlocks.COBBLED_CALCITE.get()), blockTexture(ModBlocks.COBBLED_CALCITE.get()));
+        blockItem(ModBlocks.COBBLED_CALCITE_SLAB);
         blockWithItem(ModBlocks.CRACKED_TUFF);
         blockWithItem(ModBlocks.COBBLED_TUFF);
+        fallingStairsBlock(ModBlocks.COBBLED_TUFF_STAIRS.get(), "cobbled_tuff_stairs", blockTexture(ModBlocks.COBBLED_TUFF.get()));
+        blockItem(ModBlocks.COBBLED_TUFF_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_TUFF_SLAB.get(), blockTexture(ModBlocks.COBBLED_TUFF.get()), blockTexture(ModBlocks.COBBLED_TUFF.get()));
+        blockItem(ModBlocks.COBBLED_TUFF_SLAB);
         blockWithItem(ModBlocks.CRACKED_DRIPSTONE);
         blockWithItem(ModBlocks.COBBLED_DRIPSTONE);
+        fallingStairsBlock(ModBlocks.COBBLED_DRIPSTONE_STAIRS.get(), "cobbled_dripstone_stairs", blockTexture(ModBlocks.COBBLED_DRIPSTONE.get()));
+        blockItem(ModBlocks.COBBLED_DRIPSTONE_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_DRIPSTONE_SLAB.get(), blockTexture(ModBlocks.COBBLED_DRIPSTONE.get()), blockTexture(ModBlocks.COBBLED_DRIPSTONE.get()));
+        blockItem(ModBlocks.COBBLED_DRIPSTONE_SLAB);
         blockWithItem(ModBlocks.COBBLED_NETHERRACK);
+        fallingStairsBlock(ModBlocks.COBBLED_NETHERRACK_STAIRS.get(), "cobbled_netherrack_stairs", blockTexture(ModBlocks.COBBLED_NETHERRACK.get()));
+        blockItem(ModBlocks.COBBLED_NETHERRACK_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_NETHERRACK_SLAB.get(), blockTexture(ModBlocks.COBBLED_NETHERRACK.get()), blockTexture(ModBlocks.COBBLED_NETHERRACK.get()));
+        blockItem(ModBlocks.COBBLED_NETHERRACK_SLAB);
         blockWithItem(ModBlocks.COBBLED_BLACKSTONE);
+        fallingStairsBlock(ModBlocks.COBBLED_BLACKSTONE_STAIRS.get(), "cobbled_blackstone_stairs", blockTexture(ModBlocks.COBBLED_BLACKSTONE.get()));
+        blockItem(ModBlocks.COBBLED_BLACKSTONE_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_BLACKSTONE_SLAB.get(), blockTexture(ModBlocks.COBBLED_BLACKSTONE.get()), blockTexture(ModBlocks.COBBLED_BLACKSTONE.get()));
+        blockItem(ModBlocks.COBBLED_BLACKSTONE_SLAB);
         blockWithItem(ModBlocks.CRACKED_BASALT);
         blockWithItem(ModBlocks.COBBLED_BASALT);
+        fallingStairsBlock(ModBlocks.COBBLED_BASALT_STAIRS.get(), "cobbled_basalt_stairs", blockTexture(ModBlocks.COBBLED_BASALT.get()));
+        blockItem(ModBlocks.COBBLED_BASALT_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_BASALT_SLAB.get(), blockTexture(ModBlocks.COBBLED_BASALT.get()), blockTexture(ModBlocks.COBBLED_BASALT.get()));
+        blockItem(ModBlocks.COBBLED_BASALT_SLAB);
         blockWithItem(ModBlocks.CRACKED_END_STONE);
         blockWithItem(ModBlocks.COBBLED_END_STONE);
+        fallingStairsBlock(ModBlocks.COBBLED_END_STONE_STAIRS.get(), "cobbled_end_stone_stairs", blockTexture(ModBlocks.COBBLED_END_STONE.get()));
+        blockItem(ModBlocks.COBBLED_END_STONE_STAIRS);
+        fallingSlabBlock(ModBlocks.COBBLED_END_STONE_SLAB.get(), blockTexture(ModBlocks.COBBLED_END_STONE.get()), blockTexture(ModBlocks.COBBLED_END_STONE.get()));
+        blockItem(ModBlocks.COBBLED_END_STONE_SLAB);
 
 
         blockWithItem(ModBlocks.TIN_ORE);
@@ -165,12 +217,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         customToggleableBulb(ModBlocks.TIN_BULB, "tin_bulb");
 
+
+
+
         makeCrop(((CropBlock) ModBlocks.FLAX_CROP.get()), "flax_crop_stage", "flax_crop_stage");
 
         makeBush(((SweetBerryBushBlock) ModBlocks.BLUEBERRY_BUSH.get()), "blueberry_bush_stage","blueberry_bush_stage");
 
 
-        blockWithItem(ModBlocks.IRON_BREAKABLE_BLOCK);
+        blockWithItem(ModBlocks.IRON_BREAKABLE_STONE);
+        blockWithItem(ModBlocks.IRON_BREAKABLE_SOIL);
+        blockWithItem(ModBlocks.IRON_BREAKABLE_WOOD);
 
     }
 
@@ -180,6 +237,29 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ModelFile doubleslab = models().getExistingFile(thedoubleslab);
 
         getVariantBuilder(block).partialState().with(ModColoredFallingSlabBlock.TYPE, SlabType.BOTTOM).addModels(new ConfiguredModel[]{new ConfiguredModel(bottom)}).partialState().with(ModColoredFallingSlabBlock.TYPE, SlabType.TOP).addModels(new ConfiguredModel[]{new ConfiguredModel(top)}).partialState().with(ModColoredFallingSlabBlock.TYPE, SlabType.DOUBLE).addModels(new ConfiguredModel[]{new ConfiguredModel(doubleslab)});
+    }
+
+    private void fallingStairsBlock(ModColoredFallingStairsBlock block, String baseName, ResourceLocation texture) {
+        ModelFile stairs = this.models().stairs(baseName, texture, texture, texture);
+        ModelFile stairsInner = this.models().stairsInner(baseName + "_inner", texture, texture, texture);
+        ModelFile stairsOuter = this.models().stairsOuter(baseName + "_outer", texture, texture, texture);
+        this.getVariantBuilder(block).forAllStatesExcept((state) -> {
+            Direction facing = (Direction)state.getValue(StairBlock.FACING);
+            Half half = (Half)state.getValue(StairBlock.HALF);
+            StairsShape shape = (StairsShape)state.getValue(StairBlock.SHAPE);
+            int yRot = (int)facing.getClockWise().toYRot();
+            if (shape == StairsShape.INNER_LEFT || shape == StairsShape.OUTER_LEFT) {
+                yRot += 270;
+            }
+
+            if (shape != StairsShape.STRAIGHT && half == Half.TOP) {
+                yRot += 90;
+            }
+
+            yRot %= 360;
+            boolean uvlock = yRot != 0 || half == Half.TOP;
+            return ConfiguredModel.builder().modelFile(shape == StairsShape.STRAIGHT ? stairs : (shape != StairsShape.INNER_LEFT && shape != StairsShape.INNER_RIGHT ? stairsOuter : stairsInner)).rotationX(half == Half.BOTTOM ? 0 : 180).rotationY(yRot).uvLock(uvlock).build();
+        }, new Property[]{StairBlock.WATERLOGGED});
     }
 
     private void saplingBlock(DeferredBlock<Block> blockRegistryObject) {

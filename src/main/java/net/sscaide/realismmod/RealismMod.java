@@ -3,18 +3,22 @@ package net.sscaide.realismmod;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.sscaide.realismmod.block.blockentities.ModBlockEntities;
 import net.sscaide.realismmod.block.ModBlocks;
+import net.sscaide.realismmod.screen.ModMenuTypes;
+import net.sscaide.realismmod.block.blockentities.renderer.BrickFurnaceEntityRenderer;
 import net.sscaide.realismmod.component.ModDataComponents;
-import net.sscaide.realismmod.data.recipes.ModRecipes;
+import net.sscaide.realismmod.recipe.ModRecipes;
 import net.sscaide.realismmod.effect.ModEffects;
 import net.sscaide.realismmod.entity.ModEntities;
-import net.sscaide.realismmod.entity.client.BoarRenderer;
 import net.sscaide.realismmod.entity.client.GeckoRenderer;
 import net.sscaide.realismmod.item.ModCreativeModeTabs;
 import net.sscaide.realismmod.item.ModItems;
+import net.sscaide.realismmod.screen.custom.ModAnvilScreen;
 import net.sscaide.realismmod.sound.ModSounds;
 import net.sscaide.realismmod.util.ModItemProperties;
 import net.sscaide.realismmod.worldgen.tree.ModFoliagePlacerTypes;
@@ -31,7 +35,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -57,11 +60,12 @@ public class RealismMod
 
         ModCreativeModeTabs.register(modEventBus);
 
-        ModRecipes.registerTypes(modEventBus);
-        ModRecipes.registerRecipes(modEventBus);
+        ModRecipes.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         ModEntities.register(modEventBus);
 
@@ -111,6 +115,18 @@ public class RealismMod
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_MANGROVE_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_CHERRY_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRUDE_PALM_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLOOMERY.get(), RenderType.translucent());
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.BRICK_FURNACE_ENTITY.get(), BrickFurnaceEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.MOD_ANVIL_MENU.get(), ModAnvilScreen::new);
         }
     }
+
 }

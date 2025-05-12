@@ -10,5 +10,7 @@ public class ModItemProperties {
     public static void addCustomItemProperties() {
         ItemProperties.register(ModItems.BOWL_OF_FLAX_SEEDS.get(), ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID
                         , "servings"), (stack, level, entity, seed) -> stack.get(ModDataComponents.SERVINGS));
+        ItemProperties.register(ModItems.FIRE_PLOUGH.get(), ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID
+                        , "fire_chance"), (stack, level, entity, chance) -> stack.get(ModDataComponents.FIRE_CHANCE));
     }
 }

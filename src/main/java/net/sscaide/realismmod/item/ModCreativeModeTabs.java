@@ -21,31 +21,31 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.sscaiderealism.sscr_items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.OAK_TIMBER);
-                        output.accept(ModItems.OAK_PLANK);
+                        output.accept(ModItems.OAK_BOARD);
                         output.accept(ModItems.OAK_BARK);
                         output.accept(ModItems.SPRUCE_TIMBER);
-                        output.accept(ModItems.SPRUCE_PLANK);
+                        output.accept(ModItems.SPRUCE_BOARD);
                         output.accept(ModItems.SPRUCE_BARK);
                         output.accept(ModItems.BIRCH_TIMBER);
-                        output.accept(ModItems.BIRCH_PLANK);
+                        output.accept(ModItems.BIRCH_BOARD);
                         output.accept(ModItems.BIRCH_BARK);
                         output.accept(ModItems.JUNGLE_TIMBER);
-                        output.accept(ModItems.JUNGLE_PLANK);
+                        output.accept(ModItems.JUNGLE_BOARD);
                         output.accept(ModItems.JUNGLE_BARK);
                         output.accept(ModItems.ACACIA_TIMBER);
-                        output.accept(ModItems.ACACIA_PLANK);
+                        output.accept(ModItems.ACACIA_BOARD);
                         output.accept(ModItems.ACACIA_BARK);
                         output.accept(ModItems.DARK_OAK_TIMBER);
-                        output.accept(ModItems.DARK_OAK_PLANK);
+                        output.accept(ModItems.DARK_OAK_BOARD);
                         output.accept(ModItems.DARK_OAK_BARK);
                         output.accept(ModItems.MANGROVE_TIMBER);
-                        output.accept(ModItems.MANGROVE_PLANK);
+                        output.accept(ModItems.MANGROVE_BOARD);
                         output.accept(ModItems.MANGROVE_BARK);
                         output.accept(ModItems.CHERRY_TIMBER);
-                        output.accept(ModItems.CHERRY_PLANK);
+                        output.accept(ModItems.CHERRY_BOARD);
                         output.accept(ModItems.CHERRY_BARK);
                         output.accept(ModItems.PALM_TIMBER);
-                        output.accept(ModItems.PALM_PLANK);
+                        output.accept(ModItems.PALM_BOARD);
                         output.accept(ModItems.PALM_BARK);
 
                         output.accept(ModItems.CLUMP_OF_DIRT);
@@ -58,6 +58,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CLUMP_OF_MOSS);
                         output.accept(ModItems.CLUMP_OF_SOUL_SOIL);
                         output.accept(ModItems.PILE_OF_SOUL_SAND);
+                        output.accept(ModItems.PILE_OF_ASH);
 
                         output.accept(ModItems.ROCK);
                         output.accept(ModItems.STONE_BRICK);
@@ -96,8 +97,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WHITE_PETALS);
                         output.accept(ModItems.YELLOW_PETALS);
 
+                        output.accept(ModItems.COAL_NUGGET);
+
                         output.accept(ModItems.RAW_TIN);
+                        output.accept(ModItems.RAW_TIN_NUGGET);
                         output.accept(ModItems.TIN_INGOT);
+                        output.accept(ModItems.TIN_NUGGET);
 
                         output.accept(ModItems.RAW_COPPER_NUGGET);
                         output.accept(ModItems.COPPER_DUST);
@@ -110,6 +115,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.OBSIDIAN_SHARD);
 
+
+                        output.accept(ModItems.SHORT_HAFT);
 
                         output.accept(ModItems.WIDE_SHAPED_FLINT);
                         output.accept(ModItems.FANNED_SHAPED_FLINT);
@@ -134,10 +141,29 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID, "sscr_items_tab"))
                     .title(Component.translatable("creativetab.sscaiderealism.sscr_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.CHIPPED_OAK_LOG);
+                        output.accept(ModBlocks.THIN_OAK_LOG);
+                        output.accept(ModBlocks.CHIPPED_SPRUCE_LOG);
+                        output.accept(ModBlocks.THIN_SPRUCE_LOG);
+                        output.accept(ModBlocks.CHIPPED_BIRCH_LOG);
+                        output.accept(ModBlocks.THIN_BIRCH_LOG);
+                        output.accept(ModBlocks.CHIPPED_JUNGLE_LOG);
+                        output.accept(ModBlocks.THIN_JUNGLE_LOG);
+                        output.accept(ModBlocks.CHIPPED_ACACIA_LOG);
+                        output.accept(ModBlocks.THIN_ACACIA_LOG);
+                        output.accept(ModBlocks.CHIPPED_DARK_OAK_LOG);
+                        output.accept(ModBlocks.THIN_DARK_OAK_LOG);
+                        output.accept(ModBlocks.CHIPPED_MANGROVE_LOG);
+                        output.accept(ModBlocks.THIN_MANGROVE_LOG);
+                        output.accept(ModBlocks.CHIPPED_CHERRY_LOG);
+                        output.accept(ModBlocks.THIN_CHERRY_LOG);
+
                         output.accept(ModBlocks.PALM_LOG);
                         output.accept(ModBlocks.PALM_WOOD);
                         output.accept(ModBlocks.STRIPPED_PALM_LOG);
                         output.accept(ModBlocks.STRIPPED_PALM_WOOD);
+                        output.accept(ModBlocks.CHIPPED_PALM_LOG);
+                        output.accept(ModBlocks.THIN_PALM_LOG);
                         output.accept(ModBlocks.PALM_LEAVES);
                         output.accept(ModBlocks.PALM_SAPLING);
                         output.accept(ModBlocks.PALM_PLANKS);
@@ -162,23 +188,23 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CRUDE_PALM_BLOCK);
 
 
-                        output.accept(ModBlocks.TIN_ORE);
-                        output.accept(ModBlocks.RAW_TIN_BLOCK);
-                        output.accept(ModBlocks.TIN_BLOCK);
-                        output.accept(ModBlocks.TIN_WALL);
-
-                        output.accept(ModBlocks.TIN_BULB);
-
-
                         output.accept(ModBlocks.DIRT_SLAB);
                         output.accept(ModBlocks.MUD_SLAB);
                         output.accept(ModBlocks.CLAY_SLAB);
+                        output.accept(ModBlocks.WET_CLAY_BRICK);
+                        output.accept(ModBlocks.DRIED_BRICK);
                         output.accept(ModBlocks.GRAVEL_SLAB);
+                        output.accept(ModBlocks.MOSS_SLAB);
+                        
                         output.accept(ModBlocks.SAND_SLAB);
                         output.accept(ModBlocks.COBBLED_SANDSTONE);
+                        output.accept(ModBlocks.COBBLED_SANDSTONE_STAIRS);
+                        output.accept(ModBlocks.COBBLED_SANDSTONE_SLAB);
 
                         output.accept(ModBlocks.RED_SAND_SLAB);
                         output.accept(ModBlocks.COBBLED_RED_SANDSTONE);
+                        output.accept(ModBlocks.COBBLED_RED_SANDSTONE_STAIRS);
+                        output.accept(ModBlocks.COBBLED_RED_SANDSTONE_SLAB);
 
                         output.accept(ModBlocks.WHITE_SAND);
                         output.accept(ModBlocks.WHITE_SAND_SLAB);
@@ -187,6 +213,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.WHITE_SANDSTONE_SLAB);
                         output.accept(ModBlocks.WHITE_SANDSTONE_WALL);
                         output.accept(ModBlocks.COBBLED_WHITE_SANDSTONE);
+                        output.accept(ModBlocks.COBBLED_WHITE_SANDSTONE_STAIRS);
+                        output.accept(ModBlocks.COBBLED_WHITE_SANDSTONE_SLAB);
                         output.accept(ModBlocks.CHISELED_WHITE_SANDSTONE);
                         output.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE);
                         output.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE_STAIRS);
@@ -194,35 +222,73 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CUT_WHITE_SANDSTONE);
                         output.accept(ModBlocks.CUT_WHITE_SANDSTONE_SLAB);
 
-                        output.accept(ModBlocks.MOSS_SLAB);
 
                         output.accept(ModBlocks.CRACKED_STONE);
+                        output.accept(ModBlocks.MOD_COBBLESTONE);
+                        output.accept(ModBlocks.MOD_COBBLESTONE_STAIRS);
+                        output.accept(ModBlocks.MOD_COBBLESTONE_SLAB);
                         output.accept(ModBlocks.DEEPSLATE_SLAB);
                         output.accept(ModBlocks.CRACKED_DEEPSLATE);
+                        output.accept(ModBlocks.MOD_COBBLED_DEEPSLATE);
+                        output.accept(ModBlocks.MOD_COBBLED_DEEPSLATE_STAIRS);
+                        output.accept(ModBlocks.MOD_COBBLED_DEEPSLATE_SLAB);
                         output.accept(ModBlocks.CRACKED_GRANITE);
                         output.accept(ModBlocks.COBBLED_GRANITE);
+                        output.accept(ModBlocks.COBBLED_GRANITE_STAIRS);
+                        output.accept(ModBlocks.COBBLED_GRANITE_SLAB);
                         output.accept(ModBlocks.CRACKED_DIORITE);
                         output.accept(ModBlocks.COBBLED_DIORITE);
+                        output.accept(ModBlocks.COBBLED_DIORITE_STAIRS);
+                        output.accept(ModBlocks.COBBLED_DIORITE_SLAB);
                         output.accept(ModBlocks.CRACKED_ANDESITE);
                         output.accept(ModBlocks.COBBLED_ANDESITE);
+                        output.accept(ModBlocks.COBBLED_ANDESITE_STAIRS);
+                        output.accept(ModBlocks.COBBLED_ANDESITE_SLAB);
                         output.accept(ModBlocks.CALCITE_SLAB);
                         output.accept(ModBlocks.CRACKED_CALCITE);
                         output.accept(ModBlocks.COBBLED_CALCITE);
+                        output.accept(ModBlocks.COBBLED_CALCITE_STAIRS);
+                        output.accept(ModBlocks.COBBLED_CALCITE_SLAB);
                         output.accept(ModBlocks.CRACKED_TUFF);
                         output.accept(ModBlocks.COBBLED_TUFF);
+                        output.accept(ModBlocks.COBBLED_TUFF_STAIRS);
+                        output.accept(ModBlocks.COBBLED_TUFF_SLAB);
                         output.accept(ModBlocks.DRIPSTONE_SLAB);
                         output.accept(ModBlocks.CRACKED_DRIPSTONE);
                         output.accept(ModBlocks.COBBLED_DRIPSTONE);
+                        output.accept(ModBlocks.COBBLED_DRIPSTONE_STAIRS);
+                        output.accept(ModBlocks.COBBLED_DRIPSTONE_SLAB);
                         output.accept(ModBlocks.NETHERRACK_SLAB);
                         output.accept(ModBlocks.COBBLED_NETHERRACK);
+                        output.accept(ModBlocks.COBBLED_NETHERRACK_STAIRS);
+                        output.accept(ModBlocks.COBBLED_NETHERRACK_SLAB);
                         output.accept(ModBlocks.COBBLED_BLACKSTONE);
+                        output.accept(ModBlocks.COBBLED_BLACKSTONE_STAIRS);
+                        output.accept(ModBlocks.COBBLED_BLACKSTONE_SLAB);
                         output.accept(ModBlocks.BASALT_SLAB);
                         output.accept(ModBlocks.CRACKED_BASALT);
                         output.accept(ModBlocks.COBBLED_BASALT);
+                        output.accept(ModBlocks.COBBLED_BASALT_STAIRS);
+                        output.accept(ModBlocks.COBBLED_BASALT_SLAB);
                         output.accept(ModBlocks.SMOOTH_BASALT_SLAB);
                         output.accept(ModBlocks.END_STONE_SLAB);
                         output.accept(ModBlocks.CRACKED_END_STONE);
                         output.accept(ModBlocks.COBBLED_END_STONE);
+                        output.accept(ModBlocks.COBBLED_END_STONE_STAIRS);
+                        output.accept(ModBlocks.COBBLED_END_STONE_SLAB);
+
+
+                        output.accept(ModBlocks.TIN_ORE);
+                        output.accept(ModBlocks.RAW_TIN_BLOCK);
+                        output.accept(ModBlocks.TIN_BLOCK);
+                        output.accept(ModBlocks.TIN_WALL);
+
+                        output.accept(ModBlocks.TIN_BULB);
+
+
+                        output.accept(ModBlocks.BRICK_FURNACE);
+                        output.accept(ModBlocks.BLOOMERY);
+                        output.accept(ModBlocks.STONE_ANVIL);
 
                     }).build());
 
@@ -237,6 +303,16 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.FLAX_SEEDS);
                         output.accept(ModItems.BOWL_OF_FLAX_SEEDS);
+
+
+                        output.accept(ModItems.BURNT_POTATO);
+                        output.accept(ModItems.BURNT_BEEF);
+                        output.accept(ModItems.BURNT_PORKCHOP);
+                        output.accept(ModItems.BURNT_MUTTON);
+                        output.accept(ModItems.BURNT_CHICKEN);
+                        output.accept(ModItems.BURNT_RABBIT);
+                        output.accept(ModItems.BURNT_COD);
+                        output.accept(ModItems.BURNT_SALMON);
                     }).build());
 
     public static final Supplier<CreativeModeTab> SSCR_TOOLS_TAB = CREATIVE_MODE_TAB.register("sscr_tools_tab",
@@ -244,6 +320,9 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(RealismMod.MOD_ID, "sscr_food_tab"))
                     .title(Component.translatable("creativetab.sscaiderealism.sscr_tools"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.FIRE_PLOUGH);
+                        output.accept(ModItems.BOW_DRILL);
+
                         output.accept(ModItems.SHARPENED_STICK);
                         output.accept(ModItems.SHARPENED_ROCK);
                         output.accept(ModItems.SHARPENED_COPPER_CHUNK);

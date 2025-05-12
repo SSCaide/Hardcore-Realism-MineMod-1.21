@@ -1,0 +1,19 @@
+{
+    "variants": {
+      "facing=north": {
+        "model": "sscaiderealism:block/dried_brick"
+      },
+      "facing=south": {
+        "model": "sscaiderealism:block/dried_brick",
+        "y": 180
+      },
+      "facing=east": {
+        "model": "sscaiderealism:block/dried_brick",
+        "y": 90
+      },
+      "facing=west": {
+        "model": "sscaiderealism:block/dried_brick",
+        "y": 270
+      }
+    }
+}

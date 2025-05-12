@@ -6,6 +6,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.sscaide.realismmod.RealismMod;
 import net.sscaide.realismmod.block.ModBlocks;
@@ -63,19 +64,31 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.MANGROVE_TIMBER.get())
                 .add(ModItems.CHERRY_TIMBER.get())
                 .add(ModItems.PALM_TIMBER.get());
+        tag(ModTags.Items.BARK)
+                .add(ModItems.OAK_BARK.get())
+                .add(ModItems.SPRUCE_BARK.get())
+                .add(ModItems.BIRCH_BARK.get())
+                .add(ModItems.JUNGLE_BARK.get())
+                .add(ModItems.ACACIA_BARK.get())
+                .add(ModItems.DARK_OAK_BARK.get())
+                .add(ModItems.MANGROVE_BARK.get())
+                .add(ModItems.CHERRY_BARK.get())
+                .add(ModItems.PALM_BARK.get());
         tag(ModTags.Items.PLANK_MATERIALS)
-                .add(ModItems.OAK_PLANK.get())
-                .add(ModItems.SPRUCE_PLANK.get())
-                .add(ModItems.BIRCH_PLANK.get())
-                .add(ModItems.JUNGLE_PLANK.get())
-                .add(ModItems.ACACIA_PLANK.get())
-                .add(ModItems.DARK_OAK_PLANK.get())
-                .add(ModItems.MANGROVE_PLANK.get())
-                .add(ModItems.CHERRY_PLANK.get())
-                .add(ModItems.PALM_PLANK.get());
+                .add(ModItems.OAK_BOARD.get())
+                .add(ModItems.SPRUCE_BOARD.get())
+                .add(ModItems.BIRCH_BOARD.get())
+                .add(ModItems.JUNGLE_BOARD.get())
+                .add(ModItems.ACACIA_BOARD.get())
+                .add(ModItems.DARK_OAK_BOARD.get())
+                .add(ModItems.MANGROVE_BOARD.get())
+                .add(ModItems.CHERRY_BOARD.get())
+                .add(ModItems.PALM_BOARD.get());
 
         tag(ModTags.Items.ROPES_FOR_CRAFTING_INCLUDE_VINE)
-                .add(ModItems.VINE.get());
+                .add(ModItems.VINE.get())
+                .add(Items.TWISTING_VINES)
+                .add(Items.WEEPING_VINES);
 
         tag(ModTags.Items.GRAVEL_MATERIALS)
                 .add(ModItems.PILE_OF_GRAVEL.get())
@@ -95,9 +108,73 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.COPPER_DUST.get())
                 .add(ModItems.RAW_COPPER_NUGGET.get());
 
+        tag(ModTags.Items.BRICK_FURNACE_RECIPES)
+                .addTag(ModTags.Items.COPPER_INGOT_SMELTABLES)
+                .addTag(ModTags.Items.COPPER_NUGGET_SMELTABLES)
+                .add(ModItems.RAW_TIN.get())
+                .add(ModItems.RAW_TIN_NUGGET.get())
+                .add(Items.RAW_GOLD)
+                .add(ModItems.RAW_GOLD_NUGGET.get())
+                .add(ModItems.CLAY_BRICK.get())
+                .add(Items.BEEF)
+                .add(Items.PORKCHOP)
+                .add(Items.CHICKEN)
+                .add(Items.RABBIT)
+                .add(Items.MUTTON)
+                .add(Items.POTATO)
+                .add(Items.KELP)
+                .add(Items.COD)
+                .add(Items.SALMON);
+        tag(ModTags.Items.BRICK_FURNACE_BURNABLES)
+                .add(Items.BAKED_POTATO)
+                .add(Items.COOKED_BEEF)
+                .add(Items.COOKED_PORKCHOP)
+                .add(Items.COOKED_MUTTON)
+                .add(Items.COOKED_CHICKEN)
+                .add(Items.COOKED_RABBIT)
+                .add(Items.COOKED_COD)
+                .add(Items.COOKED_SALMON)
+                .add(Items.DRIED_KELP);
+
+        tag(ModTags.Items.BLOOMERY_RECIPES)
+                .addTag(ModTags.Items.COPPER_INGOT_SMELTABLES)
+                .addTag(ModTags.Items.COPPER_NUGGET_SMELTABLES)
+                .addTag(ModTags.Items.IRON_INGOT_SMELTABLES)
+                .addTag(ModTags.Items.IRON_NUGGET_SMELTABLES)
+                .add(ModItems.RAW_TIN.get())
+                .add(ModItems.RAW_TIN_NUGGET.get())
+                .add(Items.RAW_GOLD)
+                .add(ModItems.RAW_GOLD_NUGGET.get());
+        tag(ModTags.Items.COAL_FOR_BLOOMERY)
+                .addTag(ItemTags.COALS)
+                .add(Items.COAL_BLOCK)
+                .add(ModItems.COAL_NUGGET.get());
+
+        tag(ModTags.Items.ANVIL_RECIPES)
+                .addTag(ModTags.Items.ROCKS)
+                .add(Items.FLINT)
+                .add(ModItems.WIDE_SHAPED_FLINT.get())
+                .add(ModItems.FANNED_SHAPED_FLINT.get())
+                .add(ModItems.LONG_SHAPED_FLINT.get())
+                .add(ModItems.THIN_SHAPED_FLINT.get())
+                .add(Items.RAW_COPPER)
+                .add(ModItems.WIDE_SHAPED_COPPER.get())
+                .add(ModItems.FANNED_SHAPED_COPPER.get())
+                .add(ModItems.LONG_SHAPED_COPPER.get())
+                .add(ModItems.JAGGED_SHAPED_COPPER.get())
+                .add(ModItems.THIN_SHAPED_COPPER.get())
+                .add(Items.RAW_IRON)
+                .add(ModItems.WIDE_SHAPED_IRON.get())
+                .add(ModItems.FANNED_SHAPED_IRON.get())
+                .add(ModItems.LONG_SHAPED_IRON.get())
+                .add(ModItems.JAGGED_SHAPED_IRON.get())
+                .add(ModItems.THIN_SHAPED_IRON.get())
+                ;
+
         tag(ModTags.Items.IRON_INGOT_SMELTABLES)
                 .add(ModItems.WIDE_SHAPED_IRON.get())
-                .add(ModItems.FANNED_SHAPED_IRON.get());
+                .add(ModItems.FANNED_SHAPED_IRON.get())
+                .add(Items.RAW_IRON);
         tag(ModTags.Items.IRON_NUGGET_SMELTABLES)
                 .add(ModItems.LONG_SHAPED_IRON.get())
                 .add(ModItems.JAGGED_SHAPED_IRON.get())
@@ -129,13 +206,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.ANDESITE_ROCK.get())
                 .add(ModItems.CALCITE_ROCK.get())
                 .add(ModItems.TUFF_ROCK.get());
-
-        tag(ModTags.Items.STONE_BRICK_MATERIALS)
+        tag(ModTags.Items.CARVED_STONE_BRICKS)
                 .add(ModItems.STONE_BRICK.get())
                 .add(ModItems.DEEPSLATE_BRICK.get())
                 .add(ModItems.TUFF_BRICK.get())
                 .add(ModItems.BLACKSTONE_BRICK.get())
                 .add(ModItems.END_BRICK.get());
+
+        tag(ModTags.Items.STRINGS)
+                .add(Items.STRING);
 
 
         tag(ItemTags.SWORDS)
@@ -180,6 +259,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.CRUDE_COPPER_TILL.get())
                 .add(ModItems.COPPER_HOE.get())
                 .add(ModItems.CRUDE_IRON_TILL.get());
+        tag(ModTags.Items.FIRESTARTERS)
+                .add(Items.FLINT_AND_STEEL)
+                .add(Items.FIRE_CHARGE)
+                .add(ModItems.FIRE_PLOUGH.get())
+                .add(ModItems.BOW_DRILL.get());
 
         tag(ModTags.Items.CRUSHING_CRAFTING)
                 .add(ModItems.SHARPENED_ROCK.get())
@@ -187,6 +271,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.SHARPENED_IRON_CHUNK.get());
         tag(ModTags.Items.CRUSHING_CRAFTING_COPPER_PLUS)
                 .add(ModItems.SHARPENED_COPPER_CHUNK.get())
+                .add(ModItems.SHARPENED_IRON_CHUNK.get());
+        tag(ModTags.Items.CRUSHING_CRAFTING_IRON_PLUS)
                 .add(ModItems.SHARPENED_IRON_CHUNK.get());
         tag(ModTags.Items.CRUDE_SHARPENING_CRAFTING)
                 .add(ModItems.SHARPENED_ROCK.get())
@@ -226,19 +312,110 @@ public class ModItemTagProvider extends ItemTagsProvider {
                         .add(ModItems.TIN_INGOT.get());
 
 
+
         tag(ItemTags.PLANKS)
                 .add(ModBlocks.PALM_PLANKS.asItem());
+        tag(ItemTags.WOODEN_STAIRS)
+                .add(ModBlocks.PALM_STAIRS.asItem());
+        tag(ItemTags.WOODEN_SLABS)
+                .add(ModBlocks.PALM_SLAB.asItem());
+        tag(ItemTags.WOODEN_BUTTONS)
+                .add(ModBlocks.PALM_BUTTON.asItem());
+        tag(ItemTags.WOODEN_DOORS)
+                .add(ModBlocks.PALM_DOOR.asItem());
+        tag(ItemTags.WOODEN_FENCES)
+                .add(ModBlocks.PALM_FENCE.asItem())
+                .add(ModBlocks.PALM_FENCE_GATE.asItem())
+        ;
+        tag(ItemTags.WOODEN_PRESSURE_PLATES)
+                .add(ModBlocks.PALM_PRESSURE_PLATE.asItem());
+        tag(ItemTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.PALM_TRAPDOOR.asItem());
+
         tag(ItemTags.LOGS_THAT_BURN)
                 .add(ModBlocks.PALM_LOG.asItem())
                 .add(ModBlocks.PALM_WOOD.asItem())
                 .add(ModBlocks.STRIPPED_PALM_LOG.asItem())
-                .add(ModBlocks.STRIPPED_PALM_WOOD.asItem());
-
+                .add(ModBlocks.STRIPPED_PALM_WOOD.asItem())
+                .addTag(ModTags.Items.CHIPPED_LOGS)
+                .addTag(ModTags.Items.THIN_LOGS);
         tag(ModTags.Items.PALM_LOGS)
                 .add(ModBlocks.PALM_LOG.asItem())
                 .add(ModBlocks.PALM_WOOD.asItem())
                 .add(ModBlocks.STRIPPED_PALM_LOG.asItem())
                 .add(ModBlocks.STRIPPED_PALM_WOOD.asItem());
+        tag(ModTags.Items.CHIPPED_LOGS)
+                .add(ModBlocks.CHIPPED_OAK_LOG.asItem())
+                .add(ModBlocks.CHIPPED_SPRUCE_LOG.asItem())
+                .add(ModBlocks.CHIPPED_BIRCH_LOG.asItem())
+                .add(ModBlocks.CHIPPED_JUNGLE_LOG.asItem())
+                .add(ModBlocks.CHIPPED_ACACIA_LOG.asItem())
+                .add(ModBlocks.CHIPPED_DARK_OAK_LOG.asItem())
+                .add(ModBlocks.CHIPPED_MANGROVE_LOG.asItem())
+                .add(ModBlocks.CHIPPED_CHERRY_LOG.asItem())
+                .add(ModBlocks.CHIPPED_PALM_LOG.asItem());
+        tag(ModTags.Items.THIN_LOGS)
+                .add(ModBlocks.THIN_OAK_LOG.asItem())
+                .add(ModBlocks.THIN_SPRUCE_LOG.asItem())
+                .add(ModBlocks.THIN_BIRCH_LOG.asItem())
+                .add(ModBlocks.THIN_JUNGLE_LOG.asItem())
+                .add(ModBlocks.THIN_ACACIA_LOG.asItem())
+                .add(ModBlocks.THIN_DARK_OAK_LOG.asItem())
+                .add(ModBlocks.THIN_MANGROVE_LOG.asItem())
+                .add(ModBlocks.THIN_CHERRY_LOG.asItem())
+                .add(ModBlocks.THIN_PALM_LOG.asItem());
 
+
+        tag(ModTags.Items.CRUDE_WOOD_BLOCKS)
+                .add(ModBlocks.CRUDE_OAK_BLOCK.asItem())
+                .add(ModBlocks.CRUDE_SPRUCE_BLOCK.asItem())
+                .add(ModBlocks.CRUDE_BIRCH_BLOCK.asItem())
+                .add(ModBlocks.CRUDE_JUNGLE_BLOCK.asItem())
+                .add(ModBlocks.CRUDE_ACACIA_BLOCK.asItem())
+                .add(ModBlocks.CRUDE_DARK_OAK_BLOCK.asItem())
+                .add(ModBlocks.CRUDE_MANGROVE_BLOCK.asItem())
+                .add(ModBlocks.CRUDE_CHERRY_BLOCK.asItem())
+                .add(ModBlocks.CRUDE_PALM_BLOCK.asItem());
+
+
+        tag(ModTags.Items.COBBLESTONE_REPLACE).add(Blocks.COBBLESTONE.asItem()).add(ModBlocks.MOD_COBBLESTONE.asItem());
+        tag(ModTags.Items.COBBLESTONE_REPLACE_STAIRS).add(Blocks.COBBLESTONE_STAIRS.asItem()).add(ModBlocks.MOD_COBBLESTONE_STAIRS.asItem());
+        tag(ModTags.Items.COBBLESTONE_REPLACE_SLAB).add(Blocks.COBBLESTONE_SLAB.asItem()).add(ModBlocks.MOD_COBBLESTONE_SLAB.asItem());
+        tag(ModTags.Items.DEEPSLATE_REPLACE).add(Blocks.COBBLED_DEEPSLATE.asItem()).add(ModBlocks.MOD_COBBLED_DEEPSLATE.asItem());
+        tag(ModTags.Items.DEEPSLATE_REPLACE_STAIRS).add(Blocks.COBBLED_DEEPSLATE_STAIRS.asItem()).add(ModBlocks.MOD_COBBLED_DEEPSLATE_STAIRS.asItem());
+        tag(ModTags.Items.DEEPSLATE_REPLACE_SLAB).add(Blocks.COBBLED_DEEPSLATE_SLAB.asItem()).add(ModBlocks.MOD_COBBLED_DEEPSLATE_SLAB.asItem());
+
+        tag(ModTags.Items.CRACKED_STONE)
+                .add(ModBlocks.CRACKED_STONE.asItem())
+                .add(ModBlocks.CRACKED_DEEPSLATE.asItem())
+                .add(ModBlocks.CRACKED_GRANITE.asItem())
+                .add(ModBlocks.CRACKED_DIORITE.asItem())
+                .add(ModBlocks.CRACKED_ANDESITE.asItem())
+                .add(ModBlocks.CRACKED_CALCITE.asItem())
+                .add(ModBlocks.CRACKED_TUFF.asItem())
+                .add(ModBlocks.CRACKED_DRIPSTONE.asItem())
+                .add(ModBlocks.CRACKED_BASALT.asItem())
+                .add(ModBlocks.CRACKED_END_STONE.asItem())
+        ;
+        tag(ModTags.Items.COBBLESTONE)
+                .add(Blocks.COBBLESTONE.asItem())
+                .add(Blocks.INFESTED_COBBLESTONE.asItem())
+                .add(Blocks.COBBLED_DEEPSLATE.asItem())
+                .add(ModBlocks.MOD_COBBLESTONE.asItem())
+                .add(ModBlocks.MOD_COBBLED_DEEPSLATE.asItem())
+                .add(ModBlocks.COBBLED_SANDSTONE.asItem())
+                .add(ModBlocks.COBBLED_RED_SANDSTONE.asItem())
+                .add(ModBlocks.COBBLED_WHITE_SANDSTONE.asItem())
+                .add(ModBlocks.COBBLED_GRANITE.asItem())
+                .add(ModBlocks.COBBLED_DIORITE.asItem())
+                .add(ModBlocks.COBBLED_ANDESITE.asItem())
+                .add(ModBlocks.COBBLED_CALCITE.asItem())
+                .add(ModBlocks.COBBLED_TUFF.asItem())
+                .add(ModBlocks.COBBLED_DRIPSTONE.asItem())
+                .add(ModBlocks.COBBLED_NETHERRACK.asItem())
+                .add(ModBlocks.COBBLED_BLACKSTONE.asItem())
+                .add(ModBlocks.COBBLED_BASALT.asItem())
+                .add(ModBlocks.COBBLED_END_STONE.asItem())
+        ;
     }
 }

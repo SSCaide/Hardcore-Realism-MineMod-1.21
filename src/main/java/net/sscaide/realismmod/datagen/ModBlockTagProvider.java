@@ -3,9 +3,7 @@ package net.sscaide.realismmod.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -24,7 +22,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.IRON_BREAKABLE_BLOCK.get())
+                .add(ModBlocks.IRON_BREAKABLE_STONE.get())
 
                 .add(ModBlocks.DEEPSLATE_SLAB.get())
                 .add(ModBlocks.CALCITE_SLAB.get())
@@ -46,28 +44,60 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CUT_WHITE_SANDSTONE_SLAB.get())
 
                 .add(ModBlocks.CRACKED_STONE.get())
+                .add(ModBlocks.MOD_COBBLESTONE.get())
+                .add(ModBlocks.MOD_COBBLESTONE_STAIRS.get())
+                .add(ModBlocks.MOD_COBBLESTONE_SLAB.get())
                 .add(ModBlocks.CRACKED_DEEPSLATE.get())
+                .add(ModBlocks.MOD_COBBLED_DEEPSLATE.get())
+                .add(ModBlocks.MOD_COBBLED_DEEPSLATE_STAIRS.get())
+                .add(ModBlocks.MOD_COBBLED_DEEPSLATE_SLAB.get())
                 .add(ModBlocks.COBBLED_SANDSTONE.get())
+                .add(ModBlocks.COBBLED_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.COBBLED_SANDSTONE_SLAB.get())
                 .add(ModBlocks.COBBLED_RED_SANDSTONE.get())
+                .add(ModBlocks.COBBLED_RED_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.COBBLED_RED_SANDSTONE_SLAB.get())
                 .add(ModBlocks.COBBLED_WHITE_SANDSTONE.get())
+                .add(ModBlocks.COBBLED_WHITE_SANDSTONE_STAIRS.get())
+                .add(ModBlocks.COBBLED_WHITE_SANDSTONE_SLAB.get())
                 .add(ModBlocks.CRACKED_GRANITE.get())
                 .add(ModBlocks.COBBLED_GRANITE.get())
+                .add(ModBlocks.COBBLED_GRANITE_STAIRS.get())
+                .add(ModBlocks.COBBLED_GRANITE_SLAB.get())
                 .add(ModBlocks.CRACKED_DIORITE.get())
                 .add(ModBlocks.COBBLED_DIORITE.get())
+                .add(ModBlocks.COBBLED_DIORITE_STAIRS.get())
+                .add(ModBlocks.COBBLED_DIORITE_SLAB.get())
                 .add(ModBlocks.CRACKED_ANDESITE.get())
                 .add(ModBlocks.COBBLED_ANDESITE.get())
+                .add(ModBlocks.COBBLED_ANDESITE_STAIRS.get())
+                .add(ModBlocks.COBBLED_ANDESITE_SLAB.get())
                 .add(ModBlocks.CRACKED_CALCITE.get())
                 .add(ModBlocks.COBBLED_CALCITE.get())
+                .add(ModBlocks.COBBLED_CALCITE_STAIRS.get())
+                .add(ModBlocks.COBBLED_CALCITE_SLAB.get())
                 .add(ModBlocks.CRACKED_TUFF.get())
                 .add(ModBlocks.COBBLED_TUFF.get())
+                .add(ModBlocks.COBBLED_TUFF_STAIRS.get())
+                .add(ModBlocks.COBBLED_TUFF_SLAB.get())
                 .add(ModBlocks.CRACKED_DRIPSTONE.get())
                 .add(ModBlocks.COBBLED_DRIPSTONE.get())
+                .add(ModBlocks.COBBLED_DRIPSTONE_STAIRS.get())
+                .add(ModBlocks.COBBLED_DRIPSTONE_SLAB.get())
                 .add(ModBlocks.COBBLED_NETHERRACK.get())
+                .add(ModBlocks.COBBLED_NETHERRACK_STAIRS.get())
+                .add(ModBlocks.COBBLED_NETHERRACK_SLAB.get())
                 .add(ModBlocks.COBBLED_BLACKSTONE.get())
+                .add(ModBlocks.COBBLED_BLACKSTONE_STAIRS.get())
+                .add(ModBlocks.COBBLED_BLACKSTONE_SLAB.get())
                 .add(ModBlocks.CRACKED_BASALT.get())
                 .add(ModBlocks.COBBLED_BASALT.get())
+                .add(ModBlocks.COBBLED_BASALT_STAIRS.get())
+                .add(ModBlocks.COBBLED_BASALT_SLAB.get())
                 .add(ModBlocks.CRACKED_END_STONE.get())
                 .add(ModBlocks.COBBLED_END_STONE.get())
+                .add(ModBlocks.COBBLED_END_STONE_STAIRS.get())
+                .add(ModBlocks.COBBLED_END_STONE_SLAB.get())
 
                 .add(ModBlocks.TIN_ORE.get())
                 .add(ModBlocks.DEEPSLATE_TIN_ORE.get())
@@ -75,8 +105,31 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.TIN_BLOCK.get())
                 .add(ModBlocks.TIN_WALL.get())
 
-                .add(ModBlocks.TIN_BULB.get());
+                .add(ModBlocks.TIN_BULB.get())
+                .add(ModBlocks.BRICK_FURNACE.get())
+                .add(ModBlocks.BLOOMERY.get());
         tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.IRON_BREAKABLE_WOOD.get())
+
+                .add(ModBlocks.CHIPPED_OAK_LOG.get())
+                .add(ModBlocks.THIN_OAK_LOG.get())
+                .add(ModBlocks.CHIPPED_SPRUCE_LOG.get())
+                .add(ModBlocks.THIN_SPRUCE_LOG.get())
+                .add(ModBlocks.CHIPPED_BIRCH_LOG.get())
+                .add(ModBlocks.THIN_BIRCH_LOG.get())
+                .add(ModBlocks.CHIPPED_JUNGLE_LOG.get())
+                .add(ModBlocks.THIN_JUNGLE_LOG.get())
+                .add(ModBlocks.CHIPPED_ACACIA_LOG.get())
+                .add(ModBlocks.THIN_ACACIA_LOG.get())
+                .add(ModBlocks.CHIPPED_DARK_OAK_LOG.get())
+                .add(ModBlocks.THIN_DARK_OAK_LOG.get())
+                .add(ModBlocks.CHIPPED_CHERRY_LOG.get())
+                .add(ModBlocks.THIN_CHERRY_LOG.get())
+                .add(ModBlocks.CHIPPED_MANGROVE_LOG.get())
+                .add(ModBlocks.THIN_MANGROVE_LOG.get())
+                .add(ModBlocks.CHIPPED_PALM_LOG.get())
+                .add(ModBlocks.THIN_PALM_LOG.get())
+
                 .add(ModBlocks.PALM_LOG.get())
                 .add(ModBlocks.PALM_WOOD.get())
                 .add(ModBlocks.STRIPPED_PALM_LOG.get())
@@ -103,6 +156,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRUDE_CHERRY_BLOCK.get())
                 .add(ModBlocks.CRUDE_PALM_BLOCK.get());
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(ModBlocks.IRON_BREAKABLE_SOIL.get())
+
                 .add(ModBlocks.DIRT_SLAB.get())
                 .add(ModBlocks.MUD_SLAB.get())
                 .add(ModBlocks.CLAY_SLAB.get())
@@ -167,7 +222,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .addTag(Tags.Blocks.ORES_DIAMOND);
 
         tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.IRON_BREAKABLE_BLOCK.get());
+                .add(ModBlocks.IRON_BREAKABLE_STONE.get())
+                .add(ModBlocks.IRON_BREAKABLE_SOIL.get())
+                .add(ModBlocks.IRON_BREAKABLE_WOOD.get())
+        ;
 
 
         tag(ModTags.Blocks.CRACKED_STONE)
@@ -182,8 +240,48 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRACKED_BASALT.get())
                 .add(ModBlocks.CRACKED_END_STONE.get())
         ;
+        tag(ModTags.Blocks.COBBLESTONE)
+                .add(Blocks.COBBLESTONE)
+                .add(Blocks.INFESTED_COBBLESTONE)
+                .add(Blocks.COBBLED_DEEPSLATE)
+                .add(ModBlocks.MOD_COBBLESTONE.get())
+                .add(ModBlocks.MOD_COBBLED_DEEPSLATE.get())
+                .add(ModBlocks.COBBLED_SANDSTONE.get())
+                .add(ModBlocks.COBBLED_RED_SANDSTONE.get())
+                .add(ModBlocks.COBBLED_WHITE_SANDSTONE.get())
+                .add(ModBlocks.COBBLED_GRANITE.get())
+                .add(ModBlocks.COBBLED_DIORITE.get())
+                .add(ModBlocks.COBBLED_ANDESITE.get())
+                .add(ModBlocks.COBBLED_CALCITE.get())
+                .add(ModBlocks.COBBLED_TUFF.get())
+                .add(ModBlocks.COBBLED_DRIPSTONE.get())
+                .add(ModBlocks.COBBLED_NETHERRACK.get())
+                .add(ModBlocks.COBBLED_BLACKSTONE.get())
+                .add(ModBlocks.COBBLED_BASALT.get())
+                .add(ModBlocks.COBBLED_END_STONE.get())
+                ;
+
 
         tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.CHIPPED_OAK_LOG.get())
+                .add(ModBlocks.THIN_OAK_LOG.get())
+                .add(ModBlocks.CHIPPED_SPRUCE_LOG.get())
+                .add(ModBlocks.THIN_SPRUCE_LOG.get())
+                .add(ModBlocks.CHIPPED_BIRCH_LOG.get())
+                .add(ModBlocks.THIN_BIRCH_LOG.get())
+                .add(ModBlocks.CHIPPED_JUNGLE_LOG.get())
+                .add(ModBlocks.THIN_JUNGLE_LOG.get())
+                .add(ModBlocks.CHIPPED_ACACIA_LOG.get())
+                .add(ModBlocks.THIN_ACACIA_LOG.get())
+                .add(ModBlocks.CHIPPED_DARK_OAK_LOG.get())
+                .add(ModBlocks.THIN_DARK_OAK_LOG.get())
+                .add(ModBlocks.CHIPPED_CHERRY_LOG.get())
+                .add(ModBlocks.THIN_CHERRY_LOG.get())
+                .add(ModBlocks.CHIPPED_MANGROVE_LOG.get())
+                .add(ModBlocks.THIN_MANGROVE_LOG.get())
+                .add(ModBlocks.CHIPPED_PALM_LOG.get())
+                .add(ModBlocks.THIN_PALM_LOG.get())
+
                 .add(ModBlocks.PALM_LOG.get())
                 .add(ModBlocks.PALM_WOOD.get())
                 .add(ModBlocks.STRIPPED_PALM_LOG.get())
@@ -194,7 +292,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.PALM_LOG.get())
                 .add(ModBlocks.PALM_WOOD.get())
                 .add(ModBlocks.STRIPPED_PALM_LOG.get())
-                .add(ModBlocks.STRIPPED_PALM_WOOD.get());
+                .add(ModBlocks.STRIPPED_PALM_WOOD.get())
+                .add(ModBlocks.CHIPPED_PALM_LOG.get())
+                .add(ModBlocks.THIN_PALM_LOG.get());
         tag(BlockTags.FENCES)
                 .add(ModBlocks.PALM_FENCE.get())
                 .add(ModBlocks.PALM_FENCE_GATE.get())
@@ -213,5 +313,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.SOUL_SPEED_BLOCKS)
                 .add(ModBlocks.SOUL_SOIL_SLAB.get())
                 .add(ModBlocks.SOUL_SAND_SLAB.get());
+
+        tag(BlockTags.ANVIL)
+                .add(ModBlocks.STONE_ANVIL.get());
+
     }
 }

@@ -17,6 +17,8 @@ public class ModSounds {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, RealismMod.MOD_ID);
 
+    public static final Supplier<SoundEvent> FIRE_PLOUGH_USE =registerSoundEvent("fire_plough_use");
+
     public static final Supplier<SoundEvent> WASTELAND_FUNK = registerSoundEvent("wasteland_funk");
     public static final ResourceKey<JukeboxSong> WASTELAND_FUNK_KEY = createSong("wasteland_funk");
 

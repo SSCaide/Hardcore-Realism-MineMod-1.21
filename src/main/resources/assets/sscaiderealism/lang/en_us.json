@@ -9,15 +9,15 @@
   "item.sscaiderealism.cherry_timber": "Cherry Timber",
   "item.sscaiderealism.palm_timber": "Palm Timber",
 
-  "item.sscaiderealism.oak_plank": "Oak Plank",
-  "item.sscaiderealism.spruce_plank": "Spruce Plank",
-  "item.sscaiderealism.birch_plank": "Birch Plank",
-  "item.sscaiderealism.jungle_plank": "Jungle Plank",
-  "item.sscaiderealism.acacia_plank": "Acacia Plank",
-  "item.sscaiderealism.dark_oak_plank": "Dark Oak Plank",
-  "item.sscaiderealism.mangrove_plank": "Mangrove Plank",
-  "item.sscaiderealism.cherry_plank": "Cherry Plank",
-  "item.sscaiderealism.palm_plank": "Palm Plank",
+  "item.sscaiderealism.oak_board": "Oak Board",
+  "item.sscaiderealism.spruce_board": "Spruce Board",
+  "item.sscaiderealism.birch_board": "Birch Board",
+  "item.sscaiderealism.jungle_board": "Jungle Board",
+  "item.sscaiderealism.acacia_board": "Acacia Board",
+  "item.sscaiderealism.dark_oak_board": "Dark Oak Board",
+  "item.sscaiderealism.mangrove_board": "Mangrove Board",
+  "item.sscaiderealism.cherry_board": "Cherry Board",
+  "item.sscaiderealism.palm_board": "Palm Board",
 
   "item.sscaiderealism.oak_bark": "Oak Bark",
   "item.sscaiderealism.spruce_bark": "Spruce Bark",
@@ -39,6 +39,7 @@
   "item.sscaiderealism.clump_of_moss": "Clump of Moss",
   "item.sscaiderealism.clump_of_soul_soil": "Clump of Soul Soil",
   "item.sscaiderealism.pile_of_soul_sand": "Pile of Soul Sand",
+  "item.sscaiderealism.pile_of_ash": "Pile of Ash",
 
   "item.sscaiderealism.rock": "Rock",
   "item.sscaiderealism.deepslate_rock": "Deepslate Rock",
@@ -56,11 +57,11 @@
   "item.sscaiderealism.basalt_rock": "Basalt Rock",
   "item.sscaiderealism.end_rock": "End Rock",
 
-  "item.sscaiderealism.stone_brick": "Stone Brick",
-  "item.sscaiderealism.deepslate_brick": "Deepslate Brick",
-  "item.sscaiderealism.tuff_brick": "Tuff Brick",
-  "item.sscaiderealism.blackstone_brick": "Blackstone Brick",
-  "item.sscaiderealism.end_brick": "End Brick",
+  "item.sscaiderealism.stone_brick": "Carved Stone Brick",
+  "item.sscaiderealism.deepslate_brick": "Carved Deepslate Brick",
+  "item.sscaiderealism.tuff_brick": "Carved Tuff Brick",
+  "item.sscaiderealism.blackstone_brick": "Carved Blackstone Brick",
+  "item.sscaiderealism.end_brick": "Carved End Brick",
 
   "item.sscaiderealism.vine": "Vine",
   "item.sscaiderealism.flax": "Flax",
@@ -78,8 +79,12 @@
   "item.sscaiderealism.white_petals": "White Petals",
   "item.sscaiderealism.yellow_petals": "Yellow Petals",
 
+  "item.sscaiderealism.coal_nugget": "Coal Nugget",
+
   "item.sscaiderealism.raw_tin": "Raw Tin",
+  "item.sscaiderealism.raw_tin_nugget": "Raw Tin Nugget",
   "item.sscaiderealism.tin_ingot": "Tin Ingot",
+  "item.sscaiderealism.tin_nugget": "Tin Nugget",
 
   "item.sscaiderealism.raw_copper_nugget": "Raw Copper Nugget",
   "item.sscaiderealism.copper_dust": "Copper Dust",
@@ -90,8 +95,10 @@
   "item.sscaiderealism.raw_iron_nugget": "Raw Iron Nugget",
   "item.sscaiderealism.iron_dust": "Iron Dust",
 
-
   "item.sscaiderealism.obsidian_shard": "Obsidian Shard",
+
+
+  "item.sscaiderealism.short_haft": "Short Haft",
 
   "item.sscaiderealism.wide_shaped_flint": "Wide Shaped Flint",
   "item.sscaiderealism.fanned_shaped_flint": "Fanned Shaped Flint",
@@ -118,11 +125,23 @@
   "item.sscaiderealism.flax_seeds": "Flax Seeds",
   "item.sscaiderealism.bowl_of_flax_seeds": "Bowl of Flax Seeds",
 
+  "item.sscaiderealism.burnt_potato": "Burnt Potato",
+  "item.sscaiderealism.burnt_beef": "Burnt Beef",
+  "item.sscaiderealism.burnt_porkchop": "Burnt Porkchop",
+  "item.sscaiderealism.burnt_mutton": "Burnt Mutton",
+  "item.sscaiderealism.burnt_rabbit": "Burnt Rabbit",
+  "item.sscaiderealism.burnt_chicken": "Burnt Chicken",
+  "item.sscaiderealism.burnt_cod": "Burnt Cod",
+  "item.sscaiderealism.burnt_salmon": "Burnt Salmon",
 
-  "item.sscaiderealism.sharpened_stick": "Sharpened Stick",
+
   "item.sscaiderealism.sharpened_rock": "Sharpened Rock",
   "item.sscaiderealism.sharpened_copper_chunk": "Sharpened Copper Chunk",
   "item.sscaiderealism.sharpened_iron_chunk": "Sharpened Iron Chunk",
+
+  "item.sscaiderealism.sharpened_stick": "Sharpened Stick",
+  "item.sscaiderealism.fire_plough":"Fire Plough",
+  "item.sscaiderealism.bow_drill":"Bow Drill",
 
   "item.sscaiderealism.random_flint_tool": "Random Flint Tool",
   "item.sscaiderealism.flint_knife": "Flint Knife",
@@ -182,6 +201,8 @@
   "item.sscaiderealism.copper_horse_armor": "Copper Horse Armor",
 
 
+  "sounds.sscaiderealism.fire_plough_use": "Sticks rubbing together",
+
   "item.sscaiderealism.wasteland_funk_music_disc": "Wasteland Funk Music Disc",
   "item.sscaiderealism.wasteland_funk_music_disc.desc": "Mythic Anorak - Wasteland Funk",
 
@@ -191,6 +212,25 @@
 
   "trim_material.sscaiderealism.tin": "Tin Material",
 
+
+  "block.sscaiderealism.chipped_oak_log": "Chipped Oak Log",
+  "block.sscaiderealism.thin_oak_log": "Thin Oak Log",
+  "block.sscaiderealism.chipped_spruce_log": "Chipped Spruce Log",
+  "block.sscaiderealism.thin_spruce_log": "Thin Spruce Log",
+  "block.sscaiderealism.chipped_birch_log": "Chipped Birch Log",
+  "block.sscaiderealism.thin_birch_log": "Thin Birch Log",
+  "block.sscaiderealism.chipped_jungle_log": "Chipped Jungle Log",
+  "block.sscaiderealism.thin_jungle_log": "Thin Jungle Log",
+  "block.sscaiderealism.chipped_acacia_log": "Chipped Acacia Log",
+  "block.sscaiderealism.thin_acacia_log": "Thin Acacia Log",
+  "block.sscaiderealism.chipped_dark_oak_log": "Chipped Dark Oak Log",
+  "block.sscaiderealism.thin_dark_oak_log": "Thin Dark Oak Log",
+  "block.sscaiderealism.chipped_mangrove_log": "Chipped Mangrove Log",
+  "block.sscaiderealism.thin_mangrove_log": "Thin Mangrove Log",
+  "block.sscaiderealism.chipped_cherry_log": "Chipped Cherry Log",
+  "block.sscaiderealism.thin_cherry_log": "Thin Cherry Log",
+  "block.sscaiderealism.chipped_palm_log": "Chipped Palm Log",
+  "block.sscaiderealism.thin_palm_log": "Thin Palm Log",
 
   "block.sscaiderealism.palm_log": "Palm Log",
   "block.sscaiderealism.palm_wood": "Palm Wood",
@@ -220,28 +260,60 @@
   "block.sscaiderealism.crude_palm_block": "Crude Palm Block",
 
   "block.sscaiderealism.cracked_stone": "Cracked Stone",
+  "block.sscaiderealism.mod_cobblestone": "Cobblestone",
+  "block.sscaiderealism.mod_cobblestone_stairs": "Cobblestone Stairs",
+  "block.sscaiderealism.mod_cobblestone_slab": "Cobblestone Slab",
   "block.sscaiderealism.cracked_deepslate": "Cracked Deepslate",
+  "block.sscaiderealism.mod_cobbled_deepslate": "Cobbled Deepslate",
+  "block.sscaiderealism.mod_cobbled_deepslate_stairs": "Cobbled Deepslate Stairs",
+  "block.sscaiderealism.mod_cobbled_deepslate_slab": "Cobbled Deepslate Slab",
   "block.sscaiderealism.cobbled_sandstone": "Cobbled Sandstone",
+  "block.sscaiderealism.cobbled_sandstone_stairs": "Cobbled Sandstone Stairs",
+  "block.sscaiderealism.cobbled_sandstone_slab": "Cobbled Sandstone Slab",
   "block.sscaiderealism.cobbled_red_sandstone": "Cobbled Red Sandstone",
+  "block.sscaiderealism.cobbled_red_sandstone_stairs": "Cobbled Red Sandstone Stairs",
+  "block.sscaiderealism.cobbled_red_sandstone_slab": "Cobbled Red Sandstone Slab",
   "block.sscaiderealism.cobbled_white_sandstone": "Cobbled White Sandstone",
+  "block.sscaiderealism.cobbled_white_sandstone_stairs": "Cobbled White Sandstone Stairs",
+  "block.sscaiderealism.cobbled_white_sandstone_slab": "Cobbled White Sandstone Slab",
   "block.sscaiderealism.cracked_granite": "Cracked Granite",
   "block.sscaiderealism.cobbled_granite": "Cobbled Granite",
+  "block.sscaiderealism.cobbled_granite_stairs": "Cobbled Granite Stairs",
+  "block.sscaiderealism.cobbled_granite_slab": "Cobbled Granite Slab",
   "block.sscaiderealism.cracked_diorite": "Cracked Diorite",
   "block.sscaiderealism.cobbled_diorite": "Cobbled Diorite",
+  "block.sscaiderealism.cobbled_diorite_stairs": "Cobbled Diorite Stairs",
+  "block.sscaiderealism.cobbled_diorite_slab": "Cobbled Diorite Slab",
   "block.sscaiderealism.cracked_andesite": "Cracked Andesite",
   "block.sscaiderealism.cobbled_andesite": "Cobbled Andesite",
+  "block.sscaiderealism.cobbled_andesite_stairs": "Cobbled Andesite Stairs",
+  "block.sscaiderealism.cobbled_andesite_slab": "Cobbled Andesite Slab",
   "block.sscaiderealism.cracked_calcite": "Cracked Calcite",
   "block.sscaiderealism.cobbled_calcite": "Cobbled Calcite",
+  "block.sscaiderealism.cobbled_calcite_stairs": "Cobbled Calcite Stairs",
+  "block.sscaiderealism.cobbled_calcite_slab": "Cobbled Calcite Slab",
   "block.sscaiderealism.cracked_tuff": "Cracked Tuff",
   "block.sscaiderealism.cobbled_tuff": "Cobbled Tuff",
+  "block.sscaiderealism.cobbled_tuff_stairs": "Cobbled Tuff Stairs",
+  "block.sscaiderealism.cobbled_tuff_slab": "Cobbled Tuff Slab",
   "block.sscaiderealism.cracked_dripstone": "Cracked Dripstone",
   "block.sscaiderealism.cobbled_dripstone": "Cobbled Dripstone",
+  "block.sscaiderealism.cobbled_dripstone_stairs": "Cobbled Dripstone Stairs",
+  "block.sscaiderealism.cobbled_dripstone_slab": "Cobbled Dripstone Slab",
   "block.sscaiderealism.cobbled_netherrack": "Cobbled Netherrack",
+  "block.sscaiderealism.cobbled_netherrack_stairs": "Cobbled Netherrack Stairs",
+  "block.sscaiderealism.cobbled_netherrack_slab": "Cobbled Netherrack Slab",
   "block.sscaiderealism.cobbled_blackstone": "Cobbled Blackstone",
+  "block.sscaiderealism.cobbled_blackstone_stairs": "Cobbled Blackstone Stairs",
+  "block.sscaiderealism.cobbled_blackstone_slab": "Cobbled Blackstone Slab",
   "block.sscaiderealism.cracked_basalt": "Cracked Basalt",
   "block.sscaiderealism.cobbled_basalt": "Cobbled Basalt",
+  "block.sscaiderealism.cobbled_basalt_stairs": "Cobbled Basalt Stairs",
+  "block.sscaiderealism.cobbled_basalt_slab": "Cobbled Basalt Slab",
   "block.sscaiderealism.cracked_end_stone": "Cracked End Stone",
   "block.sscaiderealism.cobbled_end_stone": "Cobbled End Stone",
+  "block.sscaiderealism.cobbled_end_stone_stairs": "Cobbled End Stone Stairs",
+  "block.sscaiderealism.cobbled_end_stone_slab": "Cobbled End Stone Slab",
 
   "block.sscaiderealism.tin_ore": "Tin Ore",
   "block.sscaiderealism.deepslate_tin_ore": "Deepslate Tin Ore",
@@ -254,6 +326,8 @@
   "block.sscaiderealism.dirt_slab": "Dirt Slab",
   "block.sscaiderealism.mud_slab": "Mud Slab",
   "block.sscaiderealism.clay_slab": "Clay Slab",
+  "block.sscaiderealism.wet_clay_brick": "Wet Clay Brick",
+  "block.sscaiderealism.dried_brick": "Dried Brick",
   "block.sscaiderealism.gravel_slab": "Gravel Slab",
   "block.sscaiderealism.sand_slab": "Sand Slab",
   "block.sscaiderealism.red_sand_slab": "Red Sand Slab",
@@ -282,6 +356,13 @@
   "block.sscaiderealism.basalt_slab": "Basalt Slab",
   "block.sscaiderealism.smooth_basalt_slab": "Smooth Basalt Slab",
   "block.sscaiderealism.end_stone_slab": "End Stone Slab",
+
+
+  "block.sscaiderealism.brick_furnace": "Brick Furnace",
+  "block.sscaiderealism.bloomery": "Bloomery",
+
+  "block.sscaiderealism.mod_anvil_display": "Anvil",
+  "block.sscaiderealism.stone_anvil": "Stone Anvil",
 
   "block.sscaiderealism.flax_crop": "Flax Crop",
 
